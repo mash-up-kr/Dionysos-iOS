@@ -1,0 +1,30 @@
+name: iOS-Build
+
+on:
+  push:
+#   pull_request:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=13.2,name=iPhone X', 'platform=iOS Simulator,OS=13.0,name=iPhone XS Max']
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_11.4.1.app
+    - name: Xcode version
+      run: /usr/bin/xcodebuild -version
+    - name: Build
+      run: |
+        xcodebuild -arch i386 \
+          -sdk iphonesimulator \
+          -project Dionysos.xcodeproj \
+          -configuration Debug \
+          -derivedDataPath DerivedData \
+          build-for-testing \
+          | xcpretty --color --simple
+      env: 
+        destination: ${{ matrix.destination }}

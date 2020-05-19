@@ -8,12 +8,22 @@
 
 import Firebase
 import UIKit
+#if DEBUG
+import Gedatsu
+#endif
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Firebase Setting
         FirebaseApp.configure()
+
+        // Pretty AutoLayout error console log https://github.com/bannzai/Gedatsu
+        #if DEBUG
+        Gedatsu.open()
+        #endif
+
         return true
     }
 

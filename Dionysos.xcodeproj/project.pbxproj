@@ -31,6 +31,8 @@
 		4D12880824743B7D00C4E3DF /* upload-symbols in Resources */ = {isa = PBXBuildFile; fileRef = 4D12880624743B7C00C4E3DF /* upload-symbols */; };
 		4D12880924743B7D00C4E3DF /* run in Resources */ = {isa = PBXBuildFile; fileRef = 4D12880724743B7D00C4E3DF /* run */; };
 		4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D1288132474404F00C4E3DF /* GoogleService-Info.plist */; };
+		4D128818247443D500C4E3DF /* Gedatsu in Frameworks */ = {isa = PBXBuildFile; productRef = 4D128817247443D500C4E3DF /* Gedatsu */; };
+		4D12881B2474447900C4E3DF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D12881A2474447900C4E3DF /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,7 @@
 		4D12880724743B7D00C4E3DF /* run */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = run; sourceTree = "<group>"; };
 		4D12880C24743CD400C4E3DF /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		4D1288132474404F00C4E3DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D12881A2474447900C4E3DF /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 				4D12880224743B2500C4E3DF /* GoogleDataTransportCCTSupport.xcframework in Frameworks */,
 				4D12880524743B7700C4E3DF /* FirebaseCrashlytics.xcframework in Frameworks */,
 				4D12880024743B2500C4E3DF /* FirebaseAnalytics.framework in Frameworks */,
+				4D128818247443D500C4E3DF /* Gedatsu in Frameworks */,
 				4D1287F824743B2500C4E3DF /* FirebaseInstallations.xcframework in Frameworks */,
 				4D1287FD24743B2500C4E3DF /* FIRAnalyticsConnector.framework in Frameworks */,
 			);
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				4D1287DC2473DC0D00C4E3DF /* Supported Files */,
+				4D1288192474446C00C4E3DF /* Common */,
 				4D1287C12473D15000C4E3DF /* ViewController.swift */,
 				4D1287C32473D15000C4E3DF /* Main.storyboard */,
 			);
@@ -159,6 +164,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		4D1288192474446C00C4E3DF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4D12881A2474447900C4E3DF /* Logger.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +194,7 @@
 			packageProductDependencies = (
 				4D1287D52473D30200C4E3DF /* Moya */,
 				4D1287E7247438B100C4E3DF /* SDWebImage */,
+				4D128817247443D500C4E3DF /* Gedatsu */,
 			);
 			productName = Dionysos;
 			productReference = 4D1287BA2473D15000C4E3DF /* Dionysos.app */;
@@ -213,6 +227,7 @@
 			packageReferences = (
 				4D1287D42473D30200C4E3DF /* XCRemoteSwiftPackageReference "Moya" */,
 				4D1287D72473D36100C4E3DF /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				4D128816247443D500C4E3DF /* XCRemoteSwiftPackageReference "Gedatsu" */,
 			);
 			productRefGroup = 4D1287BB2473D15000C4E3DF /* Products */;
 			projectDirPath = "";
@@ -304,6 +319,7 @@
 			files = (
 				4D1287C22473D15000C4E3DF /* ViewController.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
+				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
 				4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +405,7 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -447,6 +464,7 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
+				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -538,6 +556,14 @@
 				minimumVersion = 5.8.0;
 			};
 		};
+		4D128816247443D500C4E3DF /* XCRemoteSwiftPackageReference "Gedatsu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bannzai/Gedatsu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.10;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -550,6 +576,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4D1287D72473D36100C4E3DF /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		4D128817247443D500C4E3DF /* Gedatsu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D128816247443D500C4E3DF /* XCRemoteSwiftPackageReference "Gedatsu" */;
+			productName = Gedatsu;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

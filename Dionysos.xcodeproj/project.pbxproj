@@ -15,6 +15,22 @@
 		4D1287CA2473D15300C4E3DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1287C82473D15300C4E3DF /* LaunchScreen.storyboard */; };
 		4D1287D62473D30200C4E3DF /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 4D1287D52473D30200C4E3DF /* Moya */; };
 		4D1287DB2473D9F200C4E3DF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4D1287DA2473D9F200C4E3DF /* .swiftlint.yml */; };
+		4D1287E8247438B100C4E3DF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4D1287E7247438B100C4E3DF /* SDWebImage */; };
+		4D1287F824743B2500C4E3DF /* FirebaseInstallations.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287ED24743B2300C4E3DF /* FirebaseInstallations.xcframework */; };
+		4D1287F924743B2500C4E3DF /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287EE24743B2300C4E3DF /* GoogleAppMeasurement.framework */; };
+		4D1287FA24743B2500C4E3DF /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287EF24743B2300C4E3DF /* nanopb.xcframework */; };
+		4D1287FB24743B2500C4E3DF /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F024743B2400C4E3DF /* PromisesObjC.xcframework */; };
+		4D1287FC24743B2500C4E3DF /* GoogleDataTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F124743B2400C4E3DF /* GoogleDataTransport.xcframework */; };
+		4D1287FD24743B2500C4E3DF /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F224743B2400C4E3DF /* FIRAnalyticsConnector.framework */; };
+		4D1287FE24743B2500C4E3DF /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F324743B2400C4E3DF /* GoogleUtilities.xcframework */; };
+		4D1287FF24743B2500C4E3DF /* FirebaseCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F424743B2400C4E3DF /* FirebaseCore.xcframework */; };
+		4D12880024743B2500C4E3DF /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F524743B2400C4E3DF /* FirebaseAnalytics.framework */; };
+		4D12880124743B2500C4E3DF /* FirebaseCoreDiagnostics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F624743B2400C4E3DF /* FirebaseCoreDiagnostics.xcframework */; };
+		4D12880224743B2500C4E3DF /* GoogleDataTransportCCTSupport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F724743B2500C4E3DF /* GoogleDataTransportCCTSupport.xcframework */; };
+		4D12880524743B7700C4E3DF /* FirebaseCrashlytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D12880424743B7700C4E3DF /* FirebaseCrashlytics.xcframework */; };
+		4D12880824743B7D00C4E3DF /* upload-symbols in Resources */ = {isa = PBXBuildFile; fileRef = 4D12880624743B7C00C4E3DF /* upload-symbols */; };
+		4D12880924743B7D00C4E3DF /* run in Resources */ = {isa = PBXBuildFile; fileRef = 4D12880724743B7D00C4E3DF /* run */; };
+		4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D1288132474404F00C4E3DF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +43,23 @@
 		4D1287C92473D15300C4E3DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D1287CB2473D15300C4E3DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D1287DA2473D9F200C4E3DF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		4D1287E92474391700C4E3DF /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		4D1287ED24743B2300C4E3DF /* FirebaseInstallations.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseInstallations.xcframework; sourceTree = "<group>"; };
+		4D1287EE24743B2300C4E3DF /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		4D1287EF24743B2300C4E3DF /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
+		4D1287F024743B2400C4E3DF /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
+		4D1287F124743B2400C4E3DF /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransport.xcframework; sourceTree = "<group>"; };
+		4D1287F224743B2400C4E3DF /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		4D1287F324743B2400C4E3DF /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
+		4D1287F424743B2400C4E3DF /* FirebaseCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCore.xcframework; sourceTree = "<group>"; };
+		4D1287F524743B2400C4E3DF /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		4D1287F624743B2400C4E3DF /* FirebaseCoreDiagnostics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCoreDiagnostics.xcframework; sourceTree = "<group>"; };
+		4D1287F724743B2500C4E3DF /* GoogleDataTransportCCTSupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransportCCTSupport.xcframework; sourceTree = "<group>"; };
+		4D12880424743B7700C4E3DF /* FirebaseCrashlytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCrashlytics.xcframework; sourceTree = "<group>"; };
+		4D12880624743B7C00C4E3DF /* upload-symbols */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "upload-symbols"; sourceTree = "<group>"; };
+		4D12880724743B7D00C4E3DF /* run */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = run; sourceTree = "<group>"; };
+		4D12880C24743CD400C4E3DF /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		4D1288132474404F00C4E3DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +67,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1287E8247438B100C4E3DF /* SDWebImage in Frameworks */,
 				4D1287D62473D30200C4E3DF /* Moya in Frameworks */,
+				4D1287F924743B2500C4E3DF /* GoogleAppMeasurement.framework in Frameworks */,
+				4D1287FB24743B2500C4E3DF /* PromisesObjC.xcframework in Frameworks */,
+				4D12880124743B2500C4E3DF /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
+				4D1287FC24743B2500C4E3DF /* GoogleDataTransport.xcframework in Frameworks */,
+				4D1287FE24743B2500C4E3DF /* GoogleUtilities.xcframework in Frameworks */,
+				4D1287FA24743B2500C4E3DF /* nanopb.xcframework in Frameworks */,
+				4D1287FF24743B2500C4E3DF /* FirebaseCore.xcframework in Frameworks */,
+				4D12880224743B2500C4E3DF /* GoogleDataTransportCCTSupport.xcframework in Frameworks */,
+				4D12880524743B7700C4E3DF /* FirebaseCrashlytics.xcframework in Frameworks */,
+				4D12880024743B2500C4E3DF /* FirebaseAnalytics.framework in Frameworks */,
+				4D1287F824743B2500C4E3DF /* FirebaseInstallations.xcframework in Frameworks */,
+				4D1287FD24743B2500C4E3DF /* FIRAnalyticsConnector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,14 +116,47 @@
 		4D1287DC2473DC0D00C4E3DF /* Supported Files */ = {
 			isa = PBXGroup;
 			children = (
+				4D1287EB2474396900C4E3DF /* FrameWorks */,
 				4D1287C62473D15300C4E3DF /* Assets.xcassets */,
 				4D1287C82473D15300C4E3DF /* LaunchScreen.storyboard */,
 				4D1287BD2473D15000C4E3DF /* AppDelegate.swift */,
 				4D1287BF2473D15000C4E3DF /* SceneDelegate.swift */,
 				4D1287CB2473D15300C4E3DF /* Info.plist */,
 				4D1287DA2473D9F200C4E3DF /* .swiftlint.yml */,
+				4D1288132474404F00C4E3DF /* GoogleService-Info.plist */,
 			);
 			name = "Supported Files";
+			sourceTree = "<group>";
+		};
+		4D1287EB2474396900C4E3DF /* FrameWorks */ = {
+			isa = PBXGroup;
+			children = (
+				4D12880324743B6400C4E3DF /* Resource */,
+				4D12880C24743CD400C4E3DF /* module.modulemap */,
+				4D1287E92474391700C4E3DF /* Firebase.h */,
+				4D12880424743B7700C4E3DF /* FirebaseCrashlytics.xcframework */,
+				4D1287F224743B2400C4E3DF /* FIRAnalyticsConnector.framework */,
+				4D1287F524743B2400C4E3DF /* FirebaseAnalytics.framework */,
+				4D1287F424743B2400C4E3DF /* FirebaseCore.xcframework */,
+				4D1287F624743B2400C4E3DF /* FirebaseCoreDiagnostics.xcframework */,
+				4D1287ED24743B2300C4E3DF /* FirebaseInstallations.xcframework */,
+				4D1287EE24743B2300C4E3DF /* GoogleAppMeasurement.framework */,
+				4D1287F124743B2400C4E3DF /* GoogleDataTransport.xcframework */,
+				4D1287F724743B2500C4E3DF /* GoogleDataTransportCCTSupport.xcframework */,
+				4D1287F324743B2400C4E3DF /* GoogleUtilities.xcframework */,
+				4D1287EF24743B2300C4E3DF /* nanopb.xcframework */,
+				4D1287F024743B2400C4E3DF /* PromisesObjC.xcframework */,
+			);
+			path = FrameWorks;
+			sourceTree = "<group>";
+		};
+		4D12880324743B6400C4E3DF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4D12880724743B7D00C4E3DF /* run */,
+				4D12880624743B7C00C4E3DF /* upload-symbols */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,6 +171,7 @@
 				4D1287B62473D15000C4E3DF /* Sources */,
 				4D1287B72473D15000C4E3DF /* Frameworks */,
 				4D1287B82473D15000C4E3DF /* Resources */,
+				4D128815247440EF00C4E3DF /* Fabric Run */,
 			);
 			buildRules = (
 			);
@@ -100,6 +180,7 @@
 			name = Dionysos;
 			packageProductDependencies = (
 				4D1287D52473D30200C4E3DF /* Moya */,
+				4D1287E7247438B100C4E3DF /* SDWebImage */,
 			);
 			productName = Dionysos;
 			productReference = 4D1287BA2473D15000C4E3DF /* Dionysos.app */;
@@ -147,10 +228,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D12880924743B7D00C4E3DF /* run in Resources */,
 				4D1287DB2473D9F200C4E3DF /* .swiftlint.yml in Resources */,
 				4D1287CA2473D15300C4E3DF /* LaunchScreen.storyboard in Resources */,
+				4D12880824743B7D00C4E3DF /* upload-symbols in Resources */,
 				4D1287C72473D15300C4E3DF /* Assets.xcassets in Resources */,
 				4D1287C52473D15000C4E3DF /* Main.storyboard in Resources */,
+				4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +276,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		4D128815247440EF00C4E3DF /* Fabric Run */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Fabric Run";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Dionysos/FrameWorks/Resource/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -278,10 +380,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Dionysos/FrameWorks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -332,9 +439,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Dionysos/FrameWorks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -347,6 +459,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dionysos/FrameWorks",
+				);
 				INFOPLIST_FILE = Dionysos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -365,6 +481,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dionysos/FrameWorks",
+				);
 				INFOPLIST_FILE = Dionysos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -425,6 +545,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4D1287D42473D30200C4E3DF /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		4D1287E7247438B100C4E3DF /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D1287D72473D36100C4E3DF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

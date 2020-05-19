@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>482590657845-hkjhnp7p41lebdifc4m46lmhvirdrm1e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.482590657845-hkjhnp7p41lebdifc4m46lmhvirdrm1e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-LuwfBZhA4mMJ--bmE3DPhzW7Uu5tiNE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>482590657845</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>kr.co.Mashup.Dionysos</string>
+	<key>PROJECT_ID</key>
+	<string>dionysos-71a83</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dionysos-71a83.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:482590657845:ios:5c5a0b82ae15d4c135507c</string>
+	<key>DATABASE_URL</key>
+	<string>https://dionysos-71a83.firebaseio.com</string>
+</dict>
+</plist>

@@ -6,13 +6,15 @@
 //  Copyright © 2020 Mashup. All rights reserved.
 //
 
+import Firebase
 import UIKit
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        true
+        FirebaseApp.configure()
+        return true
     }
 
     // MARK: UISceneSession Lifecycle

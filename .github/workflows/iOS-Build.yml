@@ -19,11 +19,11 @@ jobs:
       run: /usr/bin/xcodebuild -version
     - name: Build
       run: |
-        xcodebuild -arch i386 \
+        xcodebuild -arch x86_64 \
           -sdk iphonesimulator \
+          -scheme Dionysos \
           -project Dionysos.xcodeproj \
           -configuration Debug \
-          -derivedDataPath DerivedData \
           build-for-testing \
           | xcpretty --color --simple
       env: 

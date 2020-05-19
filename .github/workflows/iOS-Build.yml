@@ -2,6 +2,7 @@ name: iOS-Build
 
 on:
   pull_request:
+    branches: develop
 
 jobs:
   build:

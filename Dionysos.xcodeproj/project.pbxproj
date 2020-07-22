@@ -30,10 +30,10 @@
 		4D12880824743B7D00C4E3DF /* upload-symbols in Resources */ = {isa = PBXBuildFile; fileRef = 4D12880624743B7C00C4E3DF /* upload-symbols */; };
 		4D12880924743B7D00C4E3DF /* run in Resources */ = {isa = PBXBuildFile; fileRef = 4D12880724743B7D00C4E3DF /* run */; };
 		4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D1288132474404F00C4E3DF /* GoogleService-Info.plist */; };
-		4D128818247443D500C4E3DF /* Gedatsu in Frameworks */ = {isa = PBXBuildFile; productRef = 4D128817247443D500C4E3DF /* Gedatsu */; };
 		4D12881B2474447900C4E3DF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D12881A2474447900C4E3DF /* Logger.swift */; };
 		4D2EEA0624C8B93000E7A687 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2EEA0524C8B93000E7A687 /* Promises */; };
 		4D2EEA0824C8B93000E7A687 /* FBLPromises in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2EEA0724C8B93000E7A687 /* FBLPromises */; };
+		4D2EEA0B24C8BA3C00E7A687 /* Gedatsu in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2EEA0A24C8BA3C00E7A687 /* Gedatsu */; };
 		4D421DB624C88894002DE57B /* DionysosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB524C88894002DE57B /* DionysosService.swift */; };
 		4D421DB824C88940002DE57B /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB724C88940002DE57B /* DionysosProvider.swift */; };
 		4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */; };
@@ -96,10 +96,10 @@
 				4D1287FE24743B2500C4E3DF /* GoogleUtilities.xcframework in Frameworks */,
 				4D1287FA24743B2500C4E3DF /* nanopb.xcframework in Frameworks */,
 				4D1287FF24743B2500C4E3DF /* FirebaseCore.xcframework in Frameworks */,
+				4D2EEA0B24C8BA3C00E7A687 /* Gedatsu in Frameworks */,
 				4D12880224743B2500C4E3DF /* GoogleDataTransportCCTSupport.xcframework in Frameworks */,
 				4D12880524743B7700C4E3DF /* FirebaseCrashlytics.xcframework in Frameworks */,
 				4D12880024743B2500C4E3DF /* FirebaseAnalytics.framework in Frameworks */,
-				4D128818247443D500C4E3DF /* Gedatsu in Frameworks */,
 				4D1287F824743B2500C4E3DF /* FirebaseInstallations.xcframework in Frameworks */,
 				4D2EEA0824C8B93000E7A687 /* FBLPromises in Frameworks */,
 				4D1287FD24743B2500C4E3DF /* FIRAnalyticsConnector.framework in Frameworks */,
@@ -242,12 +242,12 @@
 			packageProductDependencies = (
 				4D1287D52473D30200C4E3DF /* Moya */,
 				4D1287E7247438B100C4E3DF /* SDWebImage */,
-				4D128817247443D500C4E3DF /* Gedatsu */,
 				4D421DC824C8A7CB002DE57B /* FacebookCore */,
 				4D421DCA24C8A7CB002DE57B /* FacebookLogin */,
 				4D421DCC24C8A7CB002DE57B /* FacebookShare */,
 				4D2EEA0524C8B93000E7A687 /* Promises */,
 				4D2EEA0724C8B93000E7A687 /* FBLPromises */,
+				4D2EEA0A24C8BA3C00E7A687 /* Gedatsu */,
 			);
 			productName = Dionysos;
 			productReference = 4D1287BA2473D15000C4E3DF /* Dionysos.app */;
@@ -280,9 +280,9 @@
 			packageReferences = (
 				4D1287D42473D30200C4E3DF /* XCRemoteSwiftPackageReference "Moya" */,
 				4D1287D72473D36100C4E3DF /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				4D128816247443D500C4E3DF /* XCRemoteSwiftPackageReference "Gedatsu" */,
 				4D421DC724C8A7CB002DE57B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				4D2EEA0424C8B93000E7A687 /* XCRemoteSwiftPackageReference "promises" */,
+				4D2EEA0924C8BA3C00E7A687 /* XCRemoteSwiftPackageReference "Gedatsu" */,
 			);
 			productRefGroup = 4D1287BB2473D15000C4E3DF /* Products */;
 			projectDirPath = "";
@@ -605,20 +605,20 @@
 				minimumVersion = 5.8.0;
 			};
 		};
-		4D128816247443D500C4E3DF /* XCRemoteSwiftPackageReference "Gedatsu" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/bannzai/Gedatsu.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.10;
-			};
-		};
 		4D2EEA0424C8B93000E7A687 /* XCRemoteSwiftPackageReference "promises" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/promises.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.2.9;
+			};
+		};
+		4D2EEA0924C8BA3C00E7A687 /* XCRemoteSwiftPackageReference "Gedatsu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bannzai/Gedatsu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
 			};
 		};
 		4D421DC724C8A7CB002DE57B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
@@ -642,11 +642,6 @@
 			package = 4D1287D72473D36100C4E3DF /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		4D128817247443D500C4E3DF /* Gedatsu */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4D128816247443D500C4E3DF /* XCRemoteSwiftPackageReference "Gedatsu" */;
-			productName = Gedatsu;
-		};
 		4D2EEA0524C8B93000E7A687 /* Promises */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4D2EEA0424C8B93000E7A687 /* XCRemoteSwiftPackageReference "promises" */;
@@ -656,6 +651,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4D2EEA0424C8B93000E7A687 /* XCRemoteSwiftPackageReference "promises" */;
 			productName = FBLPromises;
+		};
+		4D2EEA0A24C8BA3C00E7A687 /* Gedatsu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D2EEA0924C8BA3C00E7A687 /* XCRemoteSwiftPackageReference "Gedatsu" */;
+			productName = Gedatsu;
 		};
 		4D421DC824C8A7CB002DE57B /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;

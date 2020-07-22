@@ -19,7 +19,6 @@
 		4D1287F824743B2500C4E3DF /* FirebaseInstallations.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287ED24743B2300C4E3DF /* FirebaseInstallations.xcframework */; };
 		4D1287F924743B2500C4E3DF /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287EE24743B2300C4E3DF /* GoogleAppMeasurement.framework */; };
 		4D1287FA24743B2500C4E3DF /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287EF24743B2300C4E3DF /* nanopb.xcframework */; };
-		4D1287FB24743B2500C4E3DF /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F024743B2400C4E3DF /* PromisesObjC.xcframework */; };
 		4D1287FC24743B2500C4E3DF /* GoogleDataTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F124743B2400C4E3DF /* GoogleDataTransport.xcframework */; };
 		4D1287FD24743B2500C4E3DF /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F224743B2400C4E3DF /* FIRAnalyticsConnector.framework */; };
 		4D1287FE24743B2500C4E3DF /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1287F324743B2400C4E3DF /* GoogleUtilities.xcframework */; };
@@ -33,6 +32,8 @@
 		4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D1288132474404F00C4E3DF /* GoogleService-Info.plist */; };
 		4D128818247443D500C4E3DF /* Gedatsu in Frameworks */ = {isa = PBXBuildFile; productRef = 4D128817247443D500C4E3DF /* Gedatsu */; };
 		4D12881B2474447900C4E3DF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D12881A2474447900C4E3DF /* Logger.swift */; };
+		4D2EEA0624C8B93000E7A687 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2EEA0524C8B93000E7A687 /* Promises */; };
+		4D2EEA0824C8B93000E7A687 /* FBLPromises in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2EEA0724C8B93000E7A687 /* FBLPromises */; };
 		4D421DB624C88894002DE57B /* DionysosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB524C88894002DE57B /* DionysosService.swift */; };
 		4D421DB824C88940002DE57B /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB724C88940002DE57B /* DionysosProvider.swift */; };
 		4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */; };
@@ -58,7 +59,6 @@
 		4D1287ED24743B2300C4E3DF /* FirebaseInstallations.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseInstallations.xcframework; sourceTree = "<group>"; };
 		4D1287EE24743B2300C4E3DF /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
 		4D1287EF24743B2300C4E3DF /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
-		4D1287F024743B2400C4E3DF /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
 		4D1287F124743B2400C4E3DF /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransport.xcframework; sourceTree = "<group>"; };
 		4D1287F224743B2400C4E3DF /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
 		4D1287F324743B2400C4E3DF /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
@@ -85,12 +85,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2EEA0624C8B93000E7A687 /* Promises in Frameworks */,
 				4D1287E8247438B100C4E3DF /* SDWebImage in Frameworks */,
 				4D421DCB24C8A7CB002DE57B /* FacebookLogin in Frameworks */,
 				4D421DCD24C8A7CB002DE57B /* FacebookShare in Frameworks */,
 				4D1287D62473D30200C4E3DF /* Moya in Frameworks */,
 				4D1287F924743B2500C4E3DF /* GoogleAppMeasurement.framework in Frameworks */,
-				4D1287FB24743B2500C4E3DF /* PromisesObjC.xcframework in Frameworks */,
 				4D12880124743B2500C4E3DF /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
 				4D1287FC24743B2500C4E3DF /* GoogleDataTransport.xcframework in Frameworks */,
 				4D1287FE24743B2500C4E3DF /* GoogleUtilities.xcframework in Frameworks */,
@@ -101,6 +101,7 @@
 				4D12880024743B2500C4E3DF /* FirebaseAnalytics.framework in Frameworks */,
 				4D128818247443D500C4E3DF /* Gedatsu in Frameworks */,
 				4D1287F824743B2500C4E3DF /* FirebaseInstallations.xcframework in Frameworks */,
+				4D2EEA0824C8B93000E7A687 /* FBLPromises in Frameworks */,
 				4D1287FD24743B2500C4E3DF /* FIRAnalyticsConnector.framework in Frameworks */,
 				4D421DC924C8A7CB002DE57B /* FacebookCore in Frameworks */,
 			);
@@ -169,7 +170,6 @@
 				4D1287F724743B2500C4E3DF /* GoogleDataTransportCCTSupport.xcframework */,
 				4D1287F324743B2400C4E3DF /* GoogleUtilities.xcframework */,
 				4D1287EF24743B2300C4E3DF /* nanopb.xcframework */,
-				4D1287F024743B2400C4E3DF /* PromisesObjC.xcframework */,
 			);
 			path = FrameWorks;
 			sourceTree = "<group>";
@@ -228,7 +228,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D1287CE2473D15300C4E3DF /* Build configuration list for PBXNativeTarget "Dionysos" */;
 			buildPhases = (
-				4D1287D92473D86000C4E3DF /* SwiftLint Autocorrection */,
 				4D1287D82473D83D00C4E3DF /* SwiftLint */,
 				4D1287B62473D15000C4E3DF /* Sources */,
 				4D1287B72473D15000C4E3DF /* Frameworks */,
@@ -247,6 +246,8 @@
 				4D421DC824C8A7CB002DE57B /* FacebookCore */,
 				4D421DCA24C8A7CB002DE57B /* FacebookLogin */,
 				4D421DCC24C8A7CB002DE57B /* FacebookShare */,
+				4D2EEA0524C8B93000E7A687 /* Promises */,
+				4D2EEA0724C8B93000E7A687 /* FBLPromises */,
 			);
 			productName = Dionysos;
 			productReference = 4D1287BA2473D15000C4E3DF /* Dionysos.app */;
@@ -280,8 +281,8 @@
 				4D1287D42473D30200C4E3DF /* XCRemoteSwiftPackageReference "Moya" */,
 				4D1287D72473D36100C4E3DF /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				4D128816247443D500C4E3DF /* XCRemoteSwiftPackageReference "Gedatsu" */,
-				4D421DB924C88D22002DE57B /* XCRemoteSwiftPackageReference "promises" */,
 				4D421DC724C8A7CB002DE57B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				4D2EEA0424C8B93000E7A687 /* XCRemoteSwiftPackageReference "promises" */,
 			);
 			productRefGroup = 4D1287BB2473D15000C4E3DF /* Products */;
 			projectDirPath = "";
@@ -327,24 +328,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		4D1287D92473D86000C4E3DF /* SwiftLint Autocorrection */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "SwiftLint Autocorrection";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		4D128815247440EF00C4E3DF /* Fabric Run */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -630,7 +613,7 @@
 				minimumVersion = 1.1.10;
 			};
 		};
-		4D421DB924C88D22002DE57B /* XCRemoteSwiftPackageReference "promises" */ = {
+		4D2EEA0424C8B93000E7A687 /* XCRemoteSwiftPackageReference "promises" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/promises.git";
 			requirement = {
@@ -663,6 +646,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4D128816247443D500C4E3DF /* XCRemoteSwiftPackageReference "Gedatsu" */;
 			productName = Gedatsu;
+		};
+		4D2EEA0524C8B93000E7A687 /* Promises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D2EEA0424C8B93000E7A687 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = Promises;
+		};
+		4D2EEA0724C8B93000E7A687 /* FBLPromises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D2EEA0424C8B93000E7A687 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = FBLPromises;
 		};
 		4D421DC824C8A7CB002DE57B /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;

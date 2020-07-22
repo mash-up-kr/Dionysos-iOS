@@ -18,8 +18,8 @@ extension DionysosProvider {
         switch result {
         case .success(let response):
             logger(try? response.mapJSON())
-            let data = response.data
-            if let body = try? response.map(T.self) {
+            let _: Data = response.data
+            if let body: T = try? response.map(T.self) {
                 completion(body)
             } else {
                failure(NSError(domain: "Unknown", code: -9_999, userInfo: nil))

@@ -9,7 +9,7 @@
 import Foundation
 
 struct AppleLogin: SocialLogin {
-     static func getToken() -> String {
+     static func getToken() -> String? {
           ""
      }
 }

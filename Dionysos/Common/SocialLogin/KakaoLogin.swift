@@ -9,7 +9,7 @@
 import Foundation
 
 struct KakaoLogin: SocialLogin {
-     static func getToken() -> String {
+     static func getToken() -> String? {
           ""
      }
 }

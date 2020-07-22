@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SocialLogin {
-     static func getToken() -> String
+     static func getToken() -> String?
 }
 
 struct SocialLoginHelper {
@@ -17,7 +17,7 @@ struct SocialLoginHelper {
           case facebook, apple, kakao
      }
 
-     func sociaLogin(type: SocialLogin) -> String {
+     func sociaLogin(type: SocialLogin) -> String? {
           switch type {
           case .facebook:
                return FacebookLogin.getToken()

@@ -123,11 +123,10 @@
 		4D1287BC2473D15000C4E3DF /* Dionysos */ = {
 			isa = PBXGroup;
 			children = (
-				4D421DB424C8880A002DE57B /* Network */,
-				4D1287DC2473DC0D00C4E3DF /* Supported Files */,
 				4D1288192474446C00C4E3DF /* Common */,
-				4D1287C12473D15000C4E3DF /* ViewController.swift */,
-				4D1287C32473D15000C4E3DF /* Main.storyboard */,
+				4D421DB424C8880A002DE57B /* Network */,
+				4D421DC524C892E2002DE57B /* Main */,
+				4D1287DC2473DC0D00C4E3DF /* Supported Files */,
 			);
 			path = Dionysos;
 			sourceTree = "<group>";
@@ -205,6 +204,15 @@
 				4D421DC324C88EF4002DE57B /* KakaoLogin.swift */,
 			);
 			path = SocialLogin;
+			sourceTree = "<group>";
+		};
+		4D421DC524C892E2002DE57B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4D1287C12473D15000C4E3DF /* ViewController.swift */,
+				4D1287C32473D15000C4E3DF /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

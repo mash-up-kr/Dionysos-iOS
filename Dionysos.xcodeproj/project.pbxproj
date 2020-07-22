@@ -33,6 +33,12 @@
 		4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D1288132474404F00C4E3DF /* GoogleService-Info.plist */; };
 		4D128818247443D500C4E3DF /* Gedatsu in Frameworks */ = {isa = PBXBuildFile; productRef = 4D128817247443D500C4E3DF /* Gedatsu */; };
 		4D12881B2474447900C4E3DF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D12881A2474447900C4E3DF /* Logger.swift */; };
+		4D421DB624C88894002DE57B /* DionysosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB524C88894002DE57B /* DionysosService.swift */; };
+		4D421DB824C88940002DE57B /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB724C88940002DE57B /* DionysosProvider.swift */; };
+		4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */; };
+		4D421DC024C88EE1002DE57B /* FacebookLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DBF24C88EE1002DE57B /* FacebookLogin.swift */; };
+		4D421DC224C88EEC002DE57B /* AppleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DC124C88EEC002DE57B /* AppleLogin.swift */; };
+		4D421DC424C88EF4002DE57B /* KakaoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DC324C88EF4002DE57B /* KakaoLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +69,12 @@
 		4D12880C24743CD400C4E3DF /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		4D1288132474404F00C4E3DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D12881A2474447900C4E3DF /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		4D421DB524C88894002DE57B /* DionysosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosService.swift; sourceTree = "<group>"; };
+		4D421DB724C88940002DE57B /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
+		4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginHelper.swift; sourceTree = "<group>"; };
+		4D421DBF24C88EE1002DE57B /* FacebookLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
+		4D421DC124C88EEC002DE57B /* AppleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogin.swift; sourceTree = "<group>"; };
+		4D421DC324C88EF4002DE57B /* KakaoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,7 @@
 				4D1287BC2473D15000C4E3DF /* Dionysos */,
 				4D1287BB2473D15000C4E3DF /* Products */,
 			);
+			indentWidth = 5;
 			sourceTree = "<group>";
 		};
 		4D1287BB2473D15000C4E3DF /* Products */ = {
@@ -110,6 +123,7 @@
 		4D1287BC2473D15000C4E3DF /* Dionysos */ = {
 			isa = PBXGroup;
 			children = (
+				4D421DB424C8880A002DE57B /* Network */,
 				4D1287DC2473DC0D00C4E3DF /* Supported Files */,
 				4D1288192474446C00C4E3DF /* Common */,
 				4D1287C12473D15000C4E3DF /* ViewController.swift */,
@@ -168,8 +182,29 @@
 			isa = PBXGroup;
 			children = (
 				4D12881A2474447900C4E3DF /* Logger.swift */,
+				4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */,
+				4D421DBE24C88ECF002DE57B /* SocialLogin */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		4D421DB424C8880A002DE57B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4D421DB524C88894002DE57B /* DionysosService.swift */,
+				4D421DB724C88940002DE57B /* DionysosProvider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4D421DBE24C88ECF002DE57B /* SocialLogin */ = {
+			isa = PBXGroup;
+			children = (
+				4D421DBF24C88EE1002DE57B /* FacebookLogin.swift */,
+				4D421DC124C88EEC002DE57B /* AppleLogin.swift */,
+				4D421DC324C88EF4002DE57B /* KakaoLogin.swift */,
+			);
+			path = SocialLogin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +263,7 @@
 				4D1287D42473D30200C4E3DF /* XCRemoteSwiftPackageReference "Moya" */,
 				4D1287D72473D36100C4E3DF /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				4D128816247443D500C4E3DF /* XCRemoteSwiftPackageReference "Gedatsu" */,
+				4D421DB924C88D22002DE57B /* XCRemoteSwiftPackageReference "promises" */,
 			);
 			productRefGroup = 4D1287BB2473D15000C4E3DF /* Products */;
 			projectDirPath = "";
@@ -318,9 +354,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1287C22473D15000C4E3DF /* ViewController.swift in Sources */,
+				4D421DC224C88EEC002DE57B /* AppleLogin.swift in Sources */,
+				4D421DC024C88EE1002DE57B /* FacebookLogin.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
+				4D421DC424C88EF4002DE57B /* KakaoLogin.swift in Sources */,
 				4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */,
+				4D421DB824C88940002DE57B /* DionysosProvider.swift in Sources */,
+				4D421DB624C88894002DE57B /* DionysosService.swift in Sources */,
+				4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +604,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.1.10;
+			};
+		};
+		4D421DB924C88D22002DE57B /* XCRemoteSwiftPackageReference "promises" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/promises.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.9;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

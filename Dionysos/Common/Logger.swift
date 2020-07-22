@@ -17,6 +17,6 @@ func logger<T>(_ object: @autoclosure () -> T, _ file: String = #file, _ functio
     let formatter: DateFormatter = DateFormatter()
     formatter.dateFormat = "HH:mm:ss"
 
-    print("❤️<\(formatter.string(from: Date()))>  <\(queue)> \(fileURL) \(function)[\(line)]: " + String(reflecting: value))
+    print("❤️<\(formatter.string(from: Date()))> <\(queue)> \(fileURL) \(function)[\(line)]: " + String(reflecting: value))
     #endif
 }

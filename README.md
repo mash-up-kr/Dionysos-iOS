@@ -53,7 +53,7 @@ logger("test")
 작업은 피쳐를 따서 feature/작업명
 커밋은 자율에 맡긴다.
 
-PR은 [#Issue Number] 작업내용
+PR은 작업내용쓰고 설명란에 이슈번호 작성
 
 ## UI작업
 

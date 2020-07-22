@@ -17,16 +17,4 @@ struct FacebookLogin: SocialLogin {
           }
           return nil
      }
-     
-     static func getProfileImage() -> Promise<URL?> {
-          Promise<URL?>(on: .main) { completion, promiseError in
-               Profile.loadCurrentProfile { profile, error in
-                    if let error: Error = error {
-                         promiseError(error)
-                    }
-                    let url: URL? = profile?.imageURL(forMode: .normal, size: CGSize(width: 500, height: 500))
-                    completion(url)
-               }
-          }
-     }
 }

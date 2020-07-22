@@ -27,11 +27,11 @@ final class ViewController: UIViewController {
 
 extension ViewController {
      private func addNotificationForFaceBookLogin() {
-          NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: .main) { notification in
+          NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: .main) { [weak self] notification in
                guard isChangeUser(notification) else { return }
-               FacebookLogin.getProfileImage().then { url in
-                    logger(url)
-               }
+               
+               let token: String? = SocialLoginHelper.getToken(type: .facebook)
+               logger(token)
           }
           
           func isChangeUser(_ notification: Notification) -> Bool {

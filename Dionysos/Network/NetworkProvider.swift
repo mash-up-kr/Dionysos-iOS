@@ -1,5 +1,5 @@
 //
-//  Network.swift
+//  NetworkProvider.swift
 //  Dionysos
 //
 //  Created by dongyoung.lee on 2020/07/23.
@@ -10,26 +10,26 @@ import Foundation
 import Moya
 import Promises
 
-enum Network {
+enum NetworkProvider {
     // MARK: Properties
-    
     private static let provider: MoyaProvider<MultiTarget> = MoyaProvider<MultiTarget>()
     
     // MARK: Method
-    
-    static func request<API: EndPointType>(_ api: API) -> Promise<API.Response> {
-        request(api.toTarget()).then {
-            try parse($0)
+    static func request<Response: Decodable>(_ target: TargetType, to type: Response.Type) -> Promise<Response> {
+        Promise<Response> { fulfill, reject in
+            request(target).then {
+                do {
+                    fulfill(try parse($0))
+                } catch {
+                    reject(error)
+                }
+            }.catch {
+                reject($0)
+            }
         }
     }
     
-    static func request<Response: Decodable>(_ target: TargetType, to type: Response) -> Promise<Response> {
-        request(target).then {
-            try parse($0)
-        }
-    }
-    
-    static func request(_ target: TargetType) -> Promise<Data> {
+    private static func request(_ target: TargetType) -> Promise<Data> {
         Promise<Data> { fulfill, reject in
             provider.request(MultiTarget(target)) { result in
                 switch result {

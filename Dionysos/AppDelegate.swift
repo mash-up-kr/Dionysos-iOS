@@ -18,15 +18,15 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Firebase Setting
         FirebaseApp.configure()
-
+        
         // Pretty AutoLayout error console log https://github.com/bannzai/Gedatsu
         #if DEBUG
         Gedatsu.open()
         #endif
-
+        
         return true
     }
-
+    
     // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication,
                      configurationForConnecting connectingSceneSession: UISceneSession,

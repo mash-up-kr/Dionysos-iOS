@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SocialLogin {
-     static func getToken() -> String?
+    static func getToken() -> String?
 }
 
 enum SocialLoginHelper {

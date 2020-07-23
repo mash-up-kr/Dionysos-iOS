@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39FA2BE224C9C5350073B6F2 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* Network.swift */; };
+		39FA2BE424C9C5420073B6F2 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE324C9C5420073B6F2 /* HTTP.swift */; };
+		39FA2BE624C9C54A0073B6F2 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE524C9C54A0073B6F2 /* EndPointType.swift */; };
+		39FA2BE824C9C5570073B6F2 /* TargetAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE724C9C5570073B6F2 /* TargetAdapter.swift */; };
 		4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287BD2473D15000C4E3DF /* AppDelegate.swift */; };
 		4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287BF2473D15000C4E3DF /* SceneDelegate.swift */; };
 		4D1287C22473D15000C4E3DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287C12473D15000C4E3DF /* ViewController.swift */; };
@@ -48,6 +52,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39FA2BE124C9C5340073B6F2 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		39FA2BE324C9C5420073B6F2 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		39FA2BE524C9C54A0073B6F2 /* EndPointType.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		39FA2BE724C9C5570073B6F2 /* TargetAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAdapter.swift; sourceTree = "<group>"; };
 		4D1287BA2473D15000C4E3DF /* Dionysos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dionysos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1287BD2473D15000C4E3DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D1287BF2473D15000C4E3DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +89,7 @@
 		4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginHelper.swift; sourceTree = "<group>"; };
 		4D421DBF24C88EE1002DE57B /* FacebookLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
 		4D421DC124C88EEC002DE57B /* AppleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogin.swift; sourceTree = "<group>"; };
-		4D421DC324C88EF4002DE57B /* KakaoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLogin.swift; sourceTree = "<group>"; };
+		4D421DC324C88EF4002DE57B /* KakaoLogin.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = KakaoLogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,13 +122,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39FA2BE924C9C7520073B6F2 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				39FA2BE324C9C5420073B6F2 /* HTTP.swift */,
+				39FA2BE524C9C54A0073B6F2 /* EndPointType.swift */,
+				39FA2BE724C9C5570073B6F2 /* TargetAdapter.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		4D1287B12473D15000C4E3DF = {
 			isa = PBXGroup;
 			children = (
 				4D1287BC2473D15000C4E3DF /* Dionysos */,
 				4D1287BB2473D15000C4E3DF /* Products */,
 			);
-			indentWidth = 5;
+			indentWidth = 4;
 			sourceTree = "<group>";
 		};
 		4D1287BB2473D15000C4E3DF /* Products */ = {
@@ -210,8 +228,10 @@
 		4D421DB424C8880A002DE57B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				39FA2BE924C9C7520073B6F2 /* Misc */,
 				4D421DB524C88894002DE57B /* DionysosService.swift */,
 				4D421DB724C88940002DE57B /* DionysosProvider.swift */,
+				39FA2BE124C9C5340073B6F2 /* Network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -372,13 +392,17 @@
 				4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */,
 				4D1287C22473D15000C4E3DF /* ViewController.swift in Sources */,
 				4D421DC224C88EEC002DE57B /* AppleLogin.swift in Sources */,
+				39FA2BE624C9C54A0073B6F2 /* EndPointType.swift in Sources */,
 				4D421DC024C88EE1002DE57B /* FacebookLogin.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
+				39FA2BE224C9C5350073B6F2 /* Network.swift in Sources */,
 				4D421DC424C88EF4002DE57B /* KakaoLogin.swift in Sources */,
 				4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */,
 				4D421DB824C88940002DE57B /* DionysosProvider.swift in Sources */,
+				39FA2BE424C9C5420073B6F2 /* HTTP.swift in Sources */,
 				4D421DB624C88894002DE57B /* DionysosService.swift in Sources */,
+				39FA2BE824C9C5570073B6F2 /* TargetAdapter.swift in Sources */,
 				4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

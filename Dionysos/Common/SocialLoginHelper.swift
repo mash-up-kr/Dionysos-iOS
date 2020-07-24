@@ -13,18 +13,18 @@ protocol SocialLogin {
 }
 
 enum SocialLoginHelper {
-     enum SocialLogin {
-          case facebook, apple, kakao
-     }
-
-     static func getToken(type: SocialLogin) -> String? {
-          switch type {
-          case .facebook:
-               return FacebookLogin.getToken()
-          case .apple:
-               return AppleLogin.getToken()
-          case .kakao:
-               return KakaoLogin.getToken()
-          }
-     }
+    enum SocialLogin {
+        case facebook, apple, kakao
+    }
+    
+    static func getToken(type: SocialLogin) -> String? {
+        switch type {
+        case .facebook:
+            return FacebookLogin.getToken()
+        case .apple:
+            return AppleLogin.getToken()
+        case .kakao:
+            return KakaoLogin.getToken()
+        }
+    }
 }

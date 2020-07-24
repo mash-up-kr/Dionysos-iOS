@@ -12,7 +12,7 @@ import Promises
 enum DionysosProvider {
     private typealias Target = DionysosTarget
     
-//    static func callMain() -> Promise<Model> {
-//        NetworkProvider.request(Target.main, to: Model.self)
-//    }
+    //    static func callMain() -> Promise<Model> {
+    //        NetworkProvider.request(Target.main, to: Model.self)
+    //    }
 }

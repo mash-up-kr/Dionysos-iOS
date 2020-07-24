@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */; };
 		39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */; };
 		4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9224CA015D0044418F /* DionysosProvider.swift */; };
 		4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287BD2473D15000C4E3DF /* AppDelegate.swift */; };
@@ -38,8 +39,6 @@
 		4D2EEA0B24C8BA3C00E7A687 /* Gedatsu in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2EEA0A24C8BA3C00E7A687 /* Gedatsu */; };
 		4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2EEA0F24C8C00100E7A687 /* UIView+Extension.swift */; };
 		4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2EEA1124C8C0D800E7A687 /* UINavigationBar+Extension.swift */; };
-		4D421DB624C88894002DE57B /* DionysosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB524C88894002DE57B /* DionysosService.swift */; };
-		4D421DB824C88940002DE57B /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB724C88940002DE57B /* DionysosProvider.swift */; };
 		4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB524C88894002DE57B /* DionysosTarget.swift */; };
 		4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */; };
 		4D421DC024C88EE1002DE57B /* FacebookLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DBF24C88EE1002DE57B /* FacebookLogin.swift */; };
@@ -51,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9224CA015D0044418F /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
 		4D1287BA2473D15000C4E3DF /* Dionysos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dionysos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +81,6 @@
 		4D12881A2474447900C4E3DF /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4D2EEA0F24C8C00100E7A687 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4D2EEA1124C8C0D800E7A687 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
-        
 		4D421DB524C88894002DE57B /* DionysosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosService.swift; sourceTree = "<group>"; };
 		4D421DB724C88940002DE57B /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
 		4D421DB524C88894002DE57B /* DionysosTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosTarget.swift; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 				4D12880024743B2500C4E3DF /* FirebaseAnalytics.framework in Frameworks */,
 				4D1287F824743B2500C4E3DF /* FirebaseInstallations.xcframework in Frameworks */,
 				4D2EEA0824C8B93000E7A687 /* FBLPromises in Frameworks */,
+				3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */,
 				4D1287FD24743B2500C4E3DF /* FIRAnalyticsConnector.framework in Frameworks */,
 				4D421DC924C8A7CB002DE57B /* FacebookCore in Frameworks */,
 			);
@@ -167,6 +167,7 @@
 		4D1287EB2474396900C4E3DF /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
+				3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */,
 				4D12880324743B6400C4E3DF /* Resource */,
 				4D12880C24743CD400C4E3DF /* module.modulemap */,
 				4D1287E92474391700C4E3DF /* Firebase.h */,
@@ -473,6 +474,7 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
+				OTHER_LIBTOOLFLAGS = "";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -532,6 +534,7 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
+				OTHER_LIBTOOLFLAGS = "";
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

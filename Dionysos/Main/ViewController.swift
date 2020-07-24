@@ -12,7 +12,7 @@ import UIKit
 final class ViewController: UIViewController {
      override func viewDidLoad() {
           super.viewDidLoad()
-
+          
           let fbLoginButton: FBLoginButton = FBLoginButton()
           fbLoginButton.center = view.center
           view.addSubview(fbLoginButton)
@@ -26,11 +26,16 @@ final class ViewController: UIViewController {
 }
 
 extension ViewController {
-     func addNotificationForFaceBookLogin() {
-          NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: .main) { notification in
-               if ((notification.userInfo?[AccessTokenDidChangeUserIDKey]) != nil) as Bool {
-
-               }
+     private func addNotificationForFaceBookLogin() {
+          NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: .main) { [weak self] notification in
+               guard isChangeUser(notification) else { return }
+               
+               let token: String? = SocialLoginHelper.getToken(type: .facebook)
+               logger(token)
+          }
+          
+          func isChangeUser(_ notification: Notification) -> Bool {
+               ((notification.userInfo?[AccessTokenDidChangeUserIDKey]) != nil) as Bool
           }
      }
 }

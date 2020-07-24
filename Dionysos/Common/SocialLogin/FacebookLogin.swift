@@ -17,11 +17,4 @@ struct FacebookLogin: SocialLogin {
           }
           return nil
      }
-     
-//     static func getProfileImage() -> URL? {
-//          Profile.loadCurrentProfile { profile, _ in
-//               let url: URL? = profile?.imageURL(forMode: .normal, size: CGSize(width: 500, height: 500))
-//               logger(url)
-//          }
-//     }
 }

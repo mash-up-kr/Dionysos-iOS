@@ -12,12 +12,12 @@ protocol SocialLogin {
      static func getToken() -> String?
 }
 
-struct SocialLoginHelper {
+enum SocialLoginHelper {
      enum SocialLogin {
           case facebook, apple, kakao
      }
 
-     func sociaLogin(type: SocialLogin) -> String? {
+     static func getToken(type: SocialLogin) -> String? {
           switch type {
           case .facebook:
                return FacebookLogin.getToken()

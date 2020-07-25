@@ -20,7 +20,9 @@ final class ViewController: UIViewController {
         view.addSubview(fbLoginButton)
         addNotificationForFaceBookLogin()
         
-        let kakaoLoginButton = KOLoginButton(frame: CGRect(origin: .zero, size: fbLoginButton.bounds.size))
+        let kakaoLoginButton: KOLoginButton = KOLoginButton(
+            frame: CGRect(origin: .zero, size: fbLoginButton.bounds.size)
+        )
         kakaoLoginButton.center = view.center
         view.addSubview(kakaoLoginButton)
         kakaoLoginButton.addTarget(self, action: #selector(kakaoButtonDidTap), for: .touchUpInside)

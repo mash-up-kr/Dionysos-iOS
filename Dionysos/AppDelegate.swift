@@ -7,8 +7,8 @@
 //
 
 import Firebase
-import UIKit
 import KakaoOpenSDK
+import UIKit
 #if DEBUG
 import Gedatsu
 #endif
@@ -27,7 +27,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
       if KOSession.isKakaoAccountLoginCallback(url.absoluteURL) {
         return KOSession.handleOpen(url)
       }
@@ -48,5 +48,4 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-    
 }

@@ -10,11 +10,11 @@ import Foundation
 import Promises
 
 class MGKTimer {
+    typealias TimeHandler = (TimeInterval) -> Void
     // MARK: Properties
-    
     private var timer: Timer?
     private var timeTasks: [TimeTask] = []
-    private var updateHandler: ((TimeInterval) -> Void)?
+    private var updateHandler: TimeHandler?
     var accumulatedTime: TimeInterval {
         timeTasks.filter { $0.state != .todo }
             .map { TimeAmount(from: $0.startDate ?? Date(), to: $0.endDate ?? Date()) }
@@ -22,11 +22,18 @@ class MGKTimer {
             .timeInterval
     }
     
-    private init() {}
+    init(updateHandler: @escaping TimeHandler = { _ in }) {
+        self.updateHandler = updateHandler
+    }
+    
+    deinit {
+        clearTimer()
+    }
     
     func run() {
         let task: TimeTask = TimeTask()
         timeTasks.append(task)
+        task.state = .inProgress
         configureTimer()
     }
     
@@ -36,6 +43,11 @@ class MGKTimer {
             else { return }
         task.state = .done
         clearTimer()
+    }
+    
+    func end() -> TimeInterval {
+        pause()
+        return accumulatedTime
     }
     
     private func configureTimer() {

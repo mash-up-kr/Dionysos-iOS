@@ -14,7 +14,18 @@
                     <view key="view" contentMode="scaleToFill" id="yM1-ik-vDx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bw9-b2-LXe" customClass="MainTab" customModule="Dionysos" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="687" width="414" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pQw-el-go3" firstAttribute="bottom" secondItem="bw9-b2-LXe" secondAttribute="bottom" id="kC7-Ma-Y73"/>
+                            <constraint firstItem="pQw-el-go3" firstAttribute="trailing" secondItem="bw9-b2-LXe" secondAttribute="trailing" id="qaN-zC-5XY"/>
+                            <constraint firstItem="bw9-b2-LXe" firstAttribute="leading" secondItem="pQw-el-go3" secondAttribute="leading" id="zyd-Oc-ZSe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pQw-el-go3"/>
                     </view>
                 </viewController>

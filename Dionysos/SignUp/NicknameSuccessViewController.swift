@@ -13,7 +13,7 @@ class NicknameSuccessViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.19) {
             let nextVC = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "")
             self.present(nextVC, animated: true, completion: nil)
         }

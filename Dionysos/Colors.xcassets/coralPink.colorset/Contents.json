@@ -3,13 +3,13 @@
     {
       "idiom" : "universal",
       "color" : {
+        "color-space" : "srgb",
         "components" : {
-          "red" : "0.988",
-          "alpha" : "1.000",
           "blue" : "0.431",
+          "alpha" : "1.000",
+          "red" : "0.988",
           "green" : "0.353"
-        },
-        "color-space" : "srgb"
+        }
       }
     }
   ],

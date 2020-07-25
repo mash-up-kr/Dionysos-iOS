@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J6z-RE-ocN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ztV-et-Cvu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -8,6 +8,130 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="0kW-h5-j4D">
+            <objects>
+                <viewController id="ztV-et-Cvu" customClass="SignInViewController" customModule="Dionysos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H9L-vu-B6X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모여서 각자 공부," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnB-8q-Jfy">
+                                <rect key="frame" x="20" y="144" width="206" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="M3f-b9-8lv"/>
+                                    <constraint firstAttribute="width" constant="206" id="QiX-e6-oDZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mo gak gong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uB-jA-tcR">
+                                <rect key="frame" x="20" y="190" width="192" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="fKD-9N-Sec"/>
+                                    <constraint firstAttribute="height" constant="42" id="zA5-kI-hNh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <color key="textColor" name="darkGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="gqG-ux-W1l">
+                                <rect key="frame" x="37" y="574" width="339" height="214"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="863-Uw-aI3">
+                                        <rect key="frame" x="0.0" y="0.0" width="339" height="43"/>
+                                        <color key="backgroundColor" name="sunflowerYellow"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <state key="normal" title="Sign in with Kakao">
+                                            <color key="titleColor" name="white"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="kakaoSignInClicked:" destination="ztV-et-Cvu" eventType="touchUpInside" id="Yx9-9S-4IW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoE-BQ-SbO">
+                                        <rect key="frame" x="0.0" y="57" width="339" height="43"/>
+                                        <color key="backgroundColor" name="frenchBlue"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <state key="normal" title="Sign in with Facebook">
+                                            <color key="titleColor" name="white"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="fbSignInClicked:" destination="ztV-et-Cvu" eventType="touchUpInside" id="ATg-ed-Wof"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1y-DH-Unx">
+                                        <rect key="frame" x="0.0" y="114" width="339" height="43"/>
+                                        <color key="backgroundColor" name="transparentBlackTwo"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <state key="normal" title="Sign in with Apple">
+                                            <color key="titleColor" name="white"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="appleSignInClicked:" destination="ztV-et-Cvu" eventType="touchUpInside" id="Wx6-cb-kL6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSc-WI-uhK">
+                                        <rect key="frame" x="0.0" y="171" width="339" height="43"/>
+                                        <color key="backgroundColor" name="lightBlueGrey"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <inset key="titleEdgeInsets" minX="3.2999999999999998" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3.2999999999999998" maxY="0.0"/>
+                                        <state key="normal" title="Sign in with Guest">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="guestSignInClicked:" destination="ztV-et-Cvu" eventType="touchUpInside" id="hvj-XJ-F8f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="1Hi-fm-fu5"/>
+                                    <constraint firstItem="PoE-BQ-SbO" firstAttribute="width" secondItem="gqG-ux-W1l" secondAttribute="width" id="IWU-SA-8YZ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="A5E-BG-RLF" firstAttribute="bottom" secondItem="gqG-ux-W1l" secondAttribute="bottom" constant="74" id="48h-O4-azb"/>
+                            <constraint firstItem="A5E-BG-RLF" firstAttribute="trailing" secondItem="gqG-ux-W1l" secondAttribute="trailing" constant="38" id="4X0-Sv-BY9"/>
+                            <constraint firstItem="3uB-jA-tcR" firstAttribute="leading" secondItem="nnB-8q-Jfy" secondAttribute="leading" id="5fu-wn-VLw"/>
+                            <constraint firstItem="3uB-jA-tcR" firstAttribute="top" secondItem="nnB-8q-Jfy" secondAttribute="bottom" constant="4" id="Cl9-GX-cob"/>
+                            <constraint firstItem="nnB-8q-Jfy" firstAttribute="top" secondItem="A5E-BG-RLF" secondAttribute="top" constant="100" id="EdI-I3-mui"/>
+                            <constraint firstItem="nnB-8q-Jfy" firstAttribute="leading" secondItem="A5E-BG-RLF" secondAttribute="leading" constant="20" id="stE-J1-nvt"/>
+                            <constraint firstItem="gqG-ux-W1l" firstAttribute="leading" secondItem="A5E-BG-RLF" secondAttribute="leading" constant="37" id="zC0-xt-XCi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A5E-BG-RLF"/>
+                    </view>
+                    <connections>
+                        <outlet property="signInButtonStackView" destination="gqG-ux-W1l" id="00D-bz-bsr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wss-NX-MKH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1021.7391304347827" y="101.78571428571428"/>
+        </scene>
         <!--Nickname Input View Controller-->
         <scene sceneID="Uea-Oy-vTS">
             <objects>
@@ -140,6 +264,21 @@
         </namedColor>
         <namedColor name="darkGrey">
             <color red="0.1289999932050705" green="0.13300000131130219" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="frenchBlue">
+            <color red="0.25900000333786011" green="0.40400001406669617" blue="0.69800001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightBlueGrey">
+            <color red="0.80400002002716064" green="0.81599998474121094" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sunflowerYellow">
+            <color red="0.97600001096725464" green="0.87800002098083496" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="transparentBlackTwo">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

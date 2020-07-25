@@ -50,6 +50,9 @@
 		4D421DCB24C8A7CB002DE57B /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DCA24C8A7CB002DE57B /* FacebookLogin */; };
 		4D421DCD24C8A7CB002DE57B /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DCC24C8A7CB002DE57B /* FacebookShare */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
+		4DDA61A924CC37F800D0978E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61A824CC37F800D0978E /* MainViewController.swift */; };
+		4DDA61AC24CC39EF00D0978E /* MainTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61AB24CC39EF00D0978E /* MainTab.xib */; };
+		4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61AD24CC39FA00D0978E /* MainTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +96,9 @@
 		4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginHelper.swift; sourceTree = "<group>"; };
 		4D421DC324C88EF4002DE57B /* KakaoAuth.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4DDA61A824CC37F800D0978E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4DDA61AB24CC39EF00D0978E /* MainTab.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTab.xib; sourceTree = "<group>"; };
+		4DDA61AD24CC39FA00D0978E /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,10 +261,21 @@
 		4D421DC524C892E2002DE57B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4DDA61AA24CC39AD00D0978E /* MainTab */,
 				4D1287C12473D15000C4E3DF /* ViewController.swift */,
 				4D1287C32473D15000C4E3DF /* Main.storyboard */,
+				4DDA61A824CC37F800D0978E /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		4DDA61AA24CC39AD00D0978E /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				4DDA61AB24CC39EF00D0978E /* MainTab.xib */,
+				4DDA61AD24CC39FA00D0978E /* MainTab.swift */,
+			);
+			path = MainTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +363,7 @@
 				4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */,
 				4D1287C52473D15000C4E3DF /* Main.storyboard in Resources */,
 				4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */,
+				4DDA61AC24CC39EF00D0978E /* MainTab.xib in Resources */,
 				17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,7 +416,9 @@
 			files = (
 				17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */,
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
+				4DDA61A924CC37F800D0978E /* MainViewController.swift in Sources */,
 				4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */,
+				4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */,
 				4D1287C22473D15000C4E3DF /* ViewController.swift in Sources */,
 				4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,

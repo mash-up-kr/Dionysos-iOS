@@ -18,6 +18,8 @@
 		390BD0DC24CC43A2009BDB18 /* TimeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0DB24CC43A2009BDB18 /* TimeTask.swift */; };
 		390BD0F324CC7C8C009BDB18 /* MGKAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0F224CC7C8C009BDB18 /* MGKAlertViewController.swift */; };
 		390BD0F524CC7CEE009BDB18 /* MGKAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390BD0F424CC7CEE009BDB18 /* MGKAlert.storyboard */; };
+		390BD0FE24CCC86D009BDB18 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390BD0FD24CCC86D009BDB18 /* QuestionView.xib */; };
+		390BD10024CCC88A009BDB18 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0FF24CCC88A009BDB18 /* QuestionView.swift */; };
 		3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */; };
 		39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */; };
 		4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9224CA015D0044418F /* DionysosProvider.swift */; };
@@ -82,6 +84,8 @@
 		390BD0DB24CC43A2009BDB18 /* TimeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTask.swift; sourceTree = "<group>"; };
 		390BD0F224CC7C8C009BDB18 /* MGKAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGKAlertViewController.swift; sourceTree = "<group>"; };
 		390BD0F424CC7CEE009BDB18 /* MGKAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MGKAlert.storyboard; sourceTree = "<group>"; };
+		390BD0FD24CCC86D009BDB18 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		390BD0FF24CCC88A009BDB18 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9224CA015D0044418F /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
@@ -190,6 +194,23 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		390BD0F924CCC837009BDB18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				390BD0FA24CCC845009BDB18 /* Question */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		390BD0FA24CCC845009BDB18 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				390BD0FD24CCC86D009BDB18 /* QuestionView.xib */,
+				390BD0FF24CCC88A009BDB18 /* QuestionView.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
 		4D1287B12473D15000C4E3DF = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +231,7 @@
 		4D1287BC2473D15000C4E3DF /* Dionysos */ = {
 			isa = PBXGroup;
 			children = (
+				390BD0F924CCC837009BDB18 /* View */,
 				390BD0F124CC7C6D009BDB18 /* Alert */,
 				17C8660524C9F42100080A8C /* Dionysos.entitlements */,
 				17FF026A24CC1B7A009C1B7F /* SignUp */,
@@ -474,6 +496,7 @@
 				390BD0F524CC7CEE009BDB18 /* MGKAlert.storyboard in Resources */,
 				17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */,
 				4D9B02D024CCBAEF00261209 /* Setting.storyboard in Resources */,
+				390BD0FE24CCC86D009BDB18 /* QuestionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +553,7 @@
 				4D0F5DA124CC7F350044418F /* RankingMainViewController.swift in Sources */,
 				390BD0F324CC7C8C009BDB18 /* MGKAlertViewController.swift in Sources */,
 				4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */,
+				390BD10024CCC88A009BDB18 /* QuestionView.swift in Sources */,
 				4D0F5D9D24CC62110044418F /* UIApplication+Extension.swift in Sources */,
 				4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */,
 				4D1287C22473D15000C4E3DF /* ViewController.swift in Sources */,

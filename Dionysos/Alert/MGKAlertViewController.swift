@@ -6,11 +6,10 @@
 //  Copyright © 2020 Mashup. All rights reserved.
 //
 
-import UIKit
 import Promises
+import UIKit
 
 final class MGKAlertViewController: UIViewController {
-    
     // MARK: Properties
     
     @IBOutlet private weak var containerHeightConstraint: NSLayoutConstraint!
@@ -27,7 +26,9 @@ final class MGKAlertViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         containerView.layer.cornerRadius = 30
-        
+        containerView.layer.masksToBounds = true
+        self.view.backgroundColor = self.view.backgroundColor?.withAlphaComponent(0.16)
+        view.isUserInteractionEnabled = true
         if let contentView: UIView = self.contentView {
             configure(contentView)
         }
@@ -41,6 +42,7 @@ final class MGKAlertViewController: UIViewController {
     
     private func configure(_ contentView: UIView) {
         self.containerView.addSubview(contentView)
+        contentView.frame.origin = .zero
     }
     
     private func slideUpContentView(withDuration duration: TimeInterval = 0.3) {
@@ -86,7 +88,7 @@ extension MGKAlertViewController {
     
     static func show(with contentView: UIView) {
         let viewController: MGKAlertViewController = Self.instantiate(with: contentView)
-        guard let window = UIApplication.shared.currentWindow else { return }
-        window.rootViewController?.present(viewController, animated: false, completion: nil)
+        guard let window = UIApplication.shared.keyWindow else { return }
+        window.rootViewController?.presentedViewController?.present(viewController, animated: false, completion: nil)
     }
 }

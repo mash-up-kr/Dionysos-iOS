@@ -12,7 +12,7 @@
         <scene sceneID="aII-13-vdL">
             <objects>
                 <viewController id="gYl-9S-H7f" customClass="MGKAlertViewController" customModule="Dionysos" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.16" contentMode="scaleToFill" id="OxN-S7-7lX">
+                    <view key="view" contentMode="scaleToFill" id="OxN-S7-7lX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

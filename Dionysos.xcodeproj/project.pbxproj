@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */; };
+		17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */; };
+		17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */; };
 		390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0CD24CBD45E009BDB18 /* Promise+.swift */; };
 		3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */; };
 		39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */; };
@@ -50,7 +53,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConstraintHandler.swift; sourceTree = "<group>"; };
 		17C8660524C9F42100080A8C /* Dionysos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dionysos.entitlements; sourceTree = "<group>"; };
+		17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInputViewController.swift; sourceTree = "<group>"; };
+		17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		390BD0CD24CBD45E009BDB18 /* Promise+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Promise+.swift"; sourceTree = "<group>"; };
 		3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
@@ -120,6 +126,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17FF026A24CC1B7A009C1B7F /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */,
+				17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		4D1287B12473D15000C4E3DF = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +155,7 @@
 		4D1287BC2473D15000C4E3DF /* Dionysos */ = {
 			isa = PBXGroup;
 			children = (
+				17FF026A24CC1B7A009C1B7F /* SignUp */,
 				17C8660524C9F42100080A8C /* Dionysos.entitlements */,
 				4D1288192474446C00C4E3DF /* Common */,
 				4D421DB424C8880A002DE57B /* Network */,
@@ -203,6 +219,7 @@
 				4D12881A2474447900C4E3DF /* Logger.swift */,
 				4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */,
 				4D421DBE24C88ECF002DE57B /* SocialLogin */,
+				17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -329,6 +346,7 @@
 				4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */,
 				4D1287C52473D15000C4E3DF /* Main.storyboard in Resources */,
 				4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */,
+				17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */,
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
 				4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */,
 				4D1287C22473D15000C4E3DF /* ViewController.swift in Sources */,
@@ -389,6 +408,7 @@
 				4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */,
 				4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */,
 				390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */,
+				17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */,
 				4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

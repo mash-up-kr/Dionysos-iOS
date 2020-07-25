@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ztV-et-Cvu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ztV-et-Cvu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모여서 각자 공부," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnB-8q-Jfy">
-                                <rect key="frame" x="20" y="144" width="203.5" height="36"/>
+                                <rect key="frame" x="105.5" y="144" width="203.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mo gak gong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uB-jA-tcR">
-                                <rect key="frame" x="20" y="184" width="192" height="36"/>
+                                <rect key="frame" x="111" y="180" width="192" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
                                 <color key="textColor" name="darkGrey"/>
                                 <nil key="highlightedColor"/>
@@ -108,10 +108,10 @@
                         <constraints>
                             <constraint firstItem="A5E-BG-RLF" firstAttribute="bottom" secondItem="gqG-ux-W1l" secondAttribute="bottom" constant="74" id="48h-O4-azb"/>
                             <constraint firstItem="A5E-BG-RLF" firstAttribute="trailing" secondItem="gqG-ux-W1l" secondAttribute="trailing" constant="38" id="4X0-Sv-BY9"/>
-                            <constraint firstItem="3uB-jA-tcR" firstAttribute="leading" secondItem="nnB-8q-Jfy" secondAttribute="leading" id="5fu-wn-VLw"/>
-                            <constraint firstItem="3uB-jA-tcR" firstAttribute="top" secondItem="nnB-8q-Jfy" secondAttribute="bottom" constant="4" id="Cl9-GX-cob"/>
+                            <constraint firstItem="3uB-jA-tcR" firstAttribute="top" secondItem="nnB-8q-Jfy" secondAttribute="bottom" id="Cl9-GX-cob"/>
                             <constraint firstItem="nnB-8q-Jfy" firstAttribute="top" secondItem="A5E-BG-RLF" secondAttribute="top" constant="100" id="EdI-I3-mui"/>
-                            <constraint firstItem="nnB-8q-Jfy" firstAttribute="leading" secondItem="A5E-BG-RLF" secondAttribute="leading" constant="20" id="stE-J1-nvt"/>
+                            <constraint firstItem="3uB-jA-tcR" firstAttribute="centerX" secondItem="H9L-vu-B6X" secondAttribute="centerX" id="iV2-S8-MDR"/>
+                            <constraint firstItem="nnB-8q-Jfy" firstAttribute="centerX" secondItem="H9L-vu-B6X" secondAttribute="centerX" id="oqD-zf-mg0"/>
                             <constraint firstItem="gqG-ux-W1l" firstAttribute="leading" secondItem="A5E-BG-RLF" secondAttribute="leading" constant="37" id="zC0-xt-XCi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A5E-BG-RLF"/>
@@ -198,34 +198,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환영해!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-KT-nzC">
-                                <rect key="frame" x="20" y="84" width="88.5" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환영해!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-KT-nzC">
+                                <rect key="frame" x="20" y="146" width="374" height="87"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <color key="textColor" name="darkGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTv-Q5-ZTX">
-                                <rect key="frame" x="20" y="136" width="374" height="22"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RtG-My-BDz">
+                                <rect key="frame" x="20" y="287" width="374" height="374"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="35n-IV-kVf"/>
+                                    <constraint firstAttribute="width" secondItem="RtG-My-BDz" secondAttribute="height" multiplier="1:1" id="mC7-BC-ehz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="YTv-Q5-ZTX" firstAttribute="top" secondItem="nGM-KT-nzC" secondAttribute="bottom" constant="16" id="2R6-KN-w6G"/>
-                            <constraint firstItem="YTv-Q5-ZTX" firstAttribute="leading" secondItem="nGM-KT-nzC" secondAttribute="leading" id="9hS-lm-F1B"/>
                             <constraint firstItem="nGM-KT-nzC" firstAttribute="leading" secondItem="f4M-YO-ARq" secondAttribute="leading" constant="20" id="CFQ-VD-dZt"/>
-                            <constraint firstItem="nGM-KT-nzC" firstAttribute="top" secondItem="f4M-YO-ARq" secondAttribute="top" constant="40" id="UTp-bY-rIR"/>
-                            <constraint firstItem="f4M-YO-ARq" firstAttribute="trailing" secondItem="YTv-Q5-ZTX" secondAttribute="trailing" constant="20" id="g8R-FR-BuO"/>
+                            <constraint firstItem="nGM-KT-nzC" firstAttribute="centerX" secondItem="YOO-lZ-sdn" secondAttribute="centerX" id="RXq-gm-IaD"/>
+                            <constraint firstItem="nGM-KT-nzC" firstAttribute="top" secondItem="f4M-YO-ARq" secondAttribute="top" constant="102" id="UTp-bY-rIR"/>
+                            <constraint firstItem="RtG-My-BDz" firstAttribute="leading" secondItem="f4M-YO-ARq" secondAttribute="leading" constant="20" id="dLV-VZ-AOV"/>
+                            <constraint firstItem="RtG-My-BDz" firstAttribute="top" secondItem="nGM-KT-nzC" secondAttribute="bottom" constant="54" id="eaE-Ky-hNE"/>
+                            <constraint firstItem="f4M-YO-ARq" firstAttribute="trailing" secondItem="nGM-KT-nzC" secondAttribute="trailing" constant="20" id="eyM-aY-TZs"/>
+                            <constraint firstItem="f4M-YO-ARq" firstAttribute="bottom" secondItem="RtG-My-BDz" secondAttribute="bottom" constant="201" id="gPU-z6-lzR"/>
+                            <constraint firstItem="f4M-YO-ARq" firstAttribute="trailing" secondItem="RtG-My-BDz" secondAttribute="trailing" constant="20" id="r1C-1B-vnh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f4M-YO-ARq"/>
                     </view>
                     <connections>
-                        <outlet property="confirmedNicknameLabel" destination="YTv-Q5-ZTX" id="6Ib-iU-rng"/>
+                        <outlet property="successImageView" destination="RtG-My-BDz" id="iPC-xF-N51"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eba-BE-qsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mashup. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum SocialLoginHelper {
     enum SocialLoginType {
@@ -15,5 +15,11 @@ enum SocialLoginHelper {
     
     static func apiCall(type: SocialLoginType, UID: String?) {
 //        NetworkProvider.request(<#T##target: TargetType##TargetType#>, to: <#T##Decodable.Protocol#>)
+        
+        if true {
+            let token: String = ""
+            UserDefaults.standard.set(token, forKey: "myToken")
+            UIApplication.shared.currentWindow?.rootViewController = MainTabCenter.default.getCurrentViewController()
+        }
     }
 }

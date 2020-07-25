@@ -15,6 +15,7 @@ final class NicknameInputViewController: UIViewController, KeyboardConstraintHan
     @IBOutlet private weak var confirmButton: UIButton!
     
     @IBAction func nicknameFieldChanged(_ sender: Any) {
+        
         // print(nicknameTextField.text)
         // apicall
         if true {

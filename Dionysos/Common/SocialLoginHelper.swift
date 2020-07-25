@@ -24,7 +24,7 @@ enum SocialLoginHelper {
         case .apple:
             return AppleLogin.getToken()
         case .kakao:
-            return KakaoLogin.getToken()
+            return KakaoAuth.getToken()
         }
     }
 }

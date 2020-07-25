@@ -31,8 +31,8 @@ final class ViewController: UIViewController {
     
     @objc
     func kakaoButtonDidTap() {
-        KakaoLogin.refreshSession().then {
-            KakaoLogin.getToken()
+        KakaoAuth.login().then {
+            KakaoAuth.getToken()
         }.then {
             logger($0)
         }.catch {

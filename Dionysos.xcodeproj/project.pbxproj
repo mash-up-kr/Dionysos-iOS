@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779C59224CC783400CC78D2 /* SignInViewController.swift */; };
+		178E43F124CCC17700955B70 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E43F024CCC17700955B70 /* SignUpResponse.swift */; };
+		178E43F324CCC18800955B70 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E43F224CCC18800955B70 /* SignInResponse.swift */; };
 		17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */; };
+		17AE78A224CCE81D00FE58D4 /* signupSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = 17AE78A124CCE81D00FE58D4 /* signupSuccess.gif */; };
 		17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */; };
 		17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */; };
 		17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */; };
@@ -28,7 +31,6 @@
 		4D0F5DA124CC7F350044418F /* RankingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5DA024CC7F350044418F /* RankingMainViewController.swift */; };
 		4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287BD2473D15000C4E3DF /* AppDelegate.swift */; };
 		4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287BF2473D15000C4E3DF /* SceneDelegate.swift */; };
-		4D1287C22473D15000C4E3DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287C12473D15000C4E3DF /* ViewController.swift */; };
 		4D1287C52473D15000C4E3DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1287C32473D15000C4E3DF /* Main.storyboard */; };
 		4D1287C72473D15300C4E3DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1287C62473D15300C4E3DF /* Assets.xcassets */; };
 		4D1287CA2473D15300C4E3DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1287C82473D15300C4E3DF /* LaunchScreen.storyboard */; };
@@ -56,7 +58,6 @@
 		4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2EEA0F24C8C00100E7A687 /* UIView+Extension.swift */; };
 		4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2EEA1124C8C0D800E7A687 /* UINavigationBar+Extension.swift */; };
 		4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB524C88894002DE57B /* DionysosTarget.swift */; };
-		4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */; };
 		4D421DC424C88EF4002DE57B /* KakaoAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DC324C88EF4002DE57B /* KakaoAuth.swift */; };
 		4D421DC924C8A7CB002DE57B /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DC824C8A7CB002DE57B /* FacebookCore */; };
 		4D421DCB24C8A7CB002DE57B /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DCA24C8A7CB002DE57B /* FacebookLogin */; };
@@ -75,7 +76,10 @@
 
 /* Begin PBXFileReference section */
 		1779C59224CC783400CC78D2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		178E43F024CCC17700955B70 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
+		178E43F224CCC18800955B70 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConstraintHandler.swift; sourceTree = "<group>"; };
+		17AE78A124CCE81D00FE58D4 /* signupSuccess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = signupSuccess.gif; sourceTree = "<group>"; };
 		17C8660524C9F42100080A8C /* Dionysos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dionysos.entitlements; sourceTree = "<group>"; };
 		17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSuccessViewController.swift; sourceTree = "<group>"; };
 		17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInputViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +101,6 @@
 		4D1287BA2473D15000C4E3DF /* Dionysos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dionysos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1287BD2473D15000C4E3DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D1287BF2473D15000C4E3DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4D1287C12473D15000C4E3DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D1287C42473D15000C4E3DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D1287C62473D15300C4E3DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D1287C92473D15300C4E3DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,7 +126,6 @@
 		4D2EEA0F24C8C00100E7A687 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4D2EEA1124C8C0D800E7A687 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		4D421DB524C88894002DE57B /* DionysosTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosTarget.swift; sourceTree = "<group>"; };
-		4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginHelper.swift; sourceTree = "<group>"; };
 		4D421DC324C88EF4002DE57B /* KakaoAuth.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
 		4D9B02CF24CCBAEF00261209 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4D9B02D124CCBAFA00261209 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,8 @@
 				17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */,
 				17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */,
 				1779C59224CC783400CC78D2 /* SignInViewController.swift */,
+				178E43F024CCC17700955B70 /* SignUpResponse.swift */,
+				178E43F224CCC18800955B70 /* SignInResponse.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -250,6 +254,7 @@
 		4D1287DC2473DC0D00C4E3DF /* Supported Files */ = {
 			isa = PBXGroup;
 			children = (
+				17AE78A124CCE81D00FE58D4 /* signupSuccess.gif */,
 				4D1287EB2474396900C4E3DF /* FrameWorks */,
 				4D1287C62473D15300C4E3DF /* Assets.xcassets */,
 				4D1287C82473D15300C4E3DF /* LaunchScreen.storyboard */,
@@ -302,7 +307,6 @@
 				390BD0D624CC35E9009BDB18 /* Timer */,
 				4D2EEA0C24C8BF6800E7A687 /* Extensions */,
 				4D12881A2474447900C4E3DF /* Logger.swift */,
-				4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */,
 				4D421DBE24C88ECF002DE57B /* SocialLogin */,
 				17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */,
 			);
@@ -345,7 +349,6 @@
 				4DDA61B424CC4E2700D0978E /* Home */,
 				4DDA61B324CC4E2000D0978E /* Ranking */,
 				4DDA61AA24CC39AD00D0978E /* MainTab */,
-				4D1287C12473D15000C4E3DF /* ViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				4D1287C52473D15000C4E3DF /* Main.storyboard in Resources */,
 				4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */,
 				390BD0F524CC7CEE009BDB18 /* MGKAlert.storyboard in Resources */,
+				17AE78A224CCE81D00FE58D4 /* signupSuccess.gif in Resources */,
 				17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */,
 				4D9B02D024CCBAEF00261209 /* Setting.storyboard in Resources */,
 				390BD0FE24CCC86D009BDB18 /* QuestionView.xib in Resources */,
@@ -563,7 +567,7 @@
 				390BD10024CCC88A009BDB18 /* QuestionView.swift in Sources */,
 				4D0F5D9D24CC62110044418F /* UIApplication+Extension.swift in Sources */,
 				4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */,
-				4D1287C22473D15000C4E3DF /* ViewController.swift in Sources */,
+				178E43F324CCC18800955B70 /* SignInResponse.swift in Sources */,
 				4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
@@ -571,6 +575,7 @@
 				4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */,
 				4DDA61B224CC458500D0978E /* MainTabCenter.swift in Sources */,
 				390BD0D824CC3603009BDB18 /* TimeAmount.swift in Sources */,
+				178E43F124CCC17700955B70 /* SignUpResponse.swift in Sources */,
 				39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */,
 				4D421DC424C88EF4002DE57B /* KakaoAuth.swift in Sources */,
 				390BD0DA24CC36D1009BDB18 /* MGKTimer.swift in Sources */,
@@ -581,7 +586,6 @@
 				4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */,
 				17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */,
 				17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */,
-				4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

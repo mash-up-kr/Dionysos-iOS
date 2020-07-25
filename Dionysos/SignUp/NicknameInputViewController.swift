@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mashup. All rights reserved.
 //
 
+import Moya
 import UIKit
 
 final class NicknameInputViewController: UIViewController, KeyboardConstraintHandler {
@@ -15,8 +16,6 @@ final class NicknameInputViewController: UIViewController, KeyboardConstraintHan
     @IBOutlet private weak var confirmButton: UIButton!
     
     @IBAction func nicknameFieldChanged(_ sender: Any) {
-        
-        // print(nicknameTextField.text)
         // apicall
         if true {
             confirmButton.isSelected = true
@@ -34,15 +33,18 @@ final class NicknameInputViewController: UIViewController, KeyboardConstraintHan
     
     @IBAction func confirmButtonClicked(_ sender: Any) {
         
-        // 닉네임 넣어서 회원가입 apiCall
+        apiCall()
         
-        let vc = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "NicknameSuccessViewController")
-        
-        guard let successViewController = vc as? NicknameSuccessViewController else { return }
-        successViewController.modalPresentationStyle = .fullScreen
-        self.present(successViewController, animated: true, completion: nil)
-        successViewController.setConfirmedNickname(nickname: "원숭이가나무에서떨어졌다")
+//        let vc = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "NicknameSuccessViewController")
+//
+//        guard let successViewController = vc as? NicknameSuccessViewController else { return }
+//        successViewController.modalPresentationStyle = .fullScreen
+//        self.present(successViewController, animated: true, completion: nil)
+//        successViewController.setConfirmedNickname(nickname: "원숭이가나무에서떨어졌다")
     }
+    
+    var provider: String?
+    var token: String?
     
     var keyboardIsShown: Bool = false
     var baseConstraint: CGFloat = CGFloat(19)
@@ -54,5 +56,20 @@ final class NicknameInputViewController: UIViewController, KeyboardConstraintHan
     override func viewDidLoad() {
         super.viewDidLoad()
         keyboardReactive()
+    }
+    
+    private func apiCall() {
+        guard let pv = provider, let tk = token, let nn = nicknameTextField.text else { return }
+        DionysosProvider.callSignUp(provider: pv, token: tk, nickname: nn).then {
+            logger($0)
+        }.catch {
+            guard let error = $0 as? Moya.MoyaError else { return }
+//            if error.response?.statusCode == 401 || error.response?.statusCode == 400 {
+//                guard let signUpVC = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(identifier: "NicknameInputViewController") as? NicknameInputViewController else { return }
+//                signUpVC.provider = type.rawValue
+//                signUpVC.token = token
+//                self.present(signUpVC, animated: true, completion: nil)
+//            }
+        }
     }
 }

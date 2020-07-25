@@ -10,34 +10,46 @@ import Foundation
 import Moya
 
 enum DionysosTarget {
+    case signIn
 }
 
 extension DionysosTarget: TargetType {
     var path: String {
         switch self {
+        case .signIn:
+            return "/user/signin"
         }
     }
     
     var method: Moya.Method {
         switch self {
+        case .signIn:
+            return .post
         }
     }
     
     var task: Task {
         switch self {
+        case .signIn:
+            return .requestPlain
         }
     }
 }
 
 extension DionysosTarget {
-    var baseURL: URL { URL(string: "http://18.217.230.58:8080/")! }
+    var baseURL: URL { URL(string: "http://18.217.230.58/")! }
     
     var sampleData: Data {
         Data()
     }
     
     var headers: [String: String]? {
-        ["Content-type": "application/json"]
+        switch self {
+        case .signIn:
+            return ["Content-type": "application/json"]
+        default:
+            return ["Content-type": "application/json"]
+        }
     }
     
     var validationType: ValidationType {

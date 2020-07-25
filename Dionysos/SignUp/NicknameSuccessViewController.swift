@@ -6,13 +6,17 @@
 //  Copyright © 2020 Mashup. All rights reserved.
 //
 
+import SDWebImage
 import UIKit
 
 class NicknameSuccessViewController: UIViewController {
     @IBOutlet private weak var confirmedNicknameLabel: UILabel?
+    @IBOutlet private weak var successImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        successImageView.image = SDAnimatedImage(named: "signupSuccess")
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.19) {
             let nextVC = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "")
             self.present(nextVC, animated: true, completion: nil)

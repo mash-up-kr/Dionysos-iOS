@@ -24,7 +24,17 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
-        logger(scene)
+        
+        let window: UIWindow = UIWindow(windowScene: scene)
+
+        if UserDefaults.standard.string(forKey: "myToken") == nil {
+            window.rootViewController = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateInitialViewController()
+        } else {
+            window.rootViewController = MainTabCenter.default.getCurrentViewController()
+        }
+        
+        self.window = window
+        window.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

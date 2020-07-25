@@ -10,7 +10,7 @@ import Foundation
 
 enum SocialLoginHelper {
     enum SocialLoginType {
-        case facebook, apple, kakao
+        case facebook, apple, kakao, guest
     }
     
     static func apiCall(type: SocialLoginType, UID: String?) {

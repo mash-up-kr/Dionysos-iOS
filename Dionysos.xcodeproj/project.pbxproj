@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779C59224CC783400CC78D2 /* SignInViewController.swift */; };
 		17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */; };
 		17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */; };
 		17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1779C59224CC783400CC78D2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConstraintHandler.swift; sourceTree = "<group>"; };
 		17C8660524C9F42100080A8C /* Dionysos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dionysos.entitlements; sourceTree = "<group>"; };
 		17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSuccessViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */,
 				17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */,
 				17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */,
+				1779C59224CC783400CC78D2 /* SignInViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
+				1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */,
 				4DDA61B224CC458500D0978E /* MainTabCenter.swift in Sources */,
 				39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */,
 				4D421DC424C88EF4002DE57B /* KakaoAuth.swift in Sources */,

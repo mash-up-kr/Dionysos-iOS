@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */; };
+		17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */; };
 		17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */; };
 		17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */; };
 		390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0CD24CBD45E009BDB18 /* Promise+.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConstraintHandler.swift; sourceTree = "<group>"; };
 		17C8660524C9F42100080A8C /* Dionysos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dionysos.entitlements; sourceTree = "<group>"; };
+		17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSuccessViewController.swift; sourceTree = "<group>"; };
 		17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInputViewController.swift; sourceTree = "<group>"; };
 		17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		390BD0CD24CBD45E009BDB18 /* Promise+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Promise+.swift"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */,
 				17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */,
+				17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */,
 				4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */,
 				390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */,
+				17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */,
 				17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */,
 				4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */,
 			);

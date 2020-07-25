@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gYl-9S-H7f">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alert View Controller-->
+        <scene sceneID="aII-13-vdL">
+            <objects>
+                <viewController id="gYl-9S-H7f" customClass="MGKAlertViewController" customModule="Dionysos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.16" contentMode="scaleToFill" id="OxN-S7-7lX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adt-wW-I5O">
+                                <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                                <color key="backgroundColor" name="white"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="9V4-Kf-2Vc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="adt-wW-I5O" secondAttribute="bottom" id="Ya5-A5-d2F"/>
+                            <constraint firstItem="adt-wW-I5O" firstAttribute="leading" secondItem="6aI-ws-4AQ" secondAttribute="leading" id="jUm-lK-SQW"/>
+                            <constraint firstItem="6aI-ws-4AQ" firstAttribute="trailing" secondItem="adt-wW-I5O" secondAttribute="trailing" id="tyv-qh-FSn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6aI-ws-4AQ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4Ig-Iv-tz1" appends="YES" id="shZ-os-rns"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="containerHeightConstraint" destination="9V4-Kf-2Vc" id="WP6-mB-Gnp"/>
+                        <outlet property="containerView" destination="adt-wW-I5O" id="qFQ-ml-tH4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsp-Ud-j9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4Ig-Iv-tz1">
+                    <connections>
+                        <action selector="backgroundViewDidTap:" destination="gYl-9S-H7f" id="bJi-fH-fdn"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="52" y="145"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

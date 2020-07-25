@@ -16,6 +16,8 @@
 		390BD0D824CC3603009BDB18 /* TimeAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0D724CC3603009BDB18 /* TimeAmount.swift */; };
 		390BD0DA24CC36D1009BDB18 /* MGKTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0D924CC36D1009BDB18 /* MGKTimer.swift */; };
 		390BD0DC24CC43A2009BDB18 /* TimeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0DB24CC43A2009BDB18 /* TimeTask.swift */; };
+		390BD0F324CC7C8C009BDB18 /* MGKAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0F224CC7C8C009BDB18 /* MGKAlertViewController.swift */; };
+		390BD0F524CC7CEE009BDB18 /* MGKAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390BD0F424CC7CEE009BDB18 /* MGKAlert.storyboard */; };
 		3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */; };
 		39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */; };
 		4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9224CA015D0044418F /* DionysosProvider.swift */; };
@@ -76,6 +78,8 @@
 		390BD0D724CC3603009BDB18 /* TimeAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAmount.swift; sourceTree = "<group>"; };
 		390BD0D924CC36D1009BDB18 /* MGKTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGKTimer.swift; sourceTree = "<group>"; };
 		390BD0DB24CC43A2009BDB18 /* TimeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTask.swift; sourceTree = "<group>"; };
+		390BD0F224CC7C8C009BDB18 /* MGKAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGKAlertViewController.swift; sourceTree = "<group>"; };
+		390BD0F424CC7CEE009BDB18 /* MGKAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MGKAlert.storyboard; sourceTree = "<group>"; };
 		3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9224CA015D0044418F /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 			path = Timer;
 			sourceTree = "<group>";
 		};
+		390BD0F124CC7C6D009BDB18 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				390BD0F224CC7C8C009BDB18 /* MGKAlertViewController.swift */,
+				390BD0F424CC7CEE009BDB18 /* MGKAlert.storyboard */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		4D1287B12473D15000C4E3DF = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +206,8 @@
 		4D1287BC2473D15000C4E3DF /* Dionysos */ = {
 			isa = PBXGroup;
 			children = (
+				390BD0F124CC7C6D009BDB18 /* Alert */,
+				17FF026A24CC1B7A009C1B7F /* SignUp */,
 				17C8660524C9F42100080A8C /* Dionysos.entitlements */,
 				17FF026A24CC1B7A009C1B7F /* SignUp */,
 				4D1288192474446C00C4E3DF /* Common */,
@@ -443,6 +458,8 @@
 				4DDA61B924CC4E4C00D0978E /* MyPage.storyboard in Resources */,
 				4D1287C52473D15000C4E3DF /* Main.storyboard in Resources */,
 				4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */,
+				4DDA61AC24CC39EF00D0978E /* MainTab.xib in Resources */,
+				390BD0F524CC7CEE009BDB18 /* MGKAlert.storyboard in Resources */,
 				17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +515,7 @@
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
 				4DDA61A924CC37F800D0978E /* MainViewController.swift in Sources */,
 				4D0F5DA124CC7F350044418F /* RankingMainViewController.swift in Sources */,
+				390BD0F324CC7C8C009BDB18 /* MGKAlertViewController.swift in Sources */,
 				4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */,
 				4D0F5D9D24CC62110044418F /* UIApplication+Extension.swift in Sources */,
 				4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */,

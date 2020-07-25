@@ -7,6 +7,7 @@
 //
 
 import FacebookLogin
+import KakaoOpenSDK
 import UIKit
 
 final class ViewController: UIViewController {
@@ -16,12 +17,27 @@ final class ViewController: UIViewController {
         let fbLoginButton: FBLoginButton = FBLoginButton()
         fbLoginButton.center = view.center
         view.addSubview(fbLoginButton)
-        
         addNotificationForFaceBookLogin()
+        
+        let kakaoLoginButton = KOLoginButton(frame: CGRect(origin: .zero, size: fbLoginButton.bounds.size))
+        kakaoLoginButton.center = view.center
+        view.addSubview(kakaoLoginButton)
+        kakaoLoginButton.addTarget(self, action: #selector(kakaoButtonDidTap), for: .touchUpInside)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc
+    func kakaoButtonDidTap() {
+        KakaoLogin.refreshSession().then {
+            KakaoLogin.getToken()
+        }.then {
+            logger($0)
+        }.catch {
+            logger($0.localizedDescription)
+        }
     }
 }
 

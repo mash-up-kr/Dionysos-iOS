@@ -81,8 +81,6 @@
 		4D12881A2474447900C4E3DF /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4D2EEA0F24C8C00100E7A687 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4D2EEA1124C8C0D800E7A687 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
-		4D421DB524C88894002DE57B /* DionysosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosService.swift; sourceTree = "<group>"; };
-		4D421DB724C88940002DE57B /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
 		4D421DB524C88894002DE57B /* DionysosTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosTarget.swift; sourceTree = "<group>"; };
 		4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginHelper.swift; sourceTree = "<group>"; };
 		4D421DBF24C88EE1002DE57B /* FacebookLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
@@ -588,6 +586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.Mashup.Dionysos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Dionysos PP";
+				SWIFT_OBJC_BRIDGING_HEADER = "-";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

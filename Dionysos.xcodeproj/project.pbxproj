@@ -63,6 +63,8 @@
 		4D421DCD24C8A7CB002DE57B /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DCC24C8A7CB002DE57B /* FacebookShare */; };
 		4D9B02D024CCBAEF00261209 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9B02CF24CCBAEF00261209 /* Setting.storyboard */; };
 		4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B02D124CCBAFA00261209 /* SettingViewController.swift */; };
+		4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */; };
+		4DA7A0DE24CCDACA0037E83D /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
 		4DDA61A924CC37F800D0978E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61A824CC37F800D0978E /* MainViewController.swift */; };
 		4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61AD24CC39FA00D0978E /* MainTab.swift */; };
@@ -125,6 +127,8 @@
 		4D421DC324C88EF4002DE57B /* KakaoAuth.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
 		4D9B02CF24CCBAEF00261209 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4D9B02D124CCBAFA00261209 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRankingTableViewCell.swift; sourceTree = "<group>"; };
+		4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4DDA61A824CC37F800D0978E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4DDA61AD24CC39FA00D0978E /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
@@ -383,6 +387,8 @@
 			children = (
 				4DDA61B624CC4E4400D0978E /* Ranking.storyboard */,
 				4D0F5DA024CC7F350044418F /* RankingMainViewController.swift */,
+				4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */,
+				4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */,
 			);
 			path = Ranking;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 				4DDA61A924CC37F800D0978E /* MainViewController.swift in Sources */,
 				4D0F5DA124CC7F350044418F /* RankingMainViewController.swift in Sources */,
 				390BD0F324CC7C8C009BDB18 /* MGKAlertViewController.swift in Sources */,
+				4DA7A0DE24CCDACA0037E83D /* RankingTableViewCell.swift in Sources */,
 				4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */,
 				390BD10024CCC88A009BDB18 /* QuestionView.swift in Sources */,
 				4D0F5D9D24CC62110044418F /* UIApplication+Extension.swift in Sources */,
@@ -561,6 +568,7 @@
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
 				1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */,
+				4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */,
 				4DDA61B224CC458500D0978E /* MainTabCenter.swift in Sources */,
 				390BD0D824CC3603009BDB18 /* TimeAmount.swift in Sources */,
 				39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */,

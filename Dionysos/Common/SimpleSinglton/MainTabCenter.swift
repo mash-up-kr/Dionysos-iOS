@@ -14,7 +14,7 @@ final class MainTabCenter {
     private var homeViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() ?? UIViewController()
     private var rankingViewController: UIViewController = UIStoryboard(name: "Ranking", bundle: nil).instantiateInitialViewController() ?? UIViewController()
     private var myPageViewController: UIViewController = UIStoryboard(name: "MyPage", bundle: nil).instantiateInitialViewController() ?? UIViewController()
-    private lazy var mainTab: UIView = MainTab(frame: .init(x: 0, y: UIScreen.main.bounds.height - 112, width: UIScreen.main.bounds.width, height: 112))
+    private lazy var mainTab: UIView = MainTab(frame: .init(x: 0, y: UIScreen.main.bounds.height - (112 + (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0)), width: UIScreen.main.bounds.width, height: 112))
     
     func getMainTab() -> UIView {
         mainTab

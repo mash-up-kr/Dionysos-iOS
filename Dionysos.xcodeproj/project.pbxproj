@@ -155,14 +155,14 @@
 		17FF026A24CC1B7A009C1B7F /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */,
 				17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */,
+				17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */,
 				17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */,
 				1779C59224CC783400CC78D2 /* SignInViewController.swift */,
 			);
 			path = SignUp;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		390BD0D624CC35E9009BDB18 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,8 +193,8 @@
 		4D1287BC2473D15000C4E3DF /* Dionysos */ = {
 			isa = PBXGroup;
 			children = (
-				17FF026A24CC1B7A009C1B7F /* SignUp */,
 				17C8660524C9F42100080A8C /* Dionysos.entitlements */,
+				17FF026A24CC1B7A009C1B7F /* SignUp */,
 				4D1288192474446C00C4E3DF /* Common */,
 				4D421DB424C8880A002DE57B /* Network */,
 				4D421DC524C892E2002DE57B /* Main */,

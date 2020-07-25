@@ -26,7 +26,15 @@ final class SignInViewController: UIViewController {
     }
     
     @IBAction private func fbSignInClicked(_ sender: Any) {
-        //fbButtonDidTap()
+        Promise.start {
+            FacebookAuth.login()
+        }.then { _ in
+            FacebookAuth.getUID()
+        }.then {
+            logger($0)
+        }.catch {
+            logger($0)
+        }
     }
     
     @IBAction private func appleSignInClicked(_ sender: Any) {
@@ -35,19 +43,19 @@ final class SignInViewController: UIViewController {
     
     @IBAction private func guestSignInClicked(_ sender: Any) {
         apiCall(type: .guest, UID: nil)
+//        SocialLoginHelper.apiCall(type: .guest, UID: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializedLogin()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
-        self.present(vc, animated: true)
+//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+//        self.present(vc, animated: true)
         
     }
     

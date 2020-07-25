@@ -23,6 +23,7 @@
 		390BD0F524CC7CEE009BDB18 /* MGKAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390BD0F424CC7CEE009BDB18 /* MGKAlert.storyboard */; };
 		390BD0FE24CCC86D009BDB18 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390BD0FD24CCC86D009BDB18 /* QuestionView.xib */; };
 		390BD10024CCC88A009BDB18 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0FF24CCC88A009BDB18 /* QuestionView.swift */; };
+		390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD10124CCE772009BDB18 /* FacebookAuth.swift */; };
 		3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */; };
 		39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */; };
 		4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9224CA015D0044418F /* DionysosProvider.swift */; };
@@ -92,6 +93,7 @@
 		390BD0F424CC7CEE009BDB18 /* MGKAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MGKAlert.storyboard; sourceTree = "<group>"; };
 		390BD0FD24CCC86D009BDB18 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		390BD0FF24CCC88A009BDB18 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		390BD10124CCE772009BDB18 /* FacebookAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuth.swift; sourceTree = "<group>"; };
 		3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9224CA015D0044418F /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				4D421DC324C88EF4002DE57B /* KakaoAuth.swift */,
+				390BD10124CCE772009BDB18 /* FacebookAuth.swift */,
 			);
 			path = SocialLogin;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */,
+				390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */,
 				4D0F5D9F24CC7F2C0044418F /* MyPageMainViewController.swift in Sources */,
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
 				4DDA61A924CC37F800D0978E /* MainViewController.swift in Sources */,

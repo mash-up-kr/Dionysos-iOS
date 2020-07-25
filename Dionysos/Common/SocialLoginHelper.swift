@@ -8,23 +8,12 @@
 
 import Foundation
 
-protocol SocialLogin {
-    static func getToken() -> String?
-}
-
 enum SocialLoginHelper {
-    enum SocialLogin {
+    enum SocialLoginType {
         case facebook, apple, kakao
     }
     
-    static func getToken(type: SocialLogin) -> String? {
-        switch type {
-        case .facebook:
-            return FacebookLogin.getToken()
-        case .apple:
-            return AppleLogin.getToken()
-        case .kakao:
-            return KakaoAuth.getToken()
-        }
+    static func apiCall(type: SocialLoginType, UID: String?) {
+//        NetworkProvider.request(<#T##target: TargetType##TargetType#>, to: <#T##Decodable.Protocol#>)
     }
 }

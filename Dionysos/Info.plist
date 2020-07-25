@@ -42,17 +42,15 @@
 	<key>KAKAO_APP_KEY</key>
 	<string>c1f999149d3e2024f1ed25b744bed861</string>
 	<key>LSApplicationQueriesSchemes</key>
-    <array>
-        <!-- Kakao 간편로그인 -->
-        <string>kakaoc1f999149d3e2024f1ed25b744bed861</string>
-        <string>kakaokompassauth</string>
-        <string>storykompassauth</string>
-        <!-- Facebook 간편로그인 -->
-        <string>fbapi</string>
-        <string>fbapi20130214</string>
-        <string>fbapi20130410</string>
-        <string>fbapi20130702</string>
-        <string>fbapi20131010</string>
+	<array>
+		<string>kakaoc1f999149d3e2024f1ed25b744bed861</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
 		<string>fbapi20131219</string>
 		<string>fbapi20140410</string>
 		<string>fbapi20140116</string>

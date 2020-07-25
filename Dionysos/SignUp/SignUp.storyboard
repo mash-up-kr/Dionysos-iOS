@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J6z-RE-ocN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Nickname Input View Controller-->
+        <scene sceneID="Uea-Oy-vTS">
+            <objects>
+                <viewController id="J6z-RE-ocN" customClass="NicknameInputViewController" customModule="Dionysos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YFK-dh-c9F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-ys-lp7">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <color key="backgroundColor" red="0.35949680210000001" green="0.65452945230000004" blue="0.67452192310000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2Dz-Z4-f17"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Qc-JW-Ddo">
+                                <rect key="frame" x="10" y="366" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Sn9-Sx-hVP" firstAttribute="trailing" secondItem="bTg-ys-lp7" secondAttribute="trailing" id="0fX-4P-ZvI"/>
+                            <constraint firstItem="Sn9-Sx-hVP" firstAttribute="bottom" secondItem="bTg-ys-lp7" secondAttribute="bottom" id="8n5-9L-czC"/>
+                            <constraint firstItem="Sn9-Sx-hVP" firstAttribute="trailing" secondItem="5Qc-JW-Ddo" secondAttribute="trailing" constant="10" id="EGg-QJ-peM"/>
+                            <constraint firstItem="bTg-ys-lp7" firstAttribute="leading" secondItem="Sn9-Sx-hVP" secondAttribute="leading" id="Ep5-nq-hCq"/>
+                            <constraint firstItem="5Qc-JW-Ddo" firstAttribute="leading" secondItem="Sn9-Sx-hVP" secondAttribute="leading" constant="10" id="Rhw-Hk-UE0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sn9-Sx-hVP"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraintOutlet" destination="YFK-dh-c9F" id="oW7-rD-OZZ"/>
+                        <outlet property="confirmView" destination="bTg-ys-lp7" id="uvc-SN-PVT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8pj-Rp-bst" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+</document>

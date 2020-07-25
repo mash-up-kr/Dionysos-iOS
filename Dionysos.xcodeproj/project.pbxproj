@@ -161,6 +161,8 @@
 				1779C59224CC783400CC78D2 /* SignInViewController.swift */,
 			);
 			path = SignUp;
+            sourceTree = "<group>";
+        };
 		390BD0D624CC35E9009BDB18 /* Timer */ = {
 			isa = PBXGroup;
 			children = (

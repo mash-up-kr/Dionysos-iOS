@@ -29,7 +29,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh8-O5-kgz">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh8-O5-kgz">
                                 <rect key="frame" x="20" y="268" width="220.5" height="100.5"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="84"/>
@@ -39,7 +39,7 @@
                                     <outletCollection property="gestureRecognizers" destination="GJg-Tp-5m6" appends="YES" id="Paa-RA-BqL"/>
                                 </connections>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stop- watch" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPk-0j-Bzl">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stop- watch" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPk-0j-Bzl">
                                 <rect key="frame" x="20" y="408.5" width="259" height="200.5"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="84"/>
@@ -72,14 +72,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZy-4D-UfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="GJg-Tp-5m6">
-                    <connections>
-                        <action selector="timerDidTap:" destination="gpG-hS-vrj" id="FoI-Ic-QHs"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer id="Pe7-Y1-9uC">
                     <connections>
                         <action selector="stopWatchDidTap:" destination="gpG-hS-vrj" id="DoW-2x-tyb"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="GJg-Tp-5m6">
+                    <connections>
+                        <action selector="timerDidTap:" destination="gpG-hS-vrj" id="FoI-Ic-QHs"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

@@ -49,6 +49,15 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializedLogin()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+        self.present(vc, animated: true)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gpG-hS-vrj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vli-JC-iQU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,13 +15,98 @@
                     <view key="view" contentMode="scaleToFill" id="yM1-ik-vDx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uy1-NC-UVN">
+                                <rect key="frame" x="20" y="108" width="87.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <color key="textColor" name="darkGrey"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xex-2W-Xct">
+                                <rect key="frame" x="20" y="152" width="148" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh8-O5-kgz">
+                                <rect key="frame" x="20" y="268" width="220.5" height="100.5"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="84"/>
+                                <color key="textColor" name="darkGrey"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="GJg-Tp-5m6" appends="YES" id="Paa-RA-BqL"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stop- watch" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPk-0j-Bzl">
+                                <rect key="frame" x="20" y="408.5" width="259" height="200.5"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="84"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Pe7-Y1-9uC" appends="YES" id="Jdh-kp-Mux"/>
+                                </connections>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xex-2W-Xct" firstAttribute="top" secondItem="Uy1-NC-UVN" secondAttribute="bottom" constant="8" id="D39-xf-LWn"/>
+                            <constraint firstItem="xex-2W-Xct" firstAttribute="leading" secondItem="Uy1-NC-UVN" secondAttribute="leading" id="M2O-q1-ekL"/>
+                            <constraint firstItem="YPk-0j-Bzl" firstAttribute="top" secondItem="uh8-O5-kgz" secondAttribute="bottom" constant="40" id="WAO-ql-RpN"/>
+                            <constraint firstItem="Uy1-NC-UVN" firstAttribute="top" secondItem="pQw-el-go3" secondAttribute="top" constant="20" id="XRB-3d-O6N"/>
+                            <constraint firstItem="uh8-O5-kgz" firstAttribute="leading" secondItem="xex-2W-Xct" secondAttribute="leading" id="dqI-1L-W20"/>
+                            <constraint firstItem="YPk-0j-Bzl" firstAttribute="leading" secondItem="uh8-O5-kgz" secondAttribute="leading" id="fgE-5X-5hF"/>
+                            <constraint firstItem="Uy1-NC-UVN" firstAttribute="leading" secondItem="pQw-el-go3" secondAttribute="leading" constant="20" id="o8n-o8-Jz3"/>
+                            <constraint firstItem="Uy1-NC-UVN" firstAttribute="top" secondItem="pQw-el-go3" secondAttribute="top" constant="20" id="qLD-BF-kLL"/>
+                            <constraint firstItem="uh8-O5-kgz" firstAttribute="top" secondItem="xex-2W-Xct" secondAttribute="bottom" constant="80" id="zdA-dJ-Abb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pQw-el-go3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9rd-tV-t8P"/>
+                    <connections>
+                        <outlet property="accumulatedTimeLabel" destination="xex-2W-Xct" id="Lcp-v7-YWP"/>
+                        <outlet property="stopWatchLabel" destination="YPk-0j-Bzl" id="Rwq-tk-qs8"/>
+                        <outlet property="timerLabel" destination="uh8-O5-kgz" id="wrX-9n-Q5W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZy-4D-UfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Pe7-Y1-9uC">
+                    <connections>
+                        <action selector="stopWatchDidTap:" destination="gpG-hS-vrj" id="DoW-2x-tyb"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="GJg-Tp-5m6">
+                    <connections>
+                        <action selector="timerDidTap:" destination="gpG-hS-vrj" id="FoI-Ic-QHs"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="160" y="146"/>
+            <point key="canvasLocation" x="1069.5652173913045" y="145.98214285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XUS-Dk-JPV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vli-JC-iQU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2OV-2I-3iJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gpG-hS-vrj" kind="relationship" relationship="rootViewController" id="qd8-Ug-IVT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qQx-aM-Ozq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="159.42028985507247" y="145.98214285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="darkGrey">
+            <color red="0.1289999932050705" green="0.13300000131130219" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

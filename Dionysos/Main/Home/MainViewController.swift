@@ -8,6 +8,7 @@
 
 import Promises
 import UIKit
+import Promises
 
 class MainViewController: UIViewController {
     @IBOutlet private weak var accumulatedTimeLabel: UILabel!
@@ -27,14 +28,25 @@ class MainViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        toggleLabelState(label: timerLabel)
-        toggleLabelState(label: stopWatchLabel)
     }
     
-    private func toggleLabelState(label: UILabel) {
+    @IBAction private func timerDidTap(_ sender: Any) {
+        toggleLine(on: timerLabel)
+    }
+    
+    @IBAction private func stopWatchDidTap(_ sender: Any) {
+        toggleLine(on: stopWatchLabel)
+    }
+    
+    private func toggleLine(on label: UILabel) {
         guard let attributeText = label.attributedText else { return }
+        let toggledLineStyle: NSUnderlineStyle = {
+            let lineSet = attributeText.attributes(at: 0, effectiveRange: nil)
+                .first { $0.0 == .underlineStyle }
+            return lineSet?.value as? Int ?? -10 != NSUnderlineStyle.single.rawValue ? NSUnderlineStyle.single : NSUnderlineStyle.byWord
+        }()
         let text = NSMutableAttributedString(attributedString: attributeText)
-        text.addAttributes([.underlineStyle: NSUnderlineStyle.single.rawValue], range: NSRange(0..<attributeText.length))
+        text.addAttributes([.underlineStyle: toggledLineStyle.rawValue], range: NSRange(0..<attributeText.length))
         label.attributedText = text
     }
     

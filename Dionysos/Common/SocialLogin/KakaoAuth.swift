@@ -11,7 +11,7 @@ import KakaoOpenSDK
 import Promises
 
 enum KakaoAuth: SocialLogin {
-    
+
     static func login() -> Promise<Void> {
         Promise<Void> { fulfill, reject in
             guard let session = KOSession.shared() else { throw Error.missingSession }

@@ -8,6 +8,7 @@
 
 import FacebookLogin
 import KakaoOpenSDK
+import Promises
 import UIKit
 
 final class ViewController: UIViewController {
@@ -31,7 +32,9 @@ final class ViewController: UIViewController {
     
     @objc
     func kakaoButtonDidTap() {
-        KakaoAuth.login().then {
+        Promise.start {
+            KakaoAuth.login()
+        }.then {
             KakaoAuth.getToken()
         }.then {
             logger($0)

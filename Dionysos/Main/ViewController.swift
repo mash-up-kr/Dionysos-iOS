@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mashup. All rights reserved.
 //
 
+import AuthenticationServices
 import FacebookLogin
 import UIKit
 
@@ -17,11 +18,24 @@ final class ViewController: UIViewController {
         fbLoginButton.center = view.center
         view.addSubview(fbLoginButton)
         
-        addNotificationForFaceBookLogin()
+        let appleLoginButton: ASAuthorizationAppleIDButton = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
+        appleLoginButton.addTarget(self, action: #selector(handleAppleSignInButton), for: .touchUpInside)
+        appleLoginButton.center = view.center
+        view.addSubview(appleLoginButton)
+        
+        initializedLogin()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+}
+
+extension ViewController {
+    private func initializedLogin() {
+        let loginManager: LoginManager = LoginManager()
+        loginManager.logOut()
+        addNotificationForFaceBookLogin()
     }
 }
 
@@ -37,5 +51,33 @@ extension ViewController {
         func isChangeUser(_ notification: Notification) -> Bool {
             ((notification.userInfo?[AccessTokenDidChangeUserIDKey]) != nil) as Bool
         }
+    }
+    
+    @objc
+    func handleAppleSignInButton() {
+        let request: ASAuthorizationAppleIDRequest = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+        let controller: ASAuthorizationController = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        controller.performRequests()
+    }
+}
+
+extension ViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
+        guard let token: Data = credential.identityToken else { return }
+        logger(token)
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("애플 로그인 에러")
+    }
+}
+
+extension ViewController: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
     }
 }

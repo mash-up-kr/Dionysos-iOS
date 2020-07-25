@@ -59,6 +59,8 @@
 		4D421DC924C8A7CB002DE57B /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DC824C8A7CB002DE57B /* FacebookCore */; };
 		4D421DCB24C8A7CB002DE57B /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DCA24C8A7CB002DE57B /* FacebookLogin */; };
 		4D421DCD24C8A7CB002DE57B /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DCC24C8A7CB002DE57B /* FacebookShare */; };
+		4D9B02D024CCBAEF00261209 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9B02CF24CCBAEF00261209 /* Setting.storyboard */; };
+		4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B02D124CCBAFA00261209 /* SettingViewController.swift */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
 		4DDA61A924CC37F800D0978E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61A824CC37F800D0978E /* MainViewController.swift */; };
 		4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61AD24CC39FA00D0978E /* MainTab.swift */; };
@@ -117,6 +119,8 @@
 		4D421DB524C88894002DE57B /* DionysosTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosTarget.swift; sourceTree = "<group>"; };
 		4D421DBC24C88EC9002DE57B /* SocialLoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginHelper.swift; sourceTree = "<group>"; };
 		4D421DC324C88EF4002DE57B /* KakaoAuth.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
+		4D9B02CF24CCBAEF00261209 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		4D9B02D124CCBAFA00261209 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4DDA61A824CC37F800D0978E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4DDA61AD24CC39FA00D0978E /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
@@ -207,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				390BD0F124CC7C6D009BDB18 /* Alert */,
-				17FF026A24CC1B7A009C1B7F /* SignUp */,
 				17C8660524C9F42100080A8C /* Dionysos.entitlements */,
 				17FF026A24CC1B7A009C1B7F /* SignUp */,
 				4D1288192474446C00C4E3DF /* Common */,
@@ -321,6 +324,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		4D9B02CE24CCBAE400261209 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4D9B02D124CCBAFA00261209 /* SettingViewController.swift */,
+				4D9B02CF24CCBAEF00261209 /* Setting.storyboard */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		4DDA61AA24CC39AD00D0978E /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +377,7 @@
 		4DDA61B524CC4E2D00D0978E /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				4D9B02CE24CCBAE400261209 /* Setting */,
 				4DDA61B824CC4E4C00D0978E /* MyPage.storyboard */,
 				4D0F5D9E24CC7F2C0044418F /* MyPageMainViewController.swift */,
 			);
@@ -458,9 +471,9 @@
 				4DDA61B924CC4E4C00D0978E /* MyPage.storyboard in Resources */,
 				4D1287C52473D15000C4E3DF /* Main.storyboard in Resources */,
 				4D1288142474404F00C4E3DF /* GoogleService-Info.plist in Resources */,
-				4DDA61AC24CC39EF00D0978E /* MainTab.xib in Resources */,
 				390BD0F524CC7CEE009BDB18 /* MGKAlert.storyboard in Resources */,
 				17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */,
+				4D9B02D024CCBAEF00261209 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +546,7 @@
 				4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */,
 				4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */,
 				390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */,
+				4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */,
 				17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */,
 				17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */,
 				4D421DBD24C88EC9002DE57B /* SocialLoginHelper.swift in Sources */,

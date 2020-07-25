@@ -86,7 +86,7 @@ extension MGKAlertViewController {
     
     static func show(with contentView: UIView) {
         let viewController: MGKAlertViewController = Self.instantiate(with: contentView)
-        guard let window = UIApplication.shared.keyWindow else { return }
+        guard let window = UIApplication.shared.currentWindow else { return }
         window.rootViewController?.present(viewController, animated: false, completion: nil)
     }
 }

@@ -16,4 +16,11 @@ extension Promise where Value == Void {
     ) -> Promise<Result> {
         Promise<Void> {}.then { work() }
     }
+    
+    static func wrap<Result>(
+           on queue: DispatchQueue = .main,
+           _ work: @autoclosure @escaping () throws -> Result
+    ) -> Promise<Result> {
+        Promise<Result> { try work() }
+    }
 }

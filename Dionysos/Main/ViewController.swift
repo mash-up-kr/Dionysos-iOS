@@ -8,6 +8,8 @@
 
 import AuthenticationServices
 import FacebookLogin
+import KakaoOpenSDK
+import Promises
 import UIKit
 
 final class ViewController: UIViewController {
@@ -17,6 +19,13 @@ final class ViewController: UIViewController {
         let fbLoginButton: FBLoginButton = FBLoginButton()
         fbLoginButton.center = view.center
         view.addSubview(fbLoginButton)
+        
+        let kakaoLoginButton: KOLoginButton = KOLoginButton(
+            frame: CGRect(origin: .zero, size: fbLoginButton.bounds.size)
+        )
+        kakaoLoginButton.center = view.center
+        view.addSubview(kakaoLoginButton)
+        kakaoLoginButton.addTarget(self, action: #selector(kakaoButtonDidTap), for: .touchUpInside)
         
         let appleLoginButton: ASAuthorizationAppleIDButton = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
         appleLoginButton.addTarget(self, action: #selector(handleAppleSignInButton), for: .touchUpInside)
@@ -28,6 +37,19 @@ final class ViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc
+    func kakaoButtonDidTap() {
+        Promise.start {
+            KakaoAuth.login()
+        }.then {
+            KakaoAuth.getToken()
+        }.then {
+            logger($0)
+        }.catch {
+            logger($0.localizedDescription)
+        }
     }
 }
 

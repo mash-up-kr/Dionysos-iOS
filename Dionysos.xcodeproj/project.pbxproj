@@ -14,6 +14,7 @@
 		390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0CD24CBD45E009BDB18 /* Promise+.swift */; };
 		390BD0D824CC3603009BDB18 /* TimeAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0D724CC3603009BDB18 /* TimeAmount.swift */; };
 		390BD0DA24CC36D1009BDB18 /* MGKTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0D924CC36D1009BDB18 /* MGKTimer.swift */; };
+		390BD0DC24CC43A2009BDB18 /* TimeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0DB24CC43A2009BDB18 /* TimeTask.swift */; };
 		3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */; };
 		39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */; };
 		4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9224CA015D0044418F /* DionysosProvider.swift */; };
@@ -70,6 +71,7 @@
 		390BD0CD24CBD45E009BDB18 /* Promise+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Promise+.swift"; sourceTree = "<group>"; };
 		390BD0D724CC3603009BDB18 /* TimeAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAmount.swift; sourceTree = "<group>"; };
 		390BD0D924CC36D1009BDB18 /* MGKTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGKTimer.swift; sourceTree = "<group>"; };
+		390BD0DB24CC43A2009BDB18 /* TimeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTask.swift; sourceTree = "<group>"; };
 		3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9224CA015D0044418F /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				390BD0D724CC3603009BDB18 /* TimeAmount.swift */,
 				390BD0D924CC36D1009BDB18 /* MGKTimer.swift */,
+				390BD0DB24CC43A2009BDB18 /* TimeTask.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */,
 				4D421DC424C88EF4002DE57B /* KakaoAuth.swift in Sources */,
 				390BD0DA24CC36D1009BDB18 /* MGKTimer.swift in Sources */,
+				390BD0DC24CC43A2009BDB18 /* TimeTask.swift in Sources */,
 				4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */,
 				4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */,
 				390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */,

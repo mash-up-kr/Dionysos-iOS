@@ -30,4 +30,9 @@ struct TimeAmount {
         self.seconds = Int(time) % 60
     }
 }
-
+extension TimeAmount {
+    static let zero: TimeAmount = TimeAmount(0)
+    static func + (lhs: Self, rhs: Self) -> Self {
+        TimeAmount(lhs.timeInterval + rhs.timeInterval)
+    }
+}

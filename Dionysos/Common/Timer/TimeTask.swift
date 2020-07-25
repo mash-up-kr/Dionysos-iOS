@@ -9,7 +9,7 @@
 import Foundation
 
 class TimeTask {
-    private var startDate: Date?
+    private(set) var startDate: Date?
     private(set) var endDate: Date?
     var state: State = .todo {
         didSet {

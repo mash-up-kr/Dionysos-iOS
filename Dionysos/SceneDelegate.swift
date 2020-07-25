@@ -26,7 +26,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         let window: UIWindow = UIWindow(windowScene: scene)
-
+        
+        UserDefaults.standard.removeObject(forKey: "myToken") // 지울 것!
+        
         if UserDefaults.standard.string(forKey: "myToken") == nil {
             window.rootViewController = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateInitialViewController()
         } else {

@@ -10,20 +10,15 @@ import SDWebImage
 import UIKit
 
 class NicknameSuccessViewController: UIViewController {
-    @IBOutlet private weak var confirmedNicknameLabel: UILabel?
-    @IBOutlet private weak var successImageView: UIImageView!
+    @IBOutlet private weak var successImageView: SDAnimatedImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        successImageView.image = SDAnimatedImage(named: "signupSuccess")
+        successImageView.image = SDAnimatedImage(named: "signupSuccess.gif")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.19) {
             let nextVC = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "")
             self.present(nextVC, animated: true, completion: nil)
         }
-    }
-    
-    func setConfirmedNickname(nickname: String) {
-        confirmedNicknameLabel?.text = nickname
     }
 }

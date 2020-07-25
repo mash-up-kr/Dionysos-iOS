@@ -9,30 +9,57 @@
 import AuthenticationServices
 import FacebookLogin
 import KakaoOpenSDK
+import Moya
 import Promises
 import UIKit
 
+enum SocialLoginType: String {
+    case facebook = "FACEBOOK"
+    case apple = "APPLE"
+    case kakao = "KAKAO"
+    case guest = "GUEST"
+}
+
 final class SignInViewController: UIViewController {
-    
-    @IBAction func kakaoSignInClicked(_ sender: Any) {
+    @IBAction private func kakaoSignInClicked(_ sender: Any) {
         kakaoButtonDidTap()
     }
     
-    @IBAction func fbSignInClicked(_ sender: Any) {
+    @IBAction private func fbSignInClicked(_ sender: Any) {
         //fbButtonDidTap()
     }
     
-    @IBAction func appleSignInClicked(_ sender: Any) {
+    @IBAction private func appleSignInClicked(_ sender: Any) {
         handleAppleSignInButton()
     }
     
-    @IBAction func guestSignInClicked(_ sender: Any) {
-        SocialLoginHelper.apiCall(type: .guest, UID: nil)
+    @IBAction private func guestSignInClicked(_ sender: Any) {
+        apiCall(type: .guest, UID: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializedLogin()
+    }
+    
+    private func apiCall(type: SocialLoginType, UID: String?) {
+        guard let token = UID else { return }
+        
+        if type == .guest {
+            UIApplication.shared.currentWindow?.rootViewController = MainTabCenter.default.getCurrentViewController()
+        }
+        
+        DionysosProvider.callSignIn(provider: type.rawValue, token: token).then { _ in
+            UIApplication.shared.currentWindow?.rootViewController = MainTabCenter.default.getCurrentViewController()
+        }.catch {
+            guard let error = $0 as? Moya.MoyaError else { return }
+            if error.response?.statusCode == 401 || error.response?.statusCode == 400 {
+                guard let signUpVC = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(identifier: "NicknameInputViewController") as? NicknameInputViewController else { return }
+                signUpVC.provider = type.rawValue
+                signUpVC.token = token
+                self.present(signUpVC, animated: true, completion: nil)
+            }
+        }
     }
     
     deinit {
@@ -57,7 +84,7 @@ extension SignInViewController {
         }.then {
             KakaoAuth.getUID()
         }.then {
-            SocialLoginHelper.apiCall(type: .kakao, UID: $0)
+            self.apiCall(type: .kakao, UID: $0)
         }.catch {
             logger($0.localizedDescription)
         }
@@ -70,8 +97,8 @@ extension SignInViewController {
         NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: .main) { notification in
             guard isChangeUser(notification) else { return }
             
-            let useId: String? = AccessToken.current?.userID
-            SocialLoginHelper.apiCall(type: .kakao, UID: useId)
+            guard let useId: String = AccessToken.current?.userID else { return }
+            self.apiCall(type: .kakao, UID: useId)
         }
         
         func isChangeUser(_ notification: Notification) -> Bool {
@@ -95,8 +122,9 @@ extension SignInViewController {
 extension SignInViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
-        let userId: String? = credential.user
-        SocialLoginHelper.apiCall(type: .apple, UID: userId)
+        let userId: String = credential.user
+        
+        apiCall(type: .apple, UID: userId)
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {

@@ -9,7 +9,7 @@
 import Foundation
 import Promises
 
-class MGKTimer {
+final class MGKTimer {
     typealias TimeHandler = (TimeInterval) -> Void
     // MARK: Properties
     private var timer: Timer?
@@ -45,6 +45,7 @@ class MGKTimer {
         clearTimer()
     }
     
+    @discardableResult
     func end() -> TimeInterval {
         pause()
         return accumulatedTime

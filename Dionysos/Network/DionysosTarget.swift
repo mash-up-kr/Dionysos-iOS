@@ -30,7 +30,7 @@ extension DionysosTarget: TargetType {
 }
 
 extension DionysosTarget {
-    var baseURL: URL { URL(string: "http://13.124.57.224")! }
+    var baseURL: URL { URL(string: "http://18.217.230.58:8080/")! }
     
     var sampleData: Data {
         Data()

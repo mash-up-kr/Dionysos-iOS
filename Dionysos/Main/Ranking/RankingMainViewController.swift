@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  RankingMainViewController.swift
 //  Dionysos
 //
 //  Created by Jercy on 2020/07/25.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class RankingMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         

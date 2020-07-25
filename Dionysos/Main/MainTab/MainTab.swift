@@ -14,31 +14,56 @@ enum MainTabType {
     case myPage
 }
 
-class MainTab: UIView {
-    var contentView: UIView?
+final class MainTab: UIView {
+    private lazy var homeButton: UIButton = {
+        let button: UIButton = UIButton()
+        addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        button.setImage(UIImage(named: "buttonHomeOff"), for: .normal)
+        button.setImage(UIImage(named: "btnTabHomeOn72Px"), for: .selected)
+        button.addTarget(self, action: #selector(homeButtonAction(_:)), for: .touchUpInside)
+        return button
+    }()
+    private lazy var myPageButton: UIButton = {
+        let button: UIButton = UIButton()
+        addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        button.centerXAnchor.constraint(equalTo: homeButton.centerXAnchor, constant: 84).isActive = true
+        button.setImage(UIImage(named: "btnTabMyOff64Px"), for: .normal)
+        button.setImage(UIImage(named: "btnMyOn72Px1"), for: .selected)
+        button.addTarget(self, action: #selector(myPageButtonAction(_:)), for: .touchUpInside)
+        return button
+    }()
+    private lazy var rankingButton: UIButton = {
+        let button: UIButton = UIButton()
+        addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        button.centerXAnchor.constraint(equalTo: homeButton.centerXAnchor, constant: -84).isActive = true
+        button.setImage(UIImage(named: "btnTabRankingOff64Px"), for: .normal)
+        button.setImage(UIImage(named: "buttonRankingOn72Px"), for: .selected)
+        button.addTarget(self, action: #selector(rankingButtonAction(_:)), for: .touchUpInside)
+        return button
+    }()
     
-    @IBOutlet private weak var rankingButton: UIButton!
-    @IBOutlet private weak var homeButton: UIButton!
-    @IBOutlet private weak var myPageButton: UIButton!
-    
-    @IBAction private func rankingButtonAction(_ sender: Any) {
+    @objc
+    private func rankingButtonAction(_ sender: Any) {
         changeTab(.ranking)
     }
-    @IBAction private func homeButtonAction(_ sender: Any) {
+    @objc
+    private func homeButtonAction(_ sender: Any) {
         changeTab(.home)
     }
-    @IBAction private func myPageButtonAction(_ sender: Any) {
+    @objc
+    private func myPageButtonAction(_ sender: Any) {
         changeTab(.myPage)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        guard let view = loadViewFromNib() else { return }
-        view.frame = self.bounds
-        view.backgroundColor = .clear
-        self.addSubview(view)
-        contentView = view
         
         switch MainTabCenter.default.getCurrentTab() {
         case .home:
@@ -50,13 +75,25 @@ class MainTab: UIView {
         }
     }
     
-    func loadViewFromNib() -> UIView? {
-        let nib: UINib = UINib(nibName: "MainTab", bundle: Bundle(for: type(of: self)))
-        return nib.instantiate(withOwner: self, options: nil).first as? UIView
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        switch MainTabCenter.default.getCurrentTab() {
+        case .home:
+            setHome()
+        case .ranking:
+            setRanking()
+        case .myPage:
+            setMyPage()
+        }
     }
 }
 
 extension MainTab {
+    func changeSelectedButtonToCurrentType() {
+        changeButtonSelected(MainTabCenter.default.getCurrentTab())
+    }
+    
     private func changeTab(_ selectedTab: MainTabType) {
         switch selectedTab {
         case .home:
@@ -69,50 +106,51 @@ extension MainTab {
     }
     
     private func setHome() {
-        homeButton.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.35, initialSpringVelocity: 0.8, options: [], animations: { [weak self] in
-            guard let self = self else { return }
-            self.homeButton.transform = CGAffineTransform.identity
-            self.homeButton.isSelected = true
-        })
-        rankingButton.isSelected = false
-        myPageButton.isSelected = false
-        
         MainTabCenter.default.setCurrentTab(.home)
-        
-        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() else { return }
-        window?.rootViewController = vc
+        changeViewController()
+        changeButtonSelected(.home)
     }
     
     private func setRanking() {
-        rankingButton.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.35, initialSpringVelocity: 0.8, options: [], animations: { [weak self] in
-            guard let self = self else { return }
-            self.rankingButton.transform = CGAffineTransform.identity
-            self.rankingButton.isSelected = true
-        })
-        homeButton.isSelected = false
-        myPageButton.isSelected = false
-        
         MainTabCenter.default.setCurrentTab(.ranking)
-        
-        guard let vc = UIStoryboard(name: "Ranking", bundle: nil).instantiateInitialViewController() else { return }
-        window?.rootViewController = vc
+        changeViewController()
+        changeButtonSelected(.ranking)
     }
     
     private func setMyPage() {
-        myPageButton.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.35, initialSpringVelocity: 0.8, options: [], animations: { [weak self] in
-            guard let self = self else { return }
-            self.myPageButton.transform = CGAffineTransform.identity
-            self.myPageButton.isSelected = true
-        })
+        MainTabCenter.default.setCurrentTab(.myPage)
+        changeViewController()
+        changeButtonSelected(.myPage)
+    }
+    
+    private func changeButtonSelected(_ type: MainTabType) {
         homeButton.isSelected = false
         rankingButton.isSelected = false
+        myPageButton.isSelected = false
         
-        MainTabCenter.default.setCurrentTab(.myPage)
+        let selectedButton: UIButton?
+        switch type {
+        case .home:
+            selectedButton = homeButton
+        case .myPage:
+            selectedButton = myPageButton
+        case .ranking:
+            selectedButton = rankingButton
+        }
         
-        guard let vc = UIStoryboard(name: "MyPage", bundle: nil).instantiateInitialViewController() else { return }
-        window?.rootViewController = vc
+        selectedButton?.isSelected = true
+        selectedButton?.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       usingSpringWithDamping: 0.35,
+                       initialSpringVelocity: 0.8,
+                       options: [.allowUserInteraction, .curveEaseInOut],
+                       animations: {
+                        selectedButton?.transform = CGAffineTransform.identity
+        })
+    }
+    
+    private func changeViewController() {
+        window?.rootViewController = MainTabCenter.default.getCurrentViewController()
     }
 }

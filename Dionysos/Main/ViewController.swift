@@ -16,40 +16,11 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fbLoginButton: FBLoginButton = FBLoginButton()
-        fbLoginButton.center = view.center
-        view.addSubview(fbLoginButton)
-        
-        let kakaoLoginButton: KOLoginButton = KOLoginButton(
-            frame: CGRect(origin: .zero, size: fbLoginButton.bounds.size)
-        )
-        kakaoLoginButton.center = view.center
-        view.addSubview(kakaoLoginButton)
-        kakaoLoginButton.addTarget(self, action: #selector(kakaoButtonDidTap), for: .touchUpInside)
-        
-        let appleLoginButton: ASAuthorizationAppleIDButton = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
-        appleLoginButton.addTarget(self, action: #selector(handleAppleSignInButton), for: .touchUpInside)
-        appleLoginButton.center = view.center
-        view.addSubview(appleLoginButton)
-        
         initializedLogin()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc
-    func kakaoButtonDidTap() {
-        Promise.start {
-            KakaoAuth.login()
-        }.then {
-            KakaoAuth.getToken()
-        }.then {
-            logger($0)
-        }.catch {
-            logger($0.localizedDescription)
-        }
     }
 }
 
@@ -58,24 +29,44 @@ extension ViewController {
         let loginManager: LoginManager = LoginManager()
         loginManager.logOut()
         addNotificationForFaceBookLogin()
+        
+        KakaoAuth.logout()
     }
 }
 
+///Kakao Login
+extension ViewController {
+    func kakaoButtonDidTap() {
+        Promise.start {
+            KakaoAuth.login()
+        }.then {
+            KakaoAuth.getUID()
+        }.then {
+            SocialLoginHelper.apiCall(type: .kakao, UID: $0)
+        }.catch {
+            logger($0.localizedDescription)
+        }
+    }
+}
+
+///Facebook Login
 extension ViewController {
     private func addNotificationForFaceBookLogin() {
-        NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: .main) { [weak self] notification in
+        NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: .main) { notification in
             guard isChangeUser(notification) else { return }
             
-            let token: String? = SocialLoginHelper.getToken(type: .facebook)
-            logger(token)
+            let useId: String? = AccessToken.current?.userID
+            SocialLoginHelper.apiCall(type: .kakao, UID: useId)
         }
         
         func isChangeUser(_ notification: Notification) -> Bool {
             ((notification.userInfo?[AccessTokenDidChangeUserIDKey]) != nil) as Bool
         }
     }
-    
-    @objc
+}
+
+///Apple Login
+extension ViewController {
     func handleAppleSignInButton() {
         let request: ASAuthorizationAppleIDRequest = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
@@ -89,17 +80,17 @@ extension ViewController {
 extension ViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
-        guard let token: Data = credential.identityToken else { return }
-        logger(token)
+        let userId: String? = credential.user
+        SocialLoginHelper.apiCall(type: .kakao, UID: userId)
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print("애플 로그인 에러")
+        logger("애플 로그인 에러")
     }
 }
 
 extension ViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return view.window!
+        view.window!
     }
 }

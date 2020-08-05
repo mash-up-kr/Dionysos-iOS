@@ -65,6 +65,7 @@
 		4D421DCD24C8A7CB002DE57B /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DCC24C8A7CB002DE57B /* FacebookShare */; };
 		4D9B02D024CCBAEF00261209 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9B02CF24CCBAEF00261209 /* Setting.storyboard */; };
 		4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B02D124CCBAFA00261209 /* SettingViewController.swift */; };
+		4DA498FE24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */; };
 		4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */; };
 		4DA7A0DE24CCDACA0037E83D /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
@@ -131,6 +132,7 @@
 		4D421DC324C88EF4002DE57B /* KakaoAuth.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
 		4D9B02CF24CCBAEF00261209 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4D9B02D124CCBAFA00261209 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatiticsCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRankingTableViewCell.swift; sourceTree = "<group>"; };
 		4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -365,6 +367,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		4DA498FC24DB05D600EA9774 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		4DDA61AA24CC39AD00D0978E /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				4D9B02CE24CCBAE400261209 /* Setting */,
+				4DA498FC24DB05D600EA9774 /* Cell */,
 				4DDA61B824CC4E4C00D0978E /* MyPage.storyboard */,
 				4D0F5D9E24CC7F2C0044418F /* MyPageMainViewController.swift */,
 			);
@@ -588,6 +599,7 @@
 				4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */,
 				390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */,
 				4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */,
+				4DA498FE24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift in Sources */,
 				17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */,
 				17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */,
 			);

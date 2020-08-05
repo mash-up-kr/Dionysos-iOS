@@ -42,7 +42,7 @@ final class SignInViewController: UIViewController {
     }
     
     @IBAction private func guestSignInClicked(_ sender: Any) {
-        apiCall(type: .guest, UID: nil)
+        apiCall(type: .guest, UID: "")
 //        SocialLoginHelper.apiCall(type: .guest, UID: nil)
     }
     

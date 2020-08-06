@@ -29,6 +29,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh8-O5-kgz">
                                 <rect key="frame" x="20" y="268" width="220.5" height="100.5"/>
                                 <gestureRecognizers/>
@@ -48,6 +49,19 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Pe7-Y1-9uC" appends="YES" id="Jdh-kp-Mux"/>
                                 </connections>
+=======
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh8-O5-kgz">
+                                <rect key="frame" x="20" y="268" width="220.5" height="100.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="84"/>
+                                <color key="textColor" name="darkGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stop- watch" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPk-0j-Bzl">
+                                <rect key="frame" x="20" y="408.5" width="259" height="200.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="84"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+>>>>>>> 💄feat: Main 레이아웃 구성
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -106,7 +120,7 @@
     </scenes>
     <resources>
         <namedColor name="darkGrey">
-            <color red="0.12941176470588237" green="0.13333333333333333" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1289999932050705" green="0.13300000131130219" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

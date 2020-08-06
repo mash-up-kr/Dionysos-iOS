@@ -10,9 +10,13 @@ import Promises
 import UIKit
 
 class MainViewController: UIViewController {
+    // MARK: Properties
+    
     @IBOutlet private weak var accumulatedTimeLabel: UILabel!
     @IBOutlet private weak var timerLabel: UILabel!
     @IBOutlet private weak var stopWatchLabel: UILabel!
+    
+    // MARK: Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,33 +26,23 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        view.addSubview(MainTabCenter.default.getMainTab())
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
     @IBAction private func timerDidTap(_ sender: Any) {
-        toggleLine(on: timerLabel)
-        let questionView = QuestionView()
-        self.view.addSubview(questionView)
-//        questionView.center = self.view.center
-//        let width = UIScreen.main.bounds.width
-//        let height = UIScreen.main.bounds.height
-//        let rect = CGRect(x: 0, y: 0, width: width, height: height/4)
-//        let view = UIView(frame: rect)
-//        view.backgroundColor = .red
-        questionView.backgroundColor = .purple
-        MGKAlertViewController.show(with: questionView)
+        toggleUnderLine(on: timerLabel)
+        deactiveUnderline(on: stopWatchLabel)
     }
     
     @IBAction private func stopWatchDidTap(_ sender: Any) {
-        toggleLine(on: stopWatchLabel)
+        toggleUnderLine(on: stopWatchLabel)
+        deactiveUnderline(on: timerLabel)
     }
 
     typealias KeyValue = (key: NSAttributedString.Key, value: Any)
-    private func toggleLine(on label: UILabel) {
+    private func toggleUnderLine(on label: UILabel) {
         guard let attributeText = label.attributedText else { return }
         let toggledLineStyle: NSUnderlineStyle = {
             let lineSet: KeyValue? = attributeText.attributes(at: 0, effectiveRange: nil)
@@ -57,6 +51,13 @@ class MainViewController: UIViewController {
         }()
         let text: NSMutableAttributedString = NSMutableAttributedString(attributedString: attributeText)
         text.addAttributes([.underlineStyle: toggledLineStyle.rawValue], range: NSRange(0..<attributeText.length))
+        label.attributedText = text
+    }
+    
+    private func deactiveUnderline(on label: UILabel) {
+        guard let attributeText = label.attributedText else { return }
+        let text: NSMutableAttributedString = NSMutableAttributedString(attributedString: attributeText)
+        text.addAttributes([.underlineStyle: NSUnderlineStyle.byWord.rawValue], range: NSRange(0..<attributeText.length))
         label.attributedText = text
     }
     

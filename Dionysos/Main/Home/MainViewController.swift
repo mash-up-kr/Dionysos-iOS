@@ -9,7 +9,7 @@
 import Promises
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     // MARK: Properties
     
     @IBOutlet private weak var accumulatedTimeLabel: UILabel!

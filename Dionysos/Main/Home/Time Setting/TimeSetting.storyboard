@@ -3,24 +3,102 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Time Setting View Controller-->
         <scene sceneID="bot-xf-hY7">
             <objects>
-                <viewController id="aOz-lk-sFg" sceneMemberID="viewController">
+                <viewController id="aOz-lk-sFg" customClass="TimeSettingViewController" customModule="Dionysos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="csJ-f9-n6v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecc-Hg-QCa">
+                                <rect key="frame" x="20" y="64" width="74" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" name="coralPink"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EzI-Dy-NUq">
+                                <rect key="frame" x="38.5" y="287" width="337" height="54.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wk1-OA-l4b" userLabel="시">
+                                        <rect key="frame" x="0.0" y="0.0" width="63" height="54.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9J-mk-QMS">
+                                        <rect key="frame" x="93" y="0.0" width="14" height="54.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isU-92-uJ5" userLabel="분">
+                                        <rect key="frame" x="137" y="0.0" width="63" height="54.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LY3-E8-oph">
+                                        <rect key="frame" x="230" y="0.0" width="14" height="54.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tn5-Wm-3jw" userLabel="초">
+                                        <rect key="frame" x="274" y="0.0" width="63" height="54.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUr-FF-TyY" userLabel="ConfirmButton">
+                                <rect key="frame" x="330" y="778" width="64" height="64"/>
+                                <state key="normal" image="btnDoneOff64Px"/>
+                                <state key="selected" image="btnDoneOn64Px"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTC-UJ-ToT">
+                                <rect key="frame" x="20" y="218" width="157.5" height="53"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ecc-Hg-QCa" firstAttribute="top" secondItem="8Ey-OE-UTt" secondAttribute="top" constant="20" id="24i-0H-hBE"/>
+                            <constraint firstItem="EzI-Dy-NUq" firstAttribute="top" secondItem="oTC-UJ-ToT" secondAttribute="bottom" constant="16" id="FFT-UL-dMN"/>
+                            <constraint firstItem="8Ey-OE-UTt" firstAttribute="bottom" secondItem="TUr-FF-TyY" secondAttribute="bottom" constant="20" id="LGO-ae-uD2"/>
+                            <constraint firstItem="ecc-Hg-QCa" firstAttribute="leading" secondItem="8Ey-OE-UTt" secondAttribute="leading" constant="20" id="Rnm-aB-UQV"/>
+                            <constraint firstItem="EzI-Dy-NUq" firstAttribute="centerX" secondItem="csJ-f9-n6v" secondAttribute="centerX" id="c2j-bJ-HhV"/>
+                            <constraint firstItem="oTC-UJ-ToT" firstAttribute="leading" secondItem="ecc-Hg-QCa" secondAttribute="leading" id="ep7-4c-nFF"/>
+                            <constraint firstItem="oTC-UJ-ToT" firstAttribute="top" secondItem="ecc-Hg-QCa" secondAttribute="bottom" constant="106" id="lE4-uj-fIB"/>
+                            <constraint firstItem="8Ey-OE-UTt" firstAttribute="trailing" secondItem="TUr-FF-TyY" secondAttribute="trailing" constant="20" id="vKN-8m-k05"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ey-OE-UTt"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="ecc-Hg-QCa" id="SSP-p5-Tt6"/>
+                        <outlet property="confirmButton" destination="TUr-FF-TyY" id="Ztc-hx-SnQ"/>
+                        <outlet property="confirmButtonConstraint" destination="LGO-ae-uD2" id="kRT-7E-TgK"/>
+                        <outlet property="hoursTextField" destination="Wk1-OA-l4b" id="uaW-W6-FEJ"/>
+                        <outlet property="minutesTextField" destination="isU-92-uJ5" id="kSs-kH-7TN"/>
+                        <outlet property="secondsTextField" destination="tn5-Wm-3jw" id="TQF-DH-Ruo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zoz-AK-bnD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="203" y="-261"/>
+            <point key="canvasLocation" x="202.89855072463769" y="-261.16071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btnDoneOff64Px" width="64" height="64"/>
+        <image name="btnDoneOn64Px" width="64" height="64"/>
+        <namedColor name="coralPink">
+            <color red="0.98799997568130493" green="0.3529999852180481" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

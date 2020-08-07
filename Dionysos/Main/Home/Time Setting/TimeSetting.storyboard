@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aOz-lk-sFg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -29,7 +29,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wk1-OA-l4b" userLabel="시">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="54.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9J-mk-QMS">
                                         <rect key="frame" x="93" y="0.0" width="14" height="54.5"/>
@@ -40,7 +40,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isU-92-uJ5" userLabel="분">
                                         <rect key="frame" x="137" y="0.0" width="63" height="54.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LY3-E8-oph">
                                         <rect key="frame" x="230" y="0.0" width="14" height="54.5"/>
@@ -51,7 +51,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tn5-Wm-3jw" userLabel="초">
                                         <rect key="frame" x="274" y="0.0" width="63" height="54.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -83,7 +83,7 @@
                     <connections>
                         <outlet property="backButton" destination="ecc-Hg-QCa" id="SSP-p5-Tt6"/>
                         <outlet property="confirmButton" destination="TUr-FF-TyY" id="Ztc-hx-SnQ"/>
-                        <outlet property="confirmButtonConstraint" destination="LGO-ae-uD2" id="kRT-7E-TgK"/>
+                        <outlet property="confirmButtonBottomConstraint" destination="LGO-ae-uD2" id="kRT-7E-TgK"/>
                         <outlet property="hoursTextField" destination="Wk1-OA-l4b" id="uaW-W6-FEJ"/>
                         <outlet property="minutesTextField" destination="isU-92-uJ5" id="kSs-kH-7TN"/>
                         <outlet property="secondsTextField" destination="tn5-Wm-3jw" id="TQF-DH-Ruo"/>

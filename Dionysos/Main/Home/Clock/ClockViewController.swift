@@ -26,9 +26,13 @@ final class ClockViewController: UIViewController {
     
     private func updateTimeLabel(from timeInterval: TimeInterval) {
         let time: TimeAmount = TimeAmount(timeInterval)
-        self.timeLabel.text = [time.hours, time.minutes, time.seconds]
+        var timeString: String = [time.hours, time.minutes, time.seconds]
             .map { String(format: "%02d", $0) }
             .joined(separator: ":")
+        if let index: String.Index = timeString.firstIndex(of: ":") {
+            timeString.insert("\n", at: index)
+        }
+        timeLabel.text = timeString
     }
     
     private func updatePlayAndPauseButton(from status: Clock.Status) {
@@ -42,7 +46,7 @@ final class ClockViewController: UIViewController {
     }
     
     @IBAction private func playAndPauseButtonDidTap(_ sender: UIButton) {
-        sender.isSelected ? clock.run() : clock.pause()
+        sender.isSelected ? clock.pause() : clock.run()
     }
     
     private func setupClock(for strategy: TimeMesureStrategy) {
@@ -73,7 +77,7 @@ extension ClockViewController {
         return viewController as! ClockViewController
     }
     
-    static func instantiate(with strategy: TimeMesureStrategy = .stopwatch) -> ClockViewController {
+    static func instantiate(with strategy: TimeMesureStrategy) -> ClockViewController {
         let viewController: ClockViewController = ClockViewController.instantiate()
         viewController.strategy = strategy
         return viewController

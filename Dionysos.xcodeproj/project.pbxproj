@@ -194,9 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */,
+				1779C59224CC783400CC78D2 /* SignInViewController.swift */,
 				17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */,
 				17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */,
-				1779C59224CC783400CC78D2 /* SignInViewController.swift */,
 				178E43F024CCC17700955B70 /* SignUpResponse.swift */,
 				178E43F224CCC18800955B70 /* SignInResponse.swift */,
 			);

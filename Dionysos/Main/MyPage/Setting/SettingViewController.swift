@@ -8,8 +8,16 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+final class SettingViewController: UIViewController {
     @IBOutlet private weak var closeButton: UIButton!
+    enum Rows: Int, CaseIterable {
+        case use
+        case contact
+        case made
+        case version
+        case logout
+    }
+    
     private var settingTitles: [String] = ["이용약관", "문의하기", "만든이", "버전", "로그아웃"]
     private var settingContents: [String: String] = [
         "만든이": "Dionysos",
@@ -19,7 +27,7 @@ class SettingViewController: UIViewController {
 
 extension SettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        settingTitles.count
+        Rows.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

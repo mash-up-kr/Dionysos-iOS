@@ -14,29 +14,20 @@ import Promises
 import UIKit
 
 enum SocialLoginType: String {
-    case facebook = "FACEBOOK"
-    case apple = "APPLE"
-    case kakao = "KAKAO"
-    case guest = "GUEST"
+    case facebook
+    case apple
+    case kakao
+    case guest
+    
+    func getRawValue() -> String {
+        rawValue.uppercased()
+    }
 }
 
 final class SignInViewController: UIViewController {
     @IBAction private func kakaoSignInClicked(_ sender: Any) { kakaoButtonDidTap() }
-    
-    @IBAction private func fbSignInClicked(_ sender: Any) {
-        Promise.start {
-            FacebookAuth.login()
-        }.then { _ in
-            FacebookAuth.getUID()
-        }.then {
-            logger($0)
-        }.catch {
-            logger($0)
-        }
-    }
-    
+    @IBAction private func fbSignInClicked(_ sender: Any) { facebookButtonDidTap() }
     @IBAction private func appleSignInClicked(_ sender: Any) { handleAppleSignInButton() }
-    
     @IBAction private func guestSignInClicked(_ sender: Any) {
         //apiCall(type: .guest, UID: UIDevice.current.identifierForVendor?.uuidString)
         UIApplication.shared.windows.first?.rootViewController = MainTabCenter.default.getCurrentViewController()
@@ -50,16 +41,23 @@ final class SignInViewController: UIViewController {
     private func apiCall(type: SocialLoginType, UID: String?) {
         guard let token = UID else { return }
         
-        DionysosProvider.callSignIn(provider: type.rawValue, token: token).then { _ in
+        DionysosProvider.callSignIn(provider: type.getRawValue(), token: token).then { _ in
             UIApplication.shared.windows.first?.rootViewController = MainTabCenter.default.getCurrentViewController()
         }.catch {
-            guard let error = $0 as? Moya.MoyaError else { return }
-            if error.response?.statusCode == 401 || error.response?.statusCode == 400 {
-                guard let signUpViewController = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(identifier: "NicknameInputViewController") as? NicknameInputViewController else { return }
-                signUpViewController.provider = type.rawValue
-                signUpViewController.token = token
-                self.present(signUpViewController, animated: true, completion: nil)
+            if isNotRegisterUser(error: $0) {
+                openSignupViewController()
             }
+        }
+        
+        func isNotRegisterUser(error: Error) -> Bool {
+            guard let error = error as? Moya.MoyaError else { return false }
+            return error.response?.statusCode == 401 || error.response?.statusCode == 400
+        }
+        
+        func openSignupViewController() {
+            let signUpViewController = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(identifier: "NicknameInputViewController") as! NicknameInputViewController
+            signUpViewController.setData(provider: type.getRawValue(), token: token)
+            present(signUpViewController, animated: true, completion: nil)
         }
     }
     
@@ -94,12 +92,24 @@ extension SignInViewController {
 
 ///Facebook Login
 extension SignInViewController {
+    private func facebookButtonDidTap() {
+        Promise.start {
+            FacebookAuth.login()
+        }.then { _ in
+            FacebookAuth.getUID()
+        }.then {
+            logger($0)
+        }.catch {
+            logger($0)
+        }
+    }
+    
     private func addNotificationForFaceBookLogin() {
         NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: .main) { notification in
             guard isChangeUser(notification) else { return }
             
             guard let useId: String = AccessToken.current?.userID else { return }
-            self.apiCall(type: .kakao, UID: useId)
+            self.apiCall(type: .facebook, UID: useId)
         }
         
         func isChangeUser(_ notification: Notification) -> Bool {

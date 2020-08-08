@@ -22,6 +22,25 @@ final class ClockViewController: UIViewController {
     // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        if case let .timer(targetTime) = strategy {
+            updateTimeLabel(from: targetTime.timeInterval)
+        }
+    }
+    
+    private func setupClock(for strategy: TimeMesureStrategy) {
+        switch strategy {
+        case .timer(let remainingTime):
+            self.clock = MGKTimer(
+                targetTime: remainingTime,
+                timeUpdateHandler: updateTimeLabel(from:),
+                statusUpdateHandler: updatePlayAndPauseButton(from:)
+            )
+        case .stopwatch:
+            self.clock = Stopwatch(
+                timeUpdateHandler: updateTimeLabel(from:),
+                statusUpdateHandler: updatePlayAndPauseButton(from:)
+            )
+        }
     }
     
     private func updateTimeLabel(from timeInterval: TimeInterval) {
@@ -48,27 +67,11 @@ final class ClockViewController: UIViewController {
     @IBAction private func playAndPauseButtonDidTap(_ sender: UIButton) {
         sender.isSelected ? clock.pause() : clock.run()
     }
-    
-    private func setupClock(for strategy: TimeMesureStrategy) {
-        switch strategy {
-        case .timer(let remainingTime):
-            self.clock = MGKTimer(
-                targetTime: remainingTime,
-                timeUpdateHandler: updateTimeLabel(from:),
-                statusUpdateHandler: updatePlayAndPauseButton(from:)
-            )
-        case .stopwatch:
-            self.clock = Stopwatch(
-                timeUpdateHandler: updateTimeLabel(from:),
-                statusUpdateHandler: updatePlayAndPauseButton(from:)
-            )
-        }
-    }
 }
 
 extension ClockViewController {
     enum TimeMesureStrategy {
-        case timer(remainingTime: TimeAmount)
+        case timer(targetTime: TimeAmount)
         case stopwatch
     }
     

@@ -54,8 +54,8 @@ final class SignInViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let viewController = TimeSettingViewController.instantiate()
-        self.present(viewController, animated: true)
+//        let viewController = TimeSettingViewController.instantiate()
+//        self.present(viewController, animated: true)
     }
     
     private func apiCall(type: SocialLoginType, UID: String?) {

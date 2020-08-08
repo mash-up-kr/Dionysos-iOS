@@ -66,7 +66,23 @@ extension MyPageMainViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == statisticCollectionView {
-            return collectionView.dequeueReusableCell(withReuseIdentifier: "StatiticsCalendarCollectionViewCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StatiticsCalendarCollectionViewCell", for: indexPath) as! StatiticsCalendarCollectionViewCell
+            cell.setFrequency(.none)
+            
+            let num = indexPath.row % 5
+            if num == 0 {
+                cell.setFrequency(.none)
+            } else if num == 1 {
+                cell.setFrequency(.less)
+            } else if num == 2 {
+                cell.setFrequency(.normal)
+            } else if num == 3 {
+                cell.setFrequency(.more)
+            } else if num == 4 {
+                cell.setFrequency(.most)
+            }
+            
+            return cell
         }
         return collectionView.dequeueReusableCell(withReuseIdentifier: "MyPageFeedCollectionViewCell", for: indexPath)
     }

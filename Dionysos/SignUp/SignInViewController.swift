@@ -24,7 +24,15 @@ final class SignInViewController: UIViewController {
     @IBAction private func kakaoSignInClicked(_ sender: Any) { kakaoButtonDidTap() }
     
     @IBAction private func fbSignInClicked(_ sender: Any) {
-        //fbButtonDidTap()
+        Promise.start {
+            FacebookAuth.login()
+        }.then { _ in
+            FacebookAuth.getUID()
+        }.then {
+            logger($0)
+        }.catch {
+            logger($0)
+        }
     }
     
     @IBAction private func appleSignInClicked(_ sender: Any) { handleAppleSignInButton() }

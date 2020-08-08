@@ -25,6 +25,7 @@
 		390BD0F524CC7CEE009BDB18 /* MGKAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390BD0F424CC7CEE009BDB18 /* MGKAlert.storyboard */; };
 		390BD0FE24CCC86D009BDB18 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390BD0FD24CCC86D009BDB18 /* QuestionView.xib */; };
 		390BD10024CCC88A009BDB18 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0FF24CCC88A009BDB18 /* QuestionView.swift */; };
+		390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD10124CCE772009BDB18 /* FacebookAuth.swift */; };
 		3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */; };
 		39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */; };
 		4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9224CA015D0044418F /* DionysosProvider.swift */; };
@@ -66,6 +67,7 @@
 		4D421DCD24C8A7CB002DE57B /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DCC24C8A7CB002DE57B /* FacebookShare */; };
 		4D9B02D024CCBAEF00261209 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9B02CF24CCBAEF00261209 /* Setting.storyboard */; };
 		4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B02D124CCBAFA00261209 /* SettingViewController.swift */; };
+		4DA498FE24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */; };
 		4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */; };
 		4DA7A0DE24CCDACA0037E83D /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
@@ -96,6 +98,7 @@
 		390BD0F424CC7CEE009BDB18 /* MGKAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MGKAlert.storyboard; sourceTree = "<group>"; };
 		390BD0FD24CCC86D009BDB18 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		390BD0FF24CCC88A009BDB18 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		390BD10124CCE772009BDB18 /* FacebookAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuth.swift; sourceTree = "<group>"; };
 		3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9224CA015D0044418F /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 		4D421DC324C88EF4002DE57B /* KakaoAuth.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
 		4D9B02CF24CCBAEF00261209 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4D9B02D124CCBAFA00261209 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatiticsCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRankingTableViewCell.swift; sourceTree = "<group>"; };
 		4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				4D421DC324C88EF4002DE57B /* KakaoAuth.swift */,
+				390BD10124CCE772009BDB18 /* FacebookAuth.swift */,
 			);
 			path = SocialLogin;
 			sourceTree = "<group>";
@@ -366,6 +371,14 @@
 				1730D20524DA73A100D49287 /* SettingTableViewCell.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		4DA498FC24DB05D600EA9774 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		4DDA61AA24CC39AD00D0978E /* MainTab */ = {
@@ -415,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				4D9B02CE24CCBAE400261209 /* Setting */,
+				4DA498FC24DB05D600EA9774 /* Cell */,
 				4DDA61B824CC4E4C00D0978E /* MyPage.storyboard */,
 				4D0F5D9E24CC7F2C0044418F /* MyPageMainViewController.swift */,
 			);
@@ -563,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */,
+				390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */,
 				4D0F5D9F24CC7F2C0044418F /* MyPageMainViewController.swift in Sources */,
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
 				4DDA61A924CC37F800D0978E /* MainViewController.swift in Sources */,
@@ -591,6 +606,7 @@
 				4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */,
 				390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */,
 				4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */,
+				4DA498FE24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift in Sources */,
 				17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */,
 				17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */,
 				1730D20424D9DB0300D49287 /* MadeByViewController.swift in Sources */,

@@ -141,7 +141,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4pe-2P-hjb">
-                                <rect key="frame" x="0.0" y="164" width="414" height="732"/>
+                                <rect key="frame" x="0.0" y="184" width="414" height="712"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="B9x-LV-3bZ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
@@ -423,7 +423,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="czK-zf-gJE" firstAttribute="centerX" secondItem="jhr-Jf-mjy" secondAttribute="centerX" id="11O-2T-sdp"/>
-                            <constraint firstItem="4pe-2P-hjb" firstAttribute="top" secondItem="czK-zf-gJE" secondAttribute="bottom" id="3y3-Sq-V4D"/>
+                            <constraint firstItem="4pe-2P-hjb" firstAttribute="top" secondItem="czK-zf-gJE" secondAttribute="bottom" constant="20" id="3y3-Sq-V4D"/>
                             <constraint firstItem="czK-zf-gJE" firstAttribute="top" secondItem="G8N-PZ-lH1" secondAttribute="bottom" constant="20" id="DEw-XY-Vn0"/>
                             <constraint firstItem="4pe-2P-hjb" firstAttribute="leading" secondItem="Ynq-7F-jvi" secondAttribute="leading" id="O7O-3Y-NgX"/>
                             <constraint firstAttribute="bottom" secondItem="4pe-2P-hjb" secondAttribute="bottom" id="QpB-YM-fmH"/>

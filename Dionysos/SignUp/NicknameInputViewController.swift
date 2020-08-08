@@ -15,32 +15,13 @@ final class NicknameInputViewController: UIViewController, KeyboardConstraintHan
     @IBOutlet private weak var bottomConstraintOutlet: NSLayoutConstraint!
     @IBOutlet private weak var confirmButton: UIButton!
     
-    @IBAction func nicknameFieldChanged(_ sender: Any) {
-        // apicall
-        if true {
-            confirmButton.isSelected = true
-            // 응답을 화면에 보여줌
-            nicknameReviewLabel.text = "진짜 멋지다!"
-            nicknameReviewLabel.textColor = UIColor(named: "azure")
-            confirmButton.isEnabled = true
-        } else {
-            confirmButton.isSelected = false
-            confirmButton.isEnabled = false
-            nicknameReviewLabel.text = "음..........."
-            nicknameReviewLabel.textColor = UIColor(named: "coralPink")
-        }
+    @IBAction private func nicknameFieldChanged(_ sender: Any) {
+        print(nicknameTextField.text)
+        //checkNicknameApiCall(nickname: nicknameTextField.text!)
     }
     
-    @IBAction func confirmButtonClicked(_ sender: Any) {
-        
-        apiCall()
-        
-//        let vc = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "NicknameSuccessViewController")
-//
-//        guard let successViewController = vc as? NicknameSuccessViewController else { return }
-//        successViewController.modalPresentationStyle = .fullScreen
-//        self.present(successViewController, animated: true, completion: nil)
-//        successViewController.setConfirmedNickname(nickname: "원숭이가나무에서떨어졌다")
+    @IBAction private func confirmButtonClicked(_ sender: Any) {
+        signUpApiCall()
     }
     
     var provider: String?
@@ -57,19 +38,40 @@ final class NicknameInputViewController: UIViewController, KeyboardConstraintHan
         super.viewDidLoad()
         keyboardReactive()
     }
-    
-    private func apiCall() {
-        guard let pv = provider, let tk = token, let nn = nicknameTextField.text else { return }
-        DionysosProvider.callSignUp(provider: pv, token: tk, nickname: nn).then {
-            logger($0)
+
+    private func checkNicknameApiCall(nickname: String) {
+        guard let token = self.token, let nickname = nicknameTextField.text else { return }
+        
+        DionysosProvider.callCheckNickname(token: token, nickname: nickname).then {
+            self.confirmButton.isSelected = true
+            // 응답을 화면에 보여줌
+            self.nicknameReviewLabel.text = "진짜 멋지다!"
+            self.nicknameReviewLabel.textColor = UIColor(named: "azure")
+            self.confirmButton.isEnabled = true
+            
+            guard let successViewController = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "NicknameSuccessViewController") as? NicknameSuccessViewController else { return }
+            successViewController.modalPresentationStyle = .fullScreen
+            print($0)
+            self.present(successViewController, animated: true, completion: nil)
         }.catch {
             guard let error = $0 as? Moya.MoyaError else { return }
-//            if error.response?.statusCode == 401 || error.response?.statusCode == 400 {
-//                guard let signUpVC = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(identifier: "NicknameInputViewController") as? NicknameInputViewController else { return }
-//                signUpVC.provider = type.rawValue
-//                signUpVC.token = token
-//                self.present(signUpVC, animated: true, completion: nil)
-//            }
+            print(error)
+            self.confirmButton.isSelected = false
+            self.confirmButton.isEnabled = false
+            self.nicknameReviewLabel.text = "음..........."
+            self.nicknameReviewLabel.textColor = UIColor(named: "coralPink")
+        }
+    }
+    
+    private func signUpApiCall() {
+        guard let prov = provider, let tkn = token, let name = nicknameTextField.text else { return }
+        DionysosProvider.callSignUp(provider: prov, token: tkn, nickname: name).then {
+            guard let successViewController = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "NicknameSuccessViewController") as? NicknameSuccessViewController else { return }
+            successViewController.modalPresentationStyle = .fullScreen
+            UserDefaults.standard.set($0.jwt, forKey: "myToken")
+            self.present(successViewController, animated: true, completion: nil)
+        }.catch {
+            guard let error = $0 as? Moya.MoyaError else { return }
         }
     }
 }

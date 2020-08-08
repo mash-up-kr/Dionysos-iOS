@@ -21,9 +21,7 @@ enum SocialLoginType: String {
 }
 
 final class SignInViewController: UIViewController {
-    @IBAction private func kakaoSignInClicked(_ sender: Any) {
-        kakaoButtonDidTap()
-    }
+    @IBAction private func kakaoSignInClicked(_ sender: Any) { kakaoButtonDidTap() }
     
     @IBAction private func fbSignInClicked(_ sender: Any) {
         Promise.start {
@@ -37,13 +35,11 @@ final class SignInViewController: UIViewController {
         }
     }
     
-    @IBAction private func appleSignInClicked(_ sender: Any) {
-        handleAppleSignInButton()
-    }
+    @IBAction private func appleSignInClicked(_ sender: Any) { handleAppleSignInButton() }
     
     @IBAction private func guestSignInClicked(_ sender: Any) {
-        apiCall(type: .guest, UID: "")
-//        SocialLoginHelper.apiCall(type: .guest, UID: nil)
+        //apiCall(type: .guest, UID: UIDevice.current.identifierForVendor?.uuidString)
+        UIApplication.shared.windows.first?.rootViewController = MainTabCenter.default.getCurrentViewController()
     }
     
     override func viewDidLoad() {
@@ -51,29 +47,18 @@ final class SignInViewController: UIViewController {
         initializedLogin()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        let viewController = TimeSettingViewController.instantiate()
-//        self.present(viewController, animated: true)
-    }
-    
     private func apiCall(type: SocialLoginType, UID: String?) {
         guard let token = UID else { return }
         
-        if type == .guest {
-            UIApplication.shared.currentWindow?.rootViewController = MainTabCenter.default.getCurrentViewController()
-        }
-        
         DionysosProvider.callSignIn(provider: type.rawValue, token: token).then { _ in
-            UIApplication.shared.currentWindow?.rootViewController = MainTabCenter.default.getCurrentViewController()
+            UIApplication.shared.windows.first?.rootViewController = MainTabCenter.default.getCurrentViewController()
         }.catch {
             guard let error = $0 as? Moya.MoyaError else { return }
             if error.response?.statusCode == 401 || error.response?.statusCode == 400 {
-                guard let signUpVC = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(identifier: "NicknameInputViewController") as? NicknameInputViewController else { return }
-                signUpVC.provider = type.rawValue
-                signUpVC.token = token
-                self.present(signUpVC, animated: true, completion: nil)
+                guard let signUpViewController = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(identifier: "NicknameInputViewController") as? NicknameInputViewController else { return }
+                signUpViewController.provider = type.rawValue
+                signUpViewController.token = token
+                self.present(signUpViewController, animated: true, completion: nil)
             }
         }
     }
@@ -139,7 +124,6 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
         let userId: String = credential.user
-        
         apiCall(type: .apple, UID: userId)
     }
     

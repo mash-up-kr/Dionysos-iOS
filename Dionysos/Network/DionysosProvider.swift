@@ -17,10 +17,14 @@ enum DionysosProvider {
     //    }
     
     static func callSignIn(provider: String, token: String) -> Promise<SignInResponse> {
-        return NetworkProvider.request(Target.signIn(provider: provider, token: token), to: SignInResponse.self)
+        NetworkProvider.request(Target.signIn(provider: provider, token: token), to: SignInResponse.self)
     }
     
     static func callSignUp(provider: String, token: String, nickname: String) -> Promise<SignUpResponse> {
         NetworkProvider.request(Target.signUp(provider: provider, token: token, nickname: nickname), to: SignUpResponse.self)
+    }
+    
+    static func callCheckNickname(token: String, nickname: String) -> Promise<String> {
+        NetworkProvider.requestWithoutParsing(Target.checkNickname(token: token, nickname: nickname))
     }
 }

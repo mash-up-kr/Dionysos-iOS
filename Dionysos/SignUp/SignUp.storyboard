@@ -148,7 +148,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utV-zT-4RE">
                                 <rect key="frame" x="330" y="779" width="64" height="64"/>
-                                <state key="normal" image="btnDoneOff64Px"/>
+                                <state key="normal" image="btnDoneOff64Px">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <state key="selected" image="btnDoneOn64Px"/>
                                 <connections>
                                     <action selector="confirmButtonClicked:" destination="J6z-RE-ocN" eventType="touchUpInside" id="cql-60-yzC"/>

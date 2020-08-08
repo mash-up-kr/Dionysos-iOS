@@ -71,7 +71,7 @@
 		4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */; };
 		4DA7A0DE24CCDACA0037E83D /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
-		4DDA61A924CC37F800D0978E /* SelectTimerTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61A824CC37F800D0978E /* SelectTimerTypeViewController.swift */; };
+		4DDA61A924CC37F800D0978E /* SelectClockTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */; };
 		4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61AD24CC39FA00D0978E /* MainTab.swift */; };
 		4DDA61B224CC458500D0978E /* MainTabCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61B124CC458500D0978E /* MainTabCenter.swift */; };
 		4DDA61B724CC4E4400D0978E /* Ranking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61B624CC4E4400D0978E /* Ranking.storyboard */; };
@@ -140,7 +140,7 @@
 		4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRankingTableViewCell.swift; sourceTree = "<group>"; };
 		4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		4DDA61A824CC37F800D0978E /* SelectTimerTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimerTypeViewController.swift; sourceTree = "<group>"; };
+		4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClockTypeViewController.swift; sourceTree = "<group>"; };
 		4DDA61AD24CC39FA00D0978E /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		4DDA61B124CC458500D0978E /* MainTabCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCenter.swift; sourceTree = "<group>"; };
 		4DDA61B624CC4E4400D0978E /* Ranking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ranking.storyboard; sourceTree = "<group>"; };
@@ -236,13 +236,20 @@
 			path = "Time Setting";
 			sourceTree = "<group>";
 		};
-		3990C0B424DE4747004A56E0 /* Select Timer Type */ = {
+		3990C0B424DE4747004A56E0 /* Select Clock Type */ = {
 			isa = PBXGroup;
 			children = (
 				4D1287C32473D15000C4E3DF /* Main.storyboard */,
-				4DDA61A824CC37F800D0978E /* SelectTimerTypeViewController.swift */,
+				4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */,
 			);
-			path = "Select Timer Type";
+			path = "Select Clock Type";
+			sourceTree = "<group>";
+		};
+		3990C0B524DE47F1004A56E0 /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Clock;
 			sourceTree = "<group>";
 		};
 		4D1287B12473D15000C4E3DF = {
@@ -434,7 +441,8 @@
 		4DDA61B424CC4E2700D0978E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3990C0B424DE4747004A56E0 /* Select Timer Type */,
+				3990C0B524DE47F1004A56E0 /* Clock */,
+				3990C0B424DE4747004A56E0 /* Select Clock Type */,
 				3990C0AF24DC3AD2004A56E0 /* Time Setting */,
 			);
 			path = Home;
@@ -597,7 +605,7 @@
 				390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */,
 				4D0F5D9F24CC7F2C0044418F /* MyPageMainViewController.swift in Sources */,
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
-				4DDA61A924CC37F800D0978E /* SelectTimerTypeViewController.swift in Sources */,
+				4DDA61A924CC37F800D0978E /* SelectClockTypeViewController.swift in Sources */,
 				4D0F5DA124CC7F350044418F /* RankingMainViewController.swift in Sources */,
 				390BD0F324CC7C8C009BDB18 /* MGKAlertViewController.swift in Sources */,
 				4DA7A0DE24CCDACA0037E83D /* RankingTableViewCell.swift in Sources */,

@@ -58,14 +58,6 @@ final class SignInViewController: UIViewController {
         self.present(viewController, animated: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
-//        self.present(vc, animated: true)
-        
-    }
-    
     private func apiCall(type: SocialLoginType, UID: String?) {
         guard let token = UID else { return }
         

@@ -15,9 +15,9 @@ enum NetworkProvider {
     private static let provider: MoyaProvider<MultiTarget> = MoyaProvider<MultiTarget>()
     
     // MARK: Method
-    static func requestWithoutParsing<Response: Decodable>(_ target: TargetType) -> Promise<Response> {
-        Promise<Response> { fulfill, reject in
-            request(target).then { _ in
+    static func requestWithoutParsing(_ target: TargetType) -> Promise<Void> {
+        Promise<Void> { fulfill, reject in
+            request(target).then { _ in 
                 fulfill
             }.catch {
                 reject($0)

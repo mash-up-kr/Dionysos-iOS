@@ -7,14 +7,16 @@
 //
 
 import Foundation
-import Promises
 
-final class MGKTimer {
-    typealias TimeHandler = (TimeInterval) -> Void
-    // MARK: Properties
-    private var timer: Timer?
-    private var timeTasks: [TimeTask] = []
-    private var updateHandler: TimeHandler?
+final class MGKTimer: Clock {
+    var timer: Timer?
+    var timeTasks: [TimeTask] = []
+    private var timeUpdateHandler: TimeHandler?
+    private var statusUpdateHandler: StatusHandler?
+    var status: Status = .onPause {
+        didSet { statusUpdateHandler?(status) }
+    }
+    private let targetTime: TimeInterval
     var accumulatedTime: TimeInterval {
         timeTasks.filter { $0.state != .todo }
             .map { TimeAmount(from: $0.startDate ?? Date(), to: $0.endDate ?? Date()) }
@@ -22,8 +24,14 @@ final class MGKTimer {
             .timeInterval
     }
     
-    init(updateHandler: @escaping TimeHandler = { _ in }) {
-        self.updateHandler = updateHandler
+    init(
+        targetTime: TimeAmount,
+        timeUpdateHandler: @escaping TimeHandler = { _ in },
+        statusUpdateHandler: @escaping StatusHandler = { _ in }
+    ) {
+        self.targetTime = targetTime.timeInterval
+        self.timeUpdateHandler = timeUpdateHandler
+        self.statusUpdateHandler = statusUpdateHandler
     }
     
     deinit {
@@ -34,6 +42,7 @@ final class MGKTimer {
         let task: TimeTask = TimeTask()
         timeTasks.append(task)
         task.state = .inProgress
+        self.status = .inProgress
         configureTimer()
     }
     
@@ -42,19 +51,25 @@ final class MGKTimer {
             case .inProgress = task.state
             else { return }
         task.state = .done
+        self.status = .onPause
         clearTimer()
     }
     
     @discardableResult
     func end() -> TimeInterval {
         pause()
+        self.status = .done
         return accumulatedTime
     }
     
     private func configureTimer() {
         let newTimer: Timer = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-            self.updateHandler?(self.accumulatedTime)
+            let remainedTime: TimeInterval = self.targetTime - self.accumulatedTime
+            self.timeUpdateHandler?(remainedTime)
+            if remainedTime == 0 {
+                self.end()
+            }
         }
         self.timer = newTimer
         RunLoop.current.add(newTimer, forMode: .common)
@@ -63,13 +78,5 @@ final class MGKTimer {
     private func clearTimer() {
         timer?.invalidate()
         timer = nil
-    }
-}
-extension MGKTimer {
-    enum Status {
-        case todo
-        case inProgress
-        case onPause
-        case done
     }
 }

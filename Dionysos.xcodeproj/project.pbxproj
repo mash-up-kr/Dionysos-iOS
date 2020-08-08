@@ -28,6 +28,9 @@
 		3990C0B124DC3AEC004A56E0 /* TimeSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3990C0B024DC3AEC004A56E0 /* TimeSetting.storyboard */; };
 		3990C0B324DC3F11004A56E0 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0B224DC3F11004A56E0 /* TimeSettingViewController.swift */; };
 		3990C0B724DE4967004A56E0 /* Clock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3990C0B624DE4967004A56E0 /* Clock.storyboard */; };
+		3990C0B924DE4B5C004A56E0 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0B824DE4B5C004A56E0 /* ClockViewController.swift */; };
+		3990C0BB24DE6F05004A56E0 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0BA24DE6F05004A56E0 /* Clock.swift */; };
+		3990C0BD24DE6F13004A56E0 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0BC24DE6F13004A56E0 /* Stopwatch.swift */; };
 		39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */; };
 		4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9224CA015D0044418F /* DionysosProvider.swift */; };
 		4D0F5D9D24CC62110044418F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9C24CC62110044418F /* UIApplication+Extension.swift */; };
@@ -102,6 +105,9 @@
 		3990C0B024DC3AEC004A56E0 /* TimeSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeSetting.storyboard; sourceTree = "<group>"; };
 		3990C0B224DC3F11004A56E0 /* TimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
 		3990C0B624DE4967004A56E0 /* Clock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Clock.storyboard; sourceTree = "<group>"; };
+		3990C0B824DE4B5C004A56E0 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
+		3990C0BA24DE6F05004A56E0 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		3990C0BC24DE6F13004A56E0 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9224CA015D0044418F /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9C24CC62110044418F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
@@ -193,14 +199,16 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
-		390BD0D624CC35E9009BDB18 /* Timer */ = {
+		390BD0D624CC35E9009BDB18 /* Clock */ = {
 			isa = PBXGroup;
 			children = (
 				390BD0D724CC3603009BDB18 /* TimeAmount.swift */,
 				390BD0D924CC36D1009BDB18 /* MGKTimer.swift */,
 				390BD0DB24CC43A2009BDB18 /* TimeTask.swift */,
+				3990C0BA24DE6F05004A56E0 /* Clock.swift */,
+				3990C0BC24DE6F13004A56E0 /* Stopwatch.swift */,
 			);
-			path = Timer;
+			path = Clock;
 			sourceTree = "<group>";
 		};
 		390BD0F124CC7C6D009BDB18 /* Alert */ = {
@@ -251,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				3990C0B624DE4967004A56E0 /* Clock.storyboard */,
+				3990C0B824DE4B5C004A56E0 /* ClockViewController.swift */,
 			);
 			path = Clock;
 			sourceTree = "<group>";
@@ -340,7 +349,7 @@
 			children = (
 				4DDA61B024CC456200D0978E /* SimpleSinglton */,
 				4DDA61AF24CC41A100D0978E /* SimpleUserdefaults */,
-				390BD0D624CC35E9009BDB18 /* Timer */,
+				390BD0D624CC35E9009BDB18 /* Clock */,
 				4D2EEA0C24C8BF6800E7A687 /* Extensions */,
 				4D12881A2474447900C4E3DF /* Logger.swift */,
 				4D421DBE24C88ECF002DE57B /* SocialLogin */,
@@ -609,15 +618,18 @@
 				390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */,
 				4D0F5D9F24CC7F2C0044418F /* MyPageMainViewController.swift in Sources */,
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
+				3990C0B924DE4B5C004A56E0 /* ClockViewController.swift in Sources */,
 				4DDA61A924CC37F800D0978E /* SelectClockTypeViewController.swift in Sources */,
 				4D0F5DA124CC7F350044418F /* RankingMainViewController.swift in Sources */,
 				390BD0F324CC7C8C009BDB18 /* MGKAlertViewController.swift in Sources */,
 				4DA7A0DE24CCDACA0037E83D /* RankingTableViewCell.swift in Sources */,
+				3990C0BD24DE6F13004A56E0 /* Stopwatch.swift in Sources */,
 				4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */,
 				390BD10024CCC88A009BDB18 /* QuestionView.swift in Sources */,
 				4D0F5D9D24CC62110044418F /* UIApplication+Extension.swift in Sources */,
 				4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */,
 				178E43F324CCC18800955B70 /* SignInResponse.swift in Sources */,
+				3990C0BB24DE6F05004A56E0 /* Clock.swift in Sources */,
 				4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,

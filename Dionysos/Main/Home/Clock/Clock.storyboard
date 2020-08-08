@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4bU-eI-lT3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Clock View Controller-->
         <scene sceneID="yzL-09-z0e">
             <objects>
-                <viewController id="4bU-eI-lT3" sceneMemberID="viewController">
+                <viewController id="4bU-eI-lT3" customClass="ClockViewController" customModule="Dionysos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Hs-JZ-NOj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,6 +42,9 @@
                                 <color key="tintColor" name="white"/>
                                 <state key="normal" backgroundImage="btnPlay88Px"/>
                                 <state key="selected" backgroundImage="btnPause88Px"/>
+                                <connections>
+                                    <action selector="playAndPauseButtonDidTap:" destination="4bU-eI-lT3" eventType="touchUpInside" id="B2E-bn-eAu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 :00:00" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-ow-HzB" userLabel="지난시간/남은시간">
                                 <rect key="frame" x="20" y="210" width="287.5" height="200.5"/>
@@ -61,6 +64,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V9f-X0-22Z"/>
                     </view>
+                    <connections>
+                        <outlet property="accumulatedTimeLabel" destination="sbd-wG-qFr" id="9C7-5u-xoR"/>
+                        <outlet property="playAndPauseButton" destination="Cl3-XG-Bb1" id="v5n-YR-Amc"/>
+                        <outlet property="timeLabel" destination="jkK-ow-HzB" id="GPx-vh-Y61"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KP5-cf-Xwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

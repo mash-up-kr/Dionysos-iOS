@@ -61,6 +61,9 @@
                                 <state key="normal" backgroundImage="btnDoneOn64Px"/>
                                 <state key="disabled" backgroundImage="btnDoneOff64Px"/>
                                 <state key="selected" image="btnDoneOn64Px"/>
+                                <connections>
+                                    <action selector="confirmButtonDidTap:" destination="aOz-lk-sFg" eventType="touchUpInside" id="c5g-1g-VbP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTC-UJ-ToT">
                                 <rect key="frame" x="20" y="218" width="157.5" height="53"/>

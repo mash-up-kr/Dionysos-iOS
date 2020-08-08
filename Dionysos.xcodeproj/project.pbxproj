@@ -33,6 +33,7 @@
 		3990C0B924DE4B5C004A56E0 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0B824DE4B5C004A56E0 /* ClockViewController.swift */; };
 		3990C0BB24DE6F05004A56E0 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0BA24DE6F05004A56E0 /* Clock.swift */; };
 		3990C0BD24DE6F13004A56E0 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0BC24DE6F13004A56E0 /* Stopwatch.swift */; };
+		3990C0C024DF0C38004A56E0 /* XibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0BF24DF0C38004A56E0 /* XibLoadable.swift */; };
 		39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */; };
 		4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9224CA015D0044418F /* DionysosProvider.swift */; };
 		4D0F5D9D24CC62110044418F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5D9C24CC62110044418F /* UIApplication+Extension.swift */; };
@@ -112,6 +113,7 @@
 		3990C0B824DE4B5C004A56E0 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		3990C0BA24DE6F05004A56E0 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		3990C0BC24DE6F13004A56E0 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		3990C0BF24DF0C38004A56E0 /* XibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibLoadable.swift; sourceTree = "<group>"; };
 		39FA2BE124C9C5340073B6F2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9224CA015D0044418F /* DionysosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DionysosProvider.swift; sourceTree = "<group>"; };
 		4D0F5D9C24CC62110044418F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
@@ -268,6 +270,14 @@
 			path = Clock;
 			sourceTree = "<group>";
 		};
+		3990C0BE24DF0C2B004A56E0 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				3990C0BF24DF0C38004A56E0 /* XibLoadable.swift */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		4D1287B12473D15000C4E3DF = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +361,7 @@
 		4D1288192474446C00C4E3DF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3990C0BE24DF0C2B004A56E0 /* Xib */,
 				4DDA61B024CC456200D0978E /* SimpleSinglton */,
 				4DDA61AF24CC41A100D0978E /* SimpleUserdefaults */,
 				390BD0D624CC35E9009BDB18 /* Clock */,
@@ -638,6 +649,7 @@
 				3990C0BB24DE6F05004A56E0 /* Clock.swift in Sources */,
 				4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
+				3990C0C024DF0C38004A56E0 /* XibLoadable.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
 				1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */,
 				4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */,

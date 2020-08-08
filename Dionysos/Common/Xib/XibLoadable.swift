@@ -5,7 +5,7 @@
 //  Created by dongyoung.lee on 2020/08/09.
 //  Copyright © 2020 Mashup. All rights reserved.
 //
-˚
+
 import UIKit
 
 protocol XibLoadable {

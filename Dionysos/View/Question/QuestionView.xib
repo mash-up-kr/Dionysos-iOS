@@ -35,6 +35,9 @@
                                 <constraint firstAttribute="height" constant="84" id="nGH-hL-XLq"/>
                             </constraints>
                             <state key="normal" image="btnNo"/>
+                            <connections>
+                                <action selector="noButtonDidTap:" destination="-1" eventType="touchUpInside" id="4kS-8i-1Fx"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-Yf-tZh" userLabel="yesButton">
                             <rect key="frame" x="173" y="0.0" width="162" height="84"/>
@@ -43,6 +46,9 @@
                                 <constraint firstAttribute="width" constant="162" id="oaX-0H-6aN"/>
                             </constraints>
                             <state key="normal" image="btnYes"/>
+                            <connections>
+                                <action selector="yesButtonDidTap:" destination="-1" eventType="touchUpInside" id="Wkh-3T-H6w"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

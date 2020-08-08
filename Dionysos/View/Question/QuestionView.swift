@@ -9,7 +9,7 @@
 import UIKit
 
 final class QuestionView: UIView, XibLoadable {
-    // MARK: Type alias
+    // MARK: Constants
     
     enum Metric {
         static let defaultFrame: CGRect = CGRect(
@@ -21,10 +21,16 @@ final class QuestionView: UIView, XibLoadable {
     }
     
     // MARK: Properties
+    
     @IBOutlet private weak var questionLabel: UILabel!
     @IBOutlet private weak var tipLabel: UILabel!
     @IBOutlet private weak var yesButton: UIButton!
     @IBOutlet private weak var noButton: UIButton!
+    
+    var yesHandler: (() -> Void)?
+    var noHandler: (() -> Void)?
+    
+    // MARK: Methods
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,8 +38,13 @@ final class QuestionView: UIView, XibLoadable {
         setupNib()
     }
     
-    init() {
+    init(
+        yesHandler: (() -> Void)? = nil,
+        noHandler: (() -> Void)? = nil
+    ) {
         super.init(frame: Metric.defaultFrame)
+        self.yesHandler = yesHandler
+        self.noHandler = noHandler
         
         setupNib()
     }
@@ -42,5 +53,13 @@ final class QuestionView: UIView, XibLoadable {
         super.init(coder: coder)
         
         setupNib()
+    }
+    
+    @IBAction private func yesButtonDidTap(_ sender: Any) {
+        yesHandler?()
+    }
+    
+    @IBAction private func noButtonDidTap(_ sender: Any) {
+        noHandler?()
     }
 }

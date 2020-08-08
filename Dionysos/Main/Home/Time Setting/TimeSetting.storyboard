@@ -55,9 +55,11 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUr-FF-TyY" userLabel="ConfirmButton">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUr-FF-TyY" userLabel="ConfirmButton">
                                 <rect key="frame" x="330" y="778" width="64" height="64"/>
-                                <state key="normal" image="btnDoneOff64Px"/>
+                                <color key="tintColor" name="white"/>
+                                <state key="normal" backgroundImage="btnDoneOn64Px"/>
+                                <state key="disabled" backgroundImage="btnDoneOff64Px"/>
                                 <state key="selected" image="btnDoneOn64Px"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTC-UJ-ToT">
@@ -99,6 +101,9 @@
         <image name="btnDoneOn64Px" width="64" height="64"/>
         <namedColor name="coralPink">
             <color red="0.98799997568130493" green="0.3529999852180481" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

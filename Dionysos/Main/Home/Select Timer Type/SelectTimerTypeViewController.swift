@@ -9,7 +9,7 @@
 import Promises
 import UIKit
 
-final class MainViewController: UIViewController {
+final class SelectTimerTypeViewController: UIViewController {
     // MARK: Properties
     
     @IBOutlet private weak var accumulatedTimeLabel: UILabel!
@@ -61,9 +61,9 @@ final class MainViewController: UIViewController {
         label.attributedText = text
     }
     
-    static func instantiate() -> MainViewController {
+    static func instantiate() -> SelectTimerTypeViewController {
         let naviController: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
-        let viewController: MainViewController = naviController.viewControllers.first as! MainViewController
+        let viewController: SelectTimerTypeViewController = naviController.viewControllers.first as! SelectTimerTypeViewController
         return viewController
     }
 }

@@ -23,29 +23,53 @@ final class TimeSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configure()
+        configureUI()
     }
     
-    private func configure() {
-        hoursTextField.delegate = self
-        minutesTextField.delegate = self
-        secondsTextField.delegate = self
-        
-        hoursTextField.addTarget(self, action: #selector(formalizeText(for:)), for: .editingChanged)
-        minutesTextField.addTarget(self, action: #selector(formalizeText(for:)), for: .editingChanged)
-        secondsTextField.addTarget(self, action: #selector(formalizeText(for:)), for: .editingChanged)
+    private func configureUI() {
+        configureTextField(hoursTextField)
+        configureTextField(minutesTextField)
+        configureTextField(secondsTextField)
+        configureConfirmButton()
+    }
+    
+    private func configureTextField(_ textField: UITextField) {
+        textField.delegate = self
+        textField.addTarget(self, action: #selector(formalizeText(of:)), for: .editingChanged)
     }
     
     @objc
-    private func formalizeText(for textField: UITextField) {
+    private func formalizeText(of textField: UITextField) {
         guard let text = textField.text else { return }
         let number: UInt = UInt(text) ?? 0
         textField.text = String(format: "%02d", number)
+        updateConfirmButton()
+    }
+    
+    private func configureConfirmButton() {
+        
+    }
+    
+    private func updateConfirmButton() {
+        let isConfirmed: Bool = validate(textFields: [hoursTextField, minutesTextField, secondsTextField])
+        confirmButton.isEnabled = isConfirmed
+    }
+    
+    private func validate(textFields: [UITextField]) -> Bool {
+        // 📝 모든 시간값 입력 유무 검증
+        let beReceivedAllInput: Bool = textFields
+            .compactMap { $0.text }
+            .filter { !$0.isEmpty }
+            .count == textFields.count
+        // 📝 모든 필드에 "00" 값만 존재하는 지에 대한 검증
+        let isValidValue: Bool = textFields
+            .contains { $0.text != "00" }
+        return beReceivedAllInput && isValidValue
     }
     
     static func instantiate() -> TimeSettingViewController {
-        let viewController: TimeSettingViewController = UIStoryboard(name: "TimeSetting", bundle: nil).instantiateInitialViewController() as! TimeSettingViewController
-        return viewController
+        let viewController: UIViewController? = UIStoryboard(name: "TimeSetting", bundle: nil).instantiateInitialViewController()
+        return viewController as! TimeSettingViewController
     }
 }
 // MARK: - UITextFieldDelegate
@@ -62,10 +86,14 @@ extension TimeSettingViewController: UITextFieldDelegate {
         replacementString string: String
     ) -> Bool {
         guard let text = textField.text else { return false }
+        // 📝 on typing or on removing
         let isOnTyping: Bool = !string.isEmpty
+        // 📝 on removing은 여과없이 진행
         guard isOnTyping else { return true }
-        guard let inputNumber = UInt(string) else { return false }
-        let number: UInt = (UInt(text) ?? 0) * 10 + inputNumber
+        guard let range = Range(range, in: text) else { return false }
+        // 📝 타이핑 결과로 입력될 텍스트
+        let newText: String = text.replacingCharacters(in: range, with: string)
+        let number: UInt = UInt(newText) ?? 0
         guard "\(number)".count <= 2 else { return false }
         let limit: UInt
         switch textField {
@@ -78,6 +106,6 @@ extension TimeSettingViewController: UITextFieldDelegate {
         default:
             limit = 0
         }
-        return number <= limit
+        return number < limit
     }
 }

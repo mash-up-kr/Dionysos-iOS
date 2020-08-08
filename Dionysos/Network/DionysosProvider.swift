@@ -24,7 +24,7 @@ enum DionysosProvider {
         NetworkProvider.request(Target.signUp(provider: provider, token: token, nickname: nickname), to: SignUpResponse.self)
     }
     
-    static func callCheckNickname(token: String, nickname: String) -> Promise<String> {
+    static func callCheckNickname(token: String, nickname: String) -> Promise<Void> {
         NetworkProvider.requestWithoutParsing(Target.checkNickname(token: token, nickname: nickname))
     }
 }

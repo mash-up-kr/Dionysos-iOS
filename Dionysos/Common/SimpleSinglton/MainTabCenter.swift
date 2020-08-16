@@ -38,4 +38,8 @@ final class MainTabCenter {
             return rankingViewController
         }
     }
+    
+    static func showCurrentViewController() {
+        UIApplication.shared.windows.first?.rootViewController = MainTabCenter.default.getCurrentViewController()
+    }
 }

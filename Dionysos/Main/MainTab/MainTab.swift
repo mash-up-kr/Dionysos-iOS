@@ -151,6 +151,6 @@ extension MainTab {
     }
     
     private func changeViewController() {
-        window?.rootViewController = MainTabCenter.default.getCurrentViewController()
+        MainTabCenter.showCurrentViewController()
     }
 }

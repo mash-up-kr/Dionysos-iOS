@@ -27,10 +27,10 @@ enum SocialLoginType: String {
 final class SignInViewController: UIViewController {
     @IBAction private func kakaoSignInClicked(_ sender: Any) { kakaoButtonDidTap() }
     @IBAction private func fbSignInClicked(_ sender: Any) { facebookButtonDidTap() }
-    @IBAction private func appleSignInClicked(_ sender: Any) { handleAppleSignInButton() }
+    @IBAction private func appleSignInClicked(_ sender: Any) { appleButtonDidTap() }
     @IBAction private func guestSignInClicked(_ sender: Any) {
         //apiCall(type: .guest, UID: UIDevice.current.identifierForVendor?.uuidString)
-        UIApplication.shared.windows.first?.rootViewController = MainTabCenter.default.getCurrentViewController()
+        MainTabCenter.showCurrentViewController()
     }
     
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ final class SignInViewController: UIViewController {
         guard let token = UID else { return }
         
         DionysosProvider.callSignIn(provider: type.getRawValue(), token: token).then { _ in
-            UIApplication.shared.windows.first?.rootViewController = MainTabCenter.default.getCurrentViewController()
+            MainTabCenter.showCurrentViewController()
         }.catch {
             if isNotRegisterUser(error: $0) {
                 openSignupViewController()
@@ -55,7 +55,7 @@ final class SignInViewController: UIViewController {
         }
         
         func openSignupViewController() {
-            let signUpViewController = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(identifier: "NicknameInputViewController") as! NicknameInputViewController
+            let signUpViewController: NicknameInputViewController = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(identifier: "NicknameInputViewController") as! NicknameInputViewController
             signUpViewController.setData(provider: type.getRawValue(), token: token)
             present(signUpViewController, animated: true, completion: nil)
         }
@@ -77,7 +77,7 @@ extension SignInViewController {
 
 ///Kakao Login
 extension SignInViewController {
-    func kakaoButtonDidTap() {
+    private func kakaoButtonDidTap() {
         Promise.start {
             KakaoAuth.login()
         }.then {
@@ -120,7 +120,7 @@ extension SignInViewController {
 
 ///Apple Login
 extension SignInViewController {
-    func handleAppleSignInButton() {
+    private func appleButtonDidTap() {
         let request: ASAuthorizationAppleIDRequest = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
         let controller: ASAuthorizationController = ASAuthorizationController(authorizationRequests: [request])
@@ -139,6 +139,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         logger("애플 로그인 에러")
+        logger(error)
     }
 }
 

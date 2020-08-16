@@ -17,8 +17,7 @@ class NicknameSuccessViewController: UIViewController {
         successImageView.image = SDAnimatedImage(named: "signupSuccess.gif")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.19) {
-            let nextVC = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "")
-            self.present(nextVC, animated: true, completion: nil)
+            MainTabCenter.showCurrentViewController()
         }
     }
 }

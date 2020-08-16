@@ -192,6 +192,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1720D29824E93ED10098BDFE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		17FF026A24CC1B7A009C1B7F /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +487,7 @@
 		4DDA61B524CC4E2D00D0978E /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				1720D29824E93ED10098BDFE /* Profile */,
 				4D9B02CE24CCBAE400261209 /* Setting */,
 				4DA498FC24DB05D600EA9774 /* Cell */,
 				4DDA61B824CC4E4C00D0978E /* MyPage.storyboard */,

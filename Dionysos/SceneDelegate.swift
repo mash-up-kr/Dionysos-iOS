@@ -32,7 +32,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if UserDefaults.standard.string(forKey: "myToken") == nil {
             window.rootViewController = UIStoryboard.init(name: "SignUp", bundle: nil).instantiateInitialViewController()
         } else {
-            window.rootViewController = MainTabCenter.default.getCurrentViewController()
+            MainTabCenter.showCurrentViewController()
         }
         
         self.window = window

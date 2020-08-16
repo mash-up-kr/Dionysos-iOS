@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ztV-et-Cvu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ztV-et-Cvu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -31,11 +31,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="gqG-ux-W1l">
                                 <rect key="frame" x="37" y="574" width="339" height="214"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="863-Uw-aI3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="863-Uw-aI3">
                                         <rect key="frame" x="0.0" y="0.0" width="339" height="43"/>
                                         <color key="backgroundColor" name="sunflowerYellow"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <state key="normal" title="Sign in with Kakao">
+                                        <inset key="titleEdgeInsets" minX="3.7999999999999998" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3.7999999999999998" maxY="0.0"/>
+                                        <state key="normal" title="Sign in with Kakao" image="kakaotalk">
                                             <color key="titleColor" name="white"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -47,11 +49,13 @@
                                             <action selector="kakaoSignInClicked:" destination="ztV-et-Cvu" eventType="touchUpInside" id="Yx9-9S-4IW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoE-BQ-SbO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoE-BQ-SbO">
                                         <rect key="frame" x="0.0" y="57" width="339" height="43"/>
                                         <color key="backgroundColor" name="frenchBlue"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <state key="normal" title="Sign in with Facebook">
+                                        <inset key="titleEdgeInsets" minX="3.7999999999999998" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3.7999999999999998" maxY="0.0"/>
+                                        <state key="normal" title="Sign in with Facebook" image="facebook">
                                             <color key="titleColor" name="white"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -79,13 +83,13 @@
                                             <action selector="appleSignInClicked:" destination="ztV-et-Cvu" eventType="touchUpInside" id="Wx6-cb-kL6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSc-WI-uhK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSc-WI-uhK">
                                         <rect key="frame" x="0.0" y="171" width="339" height="43"/>
                                         <color key="backgroundColor" name="lightBlueGrey"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <inset key="titleEdgeInsets" minX="3.2999999999999998" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3.2999999999999998" maxY="0.0"/>
-                                        <state key="normal" title="Sign in with Guest">
+                                        <state key="normal" title="Sign in with Guest" image="guest">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -237,6 +241,9 @@
     <resources>
         <image name="btnDoneOff64Px" width="64" height="64"/>
         <image name="btnDoneOn64Px" width="64" height="64"/>
+        <image name="facebook" width="19" height="19"/>
+        <image name="guest" width="14" height="15"/>
+        <image name="kakaotalk" width="21" height="21"/>
         <namedColor name="azure">
             <color red="0.10199999809265137" green="0.58799999952316284" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

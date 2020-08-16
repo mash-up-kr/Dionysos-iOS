@@ -18,6 +18,17 @@ final class TimeSettingViewController: UIViewController {
     @IBOutlet private weak var confirmButton: UIButton!
     @IBOutlet private weak var confirmButtonBottomConstraint: NSLayoutConstraint!
     
+    private var timeAmount: TimeAmount? {
+        func getTime(from textField: UITextField) -> Int? {
+            guard let timeString = textField.text else { return nil }
+            return Int(timeString)
+        }
+        guard let hours = getTime(from: hoursTextField) else { return nil }
+        guard let minutes = getTime(from: minutesTextField) else { return nil }
+        guard let seconds = getTime(from: secondsTextField) else { return nil }
+        return TimeAmount(hours: hours, minutes: minutes, seconds: seconds)
+    }
+    
     // MARK: Methods
     
     override func viewDidLoad() {

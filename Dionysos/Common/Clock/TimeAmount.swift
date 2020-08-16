@@ -14,6 +14,13 @@ struct TimeAmount {
     let minutes: Int
     let seconds: Int
     
+    init(hours: Int, minutes: Int, seconds: Int) {
+        self.hours = hours
+        self.minutes = minutes
+        self.seconds = seconds
+        self.timeInterval = TimeInterval(hours * 3_600 + minutes * 60 + seconds)
+    }
+    
     init(_ timeInterval: TimeInterval) {
         let time: Int = Int(timeInterval)
         self.timeInterval = timeInterval

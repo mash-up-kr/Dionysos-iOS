@@ -65,9 +65,9 @@ final class MGKTimer: Clock {
     private func configureTimer() {
         let newTimer: Timer = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-            let remainedTime: TimeInterval = self.targetTime - self.accumulatedTime
-            self.timeUpdateHandler?(remainedTime)
-            if remainedTime == 0 {
+            let remainingTime: TimeInterval = self.targetTime - self.accumulatedTime
+            self.timeUpdateHandler?(remainingTime)
+            if remainingTime == 0 {
                 self.end()
             }
         }

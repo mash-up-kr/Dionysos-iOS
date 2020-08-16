@@ -17,7 +17,7 @@ final class MGKAlertViewController: UIViewController {
     var contentView: UIView? {
         didSet {
             guard let contentView = contentView else { return }
-            guard self.isViewLoaded else { return }
+            loadViewIfNeeded()
             configure(contentView)
         }
     }
@@ -29,14 +29,14 @@ final class MGKAlertViewController: UIViewController {
         containerView.layer.masksToBounds = true
         self.view.backgroundColor = self.view.backgroundColor?.withAlphaComponent(0.16)
         view.isUserInteractionEnabled = true
-        if let contentView: UIView = self.contentView {
-            configure(contentView)
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if let contentView: UIView = self.contentView {
+            configure(contentView)
+        }
         self.slideUpContentView()
     }
     

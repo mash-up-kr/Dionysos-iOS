@@ -8,27 +8,58 @@
 
 import UIKit
 
-final class QuestionView: UIView {
+final class QuestionView: UIView, XibLoadable {
+    // MARK: Constants
+    
+    enum Metric {
+        static let defaultFrame: CGRect = CGRect(
+            x: 0,
+            y: 0,
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height / 3
+        )
+    }
+    
     // MARK: Properties
+    
     @IBOutlet private weak var questionLabel: UILabel!
     @IBOutlet private weak var tipLabel: UILabel!
     @IBOutlet private weak var yesButton: UIButton!
     @IBOutlet private weak var noButton: UIButton!
     
-    init() {
-        super.init(frame: .zero)
+    var yesHandler: (() -> Void)?
+    var noHandler: (() -> Void)?
+    
+    // MARK: Methods
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        let nib: UINib = UINib(nibName: "QuestionView", bundle: nil)
-        let view: UIView = nib.instantiate(withOwner: self, options: nil).first as! UIView
-        let contentView: UIView = view.subviews.first!
-        self.frame = contentView.frame
-        self.addSubview(contentView)
-        self.backgroundColor = .white
-//        contentView.frame.origin = .zero
-        layoutIfNeeded()
+        setupNib()
+    }
+    
+    init(
+        yesHandler: (() -> Void)? = nil,
+        noHandler: (() -> Void)? = nil
+    ) {
+        super.init(frame: Metric.defaultFrame)
+        self.yesHandler = yesHandler
+        self.noHandler = noHandler
+        
+        setupNib()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        
+        setupNib()
+    }
+    
+    @IBAction private func yesButtonDidTap(_ sender: Any) {
+        yesHandler?()
+    }
+    
+    @IBAction private func noButtonDidTap(_ sender: Any) {
+        noHandler?()
     }
 }

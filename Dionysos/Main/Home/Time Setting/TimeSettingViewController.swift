@@ -30,7 +30,6 @@ final class TimeSettingViewController: UIViewController {
         configureTextField(hoursTextField)
         configureTextField(minutesTextField)
         configureTextField(secondsTextField)
-        configureConfirmButton()
     }
     
     private func configureTextField(_ textField: UITextField) {
@@ -46,8 +45,9 @@ final class TimeSettingViewController: UIViewController {
         updateConfirmButton()
     }
     
-    private func configureConfirmButton() {
-        
+    @IBAction private func confirmButtonDidTap(_ sender: Any) {
+        let questionView: UIView = QuestionView()
+        MGKAlertViewController.show(with: questionView)
     }
     
     private func updateConfirmButton() {

@@ -4,11 +4,10 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionView" customModule="Dionysos" customModuleProvider="target">
             <connections>
                 <outlet property="noButton" destination="59m-ZQ-6Xe" id="wka-W3-o1R"/>
                 <outlet property="questionLabel" destination="HRg-s9-kpj" id="UZe-Sl-WNh"/>
@@ -17,73 +16,70 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="271"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaa-b0-CIS">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="271"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타임랩스로 녹화하면서 공부할 수 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tR-6r-7nK">
+                    <rect key="frame" x="63" y="76" width="288.5" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" name="darkGrey"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="AfN-CP-thE">
+                    <rect key="frame" x="39.5" y="147" width="335" height="84"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59m-ZQ-6Xe" userLabel="noButton">
-                            <rect key="frame" x="20" y="147" width="162" height="84"/>
+                            <rect key="frame" x="0.0" y="0.0" width="162" height="84"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="Siy-xV-P2j"/>
                                 <constraint firstAttribute="height" constant="84" id="nGH-hL-XLq"/>
                             </constraints>
                             <state key="normal" image="btnNo"/>
+                            <connections>
+                                <action selector="noButtonDidTap:" destination="-1" eventType="touchUpInside" id="4kS-8i-1Fx"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-Yf-tZh" userLabel="yesButton">
-                            <rect key="frame" x="232" y="147" width="162" height="84"/>
+                            <rect key="frame" x="173" y="0.0" width="162" height="84"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="84" id="Yk8-uI-D3o"/>
                                 <constraint firstAttribute="width" constant="162" id="oaX-0H-6aN"/>
                             </constraints>
                             <state key="normal" image="btnYes"/>
+                            <connections>
+                                <action selector="yesButtonDidTap:" destination="-1" eventType="touchUpInside" id="Wkh-3T-H6w"/>
+                            </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the Timelaps?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRg-s9-kpj">
-                            <rect key="frame" x="69" y="32" width="276" height="36"/>
-                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
-                            <color key="textColor" name="darkGrey"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타임랩스로 녹화하면서 공부할 수 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tR-6r-7nK">
-                            <rect key="frame" x="63" y="84" width="288.5" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <color key="textColor" name="darkGrey"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstItem="3tR-6r-7nK" firstAttribute="top" secondItem="HRg-s9-kpj" secondAttribute="bottom" constant="16" id="5p9-S0-n2C"/>
-                        <constraint firstAttribute="bottom" secondItem="bmW-Yf-tZh" secondAttribute="bottom" constant="40" id="9fE-cE-4c7"/>
-                        <constraint firstItem="3tR-6r-7nK" firstAttribute="centerX" secondItem="eaa-b0-CIS" secondAttribute="centerX" id="F2L-aX-jvd"/>
-                        <constraint firstAttribute="trailing" secondItem="bmW-Yf-tZh" secondAttribute="trailing" constant="20" id="LoP-fS-Vj6"/>
-                        <constraint firstItem="HRg-s9-kpj" firstAttribute="centerX" secondItem="eaa-b0-CIS" secondAttribute="centerX" id="QTD-fn-4bW"/>
-                        <constraint firstItem="59m-ZQ-6Xe" firstAttribute="leading" secondItem="eaa-b0-CIS" secondAttribute="leading" constant="20" id="W7r-kt-4FK"/>
-                        <constraint firstItem="HRg-s9-kpj" firstAttribute="top" secondItem="eaa-b0-CIS" secondAttribute="top" constant="32" id="nDG-UJ-xRN"/>
-                        <constraint firstAttribute="bottom" secondItem="59m-ZQ-6Xe" secondAttribute="bottom" constant="40" id="pjJ-56-QYv"/>
-                    </constraints>
-                </view>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the Timelaps?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRg-s9-kpj">
+                    <rect key="frame" x="69.5" y="32" width="275.5" height="36"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                    <color key="textColor" name="darkGrey"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="white"/>
             <constraints>
-                <constraint firstItem="eaa-b0-CIS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8uY-ai-wC3"/>
-                <constraint firstItem="eaa-b0-CIS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="E4C-GP-cUd"/>
-                <constraint firstItem="eaa-b0-CIS" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="JAw-1R-hJb"/>
-                <constraint firstItem="eaa-b0-CIS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ST3-eu-TRl"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="eaa-b0-CIS" secondAttribute="bottom" id="U8v-12-avf"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eaa-b0-CIS" secondAttribute="trailing" id="akw-Qn-ugj"/>
+                <constraint firstItem="3tR-6r-7nK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Wf-SR-n3R"/>
+                <constraint firstItem="3tR-6r-7nK" firstAttribute="top" secondItem="HRg-s9-kpj" secondAttribute="bottom" constant="8" id="3LQ-up-bMk"/>
+                <constraint firstItem="AfN-CP-thE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JBT-D0-FvH"/>
+                <constraint firstItem="HRg-s9-kpj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="mEh-QJ-fMB"/>
+                <constraint firstAttribute="bottom" secondItem="AfN-CP-thE" secondAttribute="bottom" constant="40" id="p0j-4U-0Kc"/>
+                <constraint firstItem="HRg-s9-kpj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tag-wC-HDg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="137.68115942028987" y="152.34375"/>
+            <point key="canvasLocation" x="126" y="69"/>
         </view>
     </objects>
     <resources>
         <image name="btnNo" width="162" height="84"/>
         <image name="btnYes" width="162" height="84"/>
         <namedColor name="darkGrey">
-            <color red="0.1289999932050705" green="0.13300000131130219" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12941176470588237" green="0.13333333333333333" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

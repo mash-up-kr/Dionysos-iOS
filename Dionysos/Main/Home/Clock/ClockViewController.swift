@@ -14,22 +14,44 @@ final class ClockViewController: UIViewController {
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var playAndPauseButton: UIButton!
     
-    private var clock: Clock {
-        get { _clock! }
-        set { _clock = newValue }
+    private var clock: Clock!
+    private var strategy: TimeMesureStrategy! {
+        didSet { self.setupClock(for: strategy) }
     }
-    private var _clock: Clock?
     
     // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        if case let .timer(targetTime) = strategy {
+            updateTimeLabel(from: targetTime.timeInterval)
+        }
+    }
+    
+    private func setupClock(for strategy: TimeMesureStrategy) {
+        switch strategy {
+        case .timer(let remainingTime):
+            self.clock = MGKTimer(
+                targetTime: remainingTime,
+                timeUpdateHandler: updateTimeLabel(from:),
+                statusUpdateHandler: updatePlayAndPauseButton(from:)
+            )
+        case .stopwatch:
+            self.clock = Stopwatch(
+                timeUpdateHandler: updateTimeLabel(from:),
+                statusUpdateHandler: updatePlayAndPauseButton(from:)
+            )
+        }
     }
     
     private func updateTimeLabel(from timeInterval: TimeInterval) {
         let time: TimeAmount = TimeAmount(timeInterval)
-        self.timeLabel.text = [time.hours, time.minutes, time.seconds]
+        var timeString: String = [time.hours, time.minutes, time.seconds]
             .map { String(format: "%02d", $0) }
             .joined(separator: ":")
+        if let index: String.Index = timeString.firstIndex(of: ":") {
+            timeString.insert("\n", at: index)
+        }
+        timeLabel.text = timeString
     }
     
     private func updatePlayAndPauseButton(from status: Clock.Status) {
@@ -43,6 +65,24 @@ final class ClockViewController: UIViewController {
     }
     
     @IBAction private func playAndPauseButtonDidTap(_ sender: UIButton) {
-        
+        sender.isSelected ? clock.pause() : clock.run()
+    }
+}
+
+extension ClockViewController {
+    enum TimeMesureStrategy {
+        case timer(targetTime: TimeAmount)
+        case stopwatch
+    }
+    
+    private static func instantiate() -> ClockViewController {
+        let viewController: UIViewController? = UIStoryboard(name: "Clock", bundle: nil).instantiateInitialViewController()
+        return viewController as! ClockViewController
+    }
+    
+    static func instantiate(with strategy: TimeMesureStrategy) -> ClockViewController {
+        let viewController: ClockViewController = ClockViewController.instantiate()
+        viewController.strategy = strategy
+        return viewController
     }
 }

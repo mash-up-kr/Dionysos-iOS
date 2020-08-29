@@ -277,6 +277,9 @@
                                     <constraint firstAttribute="trailing" secondItem="MiF-be-zmY" secondAttribute="trailing" id="rIq-nn-MbP"/>
                                     <constraint firstAttribute="bottom" secondItem="MiF-be-zmY" secondAttribute="bottom" id="raf-v2-ofg"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="bS7-gh-l0v" id="3Kx-mx-Ze7"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -299,6 +302,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XiC-qL-K2S"/>
                     <connections>
+                        <outlet property="mainScrollview" destination="OYA-hM-ybD" id="mfa-dE-K20"/>
                         <outlet property="pickerView" destination="yXS-Qk-2VG" id="Ur7-QC-pTh"/>
                         <outlet property="statistic" destination="xFh-QU-3cY" id="Wx4-RR-Bwi"/>
                         <outlet property="statisticCollectionView" destination="P7I-Xw-nOY" id="3ZR-Y9-rT8"/>

@@ -11,6 +11,7 @@ import UIKit
 final class MyPageMainViewController: UIViewController {
     @IBOutlet private weak var statisticCollectionView: UICollectionView!
     @IBOutlet private weak var timeStampCollectionView: UICollectionView!
+    @IBOutlet weak var mainScrollview: UIScrollView!
     @IBOutlet private weak var statistic: UIButton!
     @IBOutlet private weak var timeStamp: UIButton!
     @IBOutlet private weak var statisticLineView: UIView!
@@ -165,4 +166,22 @@ class PickerDataView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension MyPageMainViewController: UIScrollViewDelegate {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if scrollView == mainScrollview {
+//            if scrollView.contentOffset.y > 200 {
+//                mainScrollview.isScrollEnabled = false
+//                statisticCollectionView.isScrollEnabled = true
+//                timeStampCollectionView.isScrollEnabled = true
+//            }
+//        } else {
+//            if scrollView.contentOffset.y <= 0 {
+//                mainScrollview.isScrollEnabled = true
+//                statisticCollectionView.isScrollEnabled = false
+//                timeStampCollectionView.isScrollEnabled = false
+//            }
+//        }
+//    }
 }

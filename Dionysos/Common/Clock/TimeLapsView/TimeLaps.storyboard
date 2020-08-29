@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Time Laps View Controller-->
+        <scene sceneID="BpR-k3-wVg">
+            <objects>
+                <viewController id="DbI-Cj-UW1" customClass="TimeLapsViewController" customModule="Dionysos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SgQ-pP-PXk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vjy-ac-Tmv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiX-4Z-je1">
+                                <rect key="frame" x="163" y="754" width="88" height="88"/>
+                                <state key="normal" image="btnStop88Px"/>
+                                <connections>
+                                    <action selector="didTapOnTakePhotoButton:" destination="DbI-Cj-UW1" eventType="touchUpInside" id="hNj-Qb-7uG"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXF-zU-hVX">
+                                <rect key="frame" x="0.0" y="754" width="163" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eng-1I-cFr">
+                                        <rect key="frame" x="61.5" y="24" width="40" height="40"/>
+                                        <state key="normal" image="icClose40Px"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Eng-1I-cFr" firstAttribute="centerY" secondItem="eXF-zU-hVX" secondAttribute="centerY" id="RbA-sv-hgL"/>
+                                    <constraint firstItem="Eng-1I-cFr" firstAttribute="centerX" secondItem="eXF-zU-hVX" secondAttribute="centerX" id="XD2-HG-y92"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCS-jk-KRd">
+                                <rect key="frame" x="251" y="754" width="163" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOV-jV-OEY">
+                                        <rect key="frame" x="61.5" y="24" width="40" height="40"/>
+                                        <state key="normal" image="icFlip40Px"/>
+                                        <connections>
+                                            <action selector="toggleCamera:" destination="DbI-Cj-UW1" eventType="touchUpInside" id="Tag-WI-aTK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mOV-jV-OEY" firstAttribute="centerX" secondItem="ZCS-jk-KRd" secondAttribute="centerX" id="ZLn-dI-3ux"/>
+                                    <constraint firstItem="mOV-jV-OEY" firstAttribute="centerY" secondItem="ZCS-jk-KRd" secondAttribute="centerY" id="h1P-ll-beA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Vjy-ac-Tmv" firstAttribute="top" secondItem="SgQ-pP-PXk" secondAttribute="top" id="09u-Um-qeH"/>
+                            <constraint firstItem="ZCS-jk-KRd" firstAttribute="leading" secondItem="oiX-4Z-je1" secondAttribute="trailing" id="0JH-xd-1fA"/>
+                            <constraint firstItem="ZCS-jk-KRd" firstAttribute="bottom" secondItem="eXF-zU-hVX" secondAttribute="bottom" id="4Vk-1U-dGE"/>
+                            <constraint firstItem="sgU-dm-NUp" firstAttribute="bottom" secondItem="oiX-4Z-je1" secondAttribute="bottom" constant="20" id="73I-lY-QjM"/>
+                            <constraint firstItem="oiX-4Z-je1" firstAttribute="top" secondItem="eXF-zU-hVX" secondAttribute="top" id="CDg-SL-iR9"/>
+                            <constraint firstAttribute="trailing" secondItem="ZCS-jk-KRd" secondAttribute="trailing" id="CWa-MZ-RfF"/>
+                            <constraint firstAttribute="bottom" secondItem="Vjy-ac-Tmv" secondAttribute="bottom" id="EkT-Ko-2Gm"/>
+                            <constraint firstItem="sgU-dm-NUp" firstAttribute="trailing" secondItem="Vjy-ac-Tmv" secondAttribute="trailing" id="Fmv-CE-7iW"/>
+                            <constraint firstItem="ZCS-jk-KRd" firstAttribute="top" secondItem="eXF-zU-hVX" secondAttribute="top" id="Stz-B4-x3L"/>
+                            <constraint firstItem="eXF-zU-hVX" firstAttribute="leading" secondItem="sgU-dm-NUp" secondAttribute="leading" id="elg-WA-nzv"/>
+                            <constraint firstItem="oiX-4Z-je1" firstAttribute="leading" secondItem="eXF-zU-hVX" secondAttribute="trailing" id="hah-di-8wc"/>
+                            <constraint firstItem="oiX-4Z-je1" firstAttribute="bottom" secondItem="eXF-zU-hVX" secondAttribute="bottom" id="jaq-VW-ym9"/>
+                            <constraint firstItem="oiX-4Z-je1" firstAttribute="centerX" secondItem="SgQ-pP-PXk" secondAttribute="centerX" id="omP-Wm-k0v"/>
+                            <constraint firstItem="Vjy-ac-Tmv" firstAttribute="leading" secondItem="sgU-dm-NUp" secondAttribute="leading" id="vQa-Bt-K6z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sgU-dm-NUp"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewImageView" destination="Vjy-ac-Tmv" id="q1F-hq-J95"/>
+                        <outlet property="toggleCameraButton" destination="mOV-jV-OEY" id="wDt-2j-HbE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AaO-1a-uVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="158.70535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btnStop88Px" width="88" height="88"/>
+        <image name="icClose40Px" width="40" height="40"/>
+        <image name="icFlip40Px" width="40" height="40"/>
+    </resources>
+</document>

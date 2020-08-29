@@ -82,6 +82,9 @@
 		4DB9859124FA995F00E95264 /* SmoothPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858D24FA995E00E95264 /* SmoothPickerView.swift */; };
 		4DB9859224FA995F00E95264 /* SmoothPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858E24FA995E00E95264 /* SmoothPickerCollectionViewCell.swift */; };
 		4DB9859324FA995F00E95264 /* SmoothPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858F24FA995F00E95264 /* SmoothPickerConfiguration.swift */; };
+		4DB9859624FAA77300E95264 /* TimeLapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9859524FAA77300E95264 /* TimeLapsViewController.swift */; };
+		4DB9859824FAA77E00E95264 /* TimeLaps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB9859724FAA77E00E95264 /* TimeLaps.storyboard */; };
+		4DC382A224FAAF5900A8669B /* CameraConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC382A124FAAF5900A8669B /* CameraConfigure.swift */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
 		4DDA61A924CC37F800D0978E /* SelectClockTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */; };
 		4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61AD24CC39FA00D0978E /* MainTab.swift */; };
@@ -163,6 +166,9 @@
 		4DB9858D24FA995E00E95264 /* SmoothPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerView.swift; sourceTree = "<group>"; };
 		4DB9858E24FA995E00E95264 /* SmoothPickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DB9858F24FA995F00E95264 /* SmoothPickerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerConfiguration.swift; sourceTree = "<group>"; };
+		4DB9859524FAA77300E95264 /* TimeLapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLapsViewController.swift; sourceTree = "<group>"; };
+		4DB9859724FAA77E00E95264 /* TimeLaps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeLaps.storyboard; sourceTree = "<group>"; };
+		4DC382A124FAAF5900A8669B /* CameraConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraConfigure.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClockTypeViewController.swift; sourceTree = "<group>"; };
 		4DDA61AD24CC39FA00D0978E /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 		390BD0D624CC35E9009BDB18 /* Clock */ = {
 			isa = PBXGroup;
 			children = (
+				4DB9859424FAA75000E95264 /* TimeLapsView */,
 				390BD0D724CC3603009BDB18 /* TimeAmount.swift */,
 				390BD0D924CC36D1009BDB18 /* MGKTimer.swift */,
 				390BD0DB24CC43A2009BDB18 /* TimeTask.swift */,
@@ -455,6 +462,16 @@
 			path = DatePicker;
 			sourceTree = "<group>";
 		};
+		4DB9859424FAA75000E95264 /* TimeLapsView */ = {
+			isa = PBXGroup;
+			children = (
+				4DB9859524FAA77300E95264 /* TimeLapsViewController.swift */,
+				4DB9859724FAA77E00E95264 /* TimeLaps.storyboard */,
+				4DC382A124FAAF5900A8669B /* CameraConfigure.swift */,
+			);
+			path = TimeLapsView;
+			sourceTree = "<group>";
+		};
 		4DDA61AA24CC39AD00D0978E /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,6 +620,7 @@
 				390BD0F524CC7CEE009BDB18 /* MGKAlert.storyboard in Resources */,
 				17AE78A224CCE81D00FE58D4 /* signupSuccess.gif in Resources */,
 				17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */,
+				4DB9859824FAA77E00E95264 /* TimeLaps.storyboard in Resources */,
 				4D9B02D024CCBAEF00261209 /* Setting.storyboard in Resources */,
 				390BD0FE24CCC86D009BDB18 /* QuestionView.xib in Resources */,
 			);
@@ -673,6 +691,7 @@
 				4DB9859224FA995F00E95264 /* SmoothPickerCollectionViewCell.swift in Sources */,
 				3990C0BB24DE6F05004A56E0 /* Clock.swift in Sources */,
 				4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */,
+				4DC382A224FAAF5900A8669B /* CameraConfigure.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
 				3990C0C024DF0C38004A56E0 /* XibLoadable.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
@@ -692,6 +711,7 @@
 				390BD0DC24CC43A2009BDB18 /* TimeTask.swift in Sources */,
 				4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */,
 				4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */,
+				4DB9859624FAA77300E95264 /* TimeLapsViewController.swift in Sources */,
 				390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */,
 				4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */,
 				4DA498FE24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift in Sources */,

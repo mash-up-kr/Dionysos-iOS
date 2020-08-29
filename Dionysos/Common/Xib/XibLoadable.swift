@@ -22,10 +22,10 @@ extension XibLoadable where Self: UIView {
         nib.translatesAutoresizingMaskIntoConstraints = false
         addSubview(nib)
         NSLayoutConstraint.activate([
-            nib.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            nib.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            nib.topAnchor.constraint(equalTo: self.topAnchor),
-            nib.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            nib.leadingAnchor.constraint(equalTo: leadingAnchor),
+            nib.trailingAnchor.constraint(equalTo: trailingAnchor),
+            nib.topAnchor.constraint(equalTo: topAnchor),
+            nib.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     

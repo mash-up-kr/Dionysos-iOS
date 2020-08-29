@@ -17,9 +17,9 @@ class TimeTask {
             case .todo:
                 return
             case .inProgress:
-                self.startDate = Date()
+                startDate = Date()
             case .done:
-                self.endDate = Date()
+                endDate = Date()
             }
         }
     }
@@ -30,5 +30,3 @@ class TimeTask {
         case done
     }
 }
-
-func useCase() {}

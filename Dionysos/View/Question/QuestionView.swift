@@ -6,10 +6,12 @@
 //  Copyright © 2020 Mashup. All rights reserved.
 //
 
+import Promises
 import UIKit
 
-final class QuestionView: UIView, XibLoadable {
+final class QuestionView: UIView, Promiseable, XibLoadable {
     // MARK: Constants
+    typealias Output = Bool
     
     enum Metric {
         static let defaultFrame: CGRect = CGRect(
@@ -27,24 +29,10 @@ final class QuestionView: UIView, XibLoadable {
     @IBOutlet private weak var yesButton: UIButton!
     @IBOutlet private weak var noButton: UIButton!
     
-    var yesHandler: (() -> Void)?
-    var noHandler: (() -> Void)?
-    
     // MARK: Methods
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setupNib()
-    }
-    
-    init(
-        yesHandler: (() -> Void)? = nil,
-        noHandler: (() -> Void)? = nil
-    ) {
-        super.init(frame: Metric.defaultFrame)
-        self.yesHandler = yesHandler
-        self.noHandler = noHandler
         
         setupNib()
     }
@@ -56,10 +44,10 @@ final class QuestionView: UIView, XibLoadable {
     }
     
     @IBAction private func yesButtonDidTap(_ sender: Any) {
-        yesHandler?()
+        pending.fulfill(true)
     }
     
     @IBAction private func noButtonDidTap(_ sender: Any) {
-        noHandler?()
+        pending.fulfill(false)
     }
 }

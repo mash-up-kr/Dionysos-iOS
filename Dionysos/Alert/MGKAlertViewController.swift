@@ -27,8 +27,7 @@ final class MGKAlertViewController: UIViewController {
         super.viewDidLoad()
         containerView.layer.cornerRadius = 30
         containerView.layer.masksToBounds = true
-        self.view.backgroundColor = self.view.backgroundColor?.withAlphaComponent(0.16)
-        view.isUserInteractionEnabled = true
+        view.backgroundColor = view.backgroundColor?.withAlphaComponent(0.16)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,18 +36,18 @@ final class MGKAlertViewController: UIViewController {
         if let contentView: UIView = self.contentView {
             configure(contentView)
         }
-        self.slideUpContentView()
+        slideUpContentView()
     }
     
     private func configure(_ contentView: UIView) {
-        self.containerView.addSubview(contentView)
+        containerView.addSubview(contentView)
         contentView.frame.origin = .zero
     }
     
     private func slideUpContentView(withDuration duration: TimeInterval = 0.3) {
         containerHeightConstraint.constant = contentView?.bounds.height ?? 0
-        UIView.animate(withDuration: duration) {
-            self.view.layoutIfNeeded()
+        UIView.animate(withDuration: duration) { [weak self] in
+            self?.view.layoutIfNeeded()
         }
     }
     
@@ -65,10 +64,9 @@ final class MGKAlertViewController: UIViewController {
     
     // MARK: Actions
     @IBAction private func backgroundViewDidTap(_ sender: Any) {
-        Promise.start {
-            self.slideDownContentView()
-        }.then {
-            self.dismiss(animated: false, completion: nil)
+        
+        slideDownContentView().then { [weak self] in
+            self?.dismiss(animated: false, completion: nil)
         }
     }
 }
@@ -80,6 +78,7 @@ extension MGKAlertViewController {
         viewController.modalPresentationStyle = .overCurrentContext
         return viewController as! Self
     }
+    
     private static func instantiate(with contentView: UIView) -> Self {
         let viewController: Self = Self.instantiate()
         viewController.contentView = contentView

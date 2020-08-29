@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mashup. All rights reserved.
 //
 
+import Promises
 import UIKit
 
 final class TimeSettingViewController: UIViewController {
@@ -57,7 +58,16 @@ final class TimeSettingViewController: UIViewController {
     }
     
     @IBAction private func confirmButtonDidTap(_ sender: Any) {
-        let questionView: UIView = QuestionView()
+        let questionView: QuestionView = QuestionView()
+        Promise<Bool> {
+            try await(questionView.pending)
+        }.then { ok in
+            if ok {
+                // Todo: 📽 타임 랩스 화면 랜딩 추가
+            } else {
+                
+            }
+        }
         MGKAlertViewController.show(with: questionView)
     }
     

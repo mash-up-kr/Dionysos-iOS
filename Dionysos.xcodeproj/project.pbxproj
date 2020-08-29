@@ -26,6 +26,7 @@
 		390BD0FE24CCC86D009BDB18 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390BD0FD24CCC86D009BDB18 /* QuestionView.xib */; };
 		390BD10024CCC88A009BDB18 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD0FF24CCC88A009BDB18 /* QuestionView.swift */; };
 		390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD10124CCE772009BDB18 /* FacebookAuth.swift */; };
+		392B19C124E92A3200DC89D8 /* Promiseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B19C024E92A3200DC89D8 /* Promiseable.swift */; };
 		3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */; };
 		3990C0B124DC3AEC004A56E0 /* TimeSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3990C0B024DC3AEC004A56E0 /* TimeSetting.storyboard */; };
 		3990C0B324DC3F11004A56E0 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0B224DC3F11004A56E0 /* TimeSettingViewController.swift */; };
@@ -106,6 +107,7 @@
 		390BD0FD24CCC86D009BDB18 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		390BD0FF24CCC88A009BDB18 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		390BD10124CCE772009BDB18 /* FacebookAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuth.swift; sourceTree = "<group>"; };
+		392B19C024E92A3200DC89D8 /* Promiseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promiseable.swift; sourceTree = "<group>"; };
 		3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		3990C0B024DC3AEC004A56E0 /* TimeSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeSetting.storyboard; sourceTree = "<group>"; };
 		3990C0B224DC3F11004A56E0 /* TimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				4D12881A2474447900C4E3DF /* Logger.swift */,
 				4D421DBE24C88ECF002DE57B /* SocialLogin */,
 				17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */,
+				392B19C024E92A3200DC89D8 /* Promiseable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */,
 				4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */,
 				3990C0B324DC3F11004A56E0 /* TimeSettingViewController.swift in Sources */,
+				392B19C124E92A3200DC89D8 /* Promiseable.swift in Sources */,
 				4DDA61B224CC458500D0978E /* MainTabCenter.swift in Sources */,
 				390BD0D824CC3603009BDB18 /* TimeAmount.swift in Sources */,
 				178E43F124CCC17700955B70 /* SignUpResponse.swift in Sources */,

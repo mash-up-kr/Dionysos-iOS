@@ -42,7 +42,7 @@ final class MGKTimer: Clock {
         let task: TimeTask = TimeTask()
         timeTasks.append(task)
         task.state = .inProgress
-        self.status = .inProgress
+        status = .inProgress
         configureTimer()
     }
     
@@ -51,7 +51,7 @@ final class MGKTimer: Clock {
             case .inProgress = task.state
             else { return }
         task.state = .done
-        self.status = .onPause
+        status = .onPause
         clearTimer()
     }
     
@@ -71,7 +71,7 @@ final class MGKTimer: Clock {
                 self.end()
             }
         }
-        self.timer = newTimer
+        timer = newTimer
         RunLoop.current.add(newTimer, forMode: .common)
     }
     

@@ -15,7 +15,8 @@ final class MyPageMainViewController: UIViewController {
     @IBOutlet private weak var timeStamp: UIButton!
     @IBOutlet private weak var statisticLineView: UIView!
     @IBOutlet private weak var timeStampLineView: UIView!
-    
+    @IBOutlet private weak var pickerView: SmoothPickerView!
+    var views: [UIView] = []
     @IBAction private func staticsButtonAction(_ sender: Any) {
         statistic.titleLabel?.font = .systemFont(ofSize: 16, weight: .black)
         timeStamp.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
@@ -36,13 +37,29 @@ final class MyPageMainViewController: UIViewController {
         statisticLineView.isHidden = true
         timeStampLineView.isHidden = false
     }
-    
+
+    private var index = 0
+    private var previousView: PickerDataView?
     private var isStatistic: Bool = true
     override func viewDidLoad() {
         super.viewDidLoad()
         
         staticsButtonAction(UIButton())
         view.addSubview(MainTabCenter.default.getMainTab())
+        
+        for index in 0 ..< (12 * 10) {
+            let view: PickerDataView = PickerDataView(index: index)
+            views.append(view)
+        }
+        let now = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM"
+        let nameOfMonth = dateFormatter.string(from: now)
+        dateFormatter.dateFormat = "yyyy"
+        let nameOfYear = dateFormatter.string(from: now)
+        
+        let index = (Int(nameOfMonth)! - 1) + (Int(nameOfYear)! - 2020)
+        pickerView.firstselectedItem = index
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,5 +127,42 @@ extension MyPageMainViewController: UICollectionViewDelegateFlowLayout {
             return 4
         }
         return 2
+    }
+}
+
+extension MyPageMainViewController: SmoothPickerViewDataSource, SmoothPickerViewDelegate {
+    func numberOfItems(pickerView: SmoothPickerView) -> Int {
+        12 * 10
+    }
+    
+    func itemForIndex(index: Int, pickerView: SmoothPickerView) -> UIView {
+        views[index]
+    }
+    
+    func didSelectItem(index: Int, view: UIView, pickerView: SmoothPickerView) {
+        let pickerView = view as! PickerDataView
+        previousView?.label.text = "\((view.tag % 12) + 1)"
+        pickerView.label.text = "\((view.tag / 12) + 2020). \((view.tag % 12) + 1)"
+        self.index = pickerView.tag
+        previousView = pickerView
+    }
+}
+
+class PickerDataView: UIView {
+    let label: UILabel = UILabel()
+    init(index: Int) {
+        super.init(frame: CGRect(x: 0, y: 0, width: 70, height: 50))
+        
+        tag = index
+        addSubview(label)
+        label.textColor = .black
+        label.text = "\(index % 12 + 1)"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -77,6 +77,10 @@
 		4DA498FE24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */; };
 		4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */; };
 		4DA7A0DE24CCDACA0037E83D /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */; };
+		4DB9859024FA995F00E95264 /* SmoothPickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858C24FA995D00E95264 /* SmoothPickerHandler.swift */; };
+		4DB9859124FA995F00E95264 /* SmoothPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858D24FA995E00E95264 /* SmoothPickerView.swift */; };
+		4DB9859224FA995F00E95264 /* SmoothPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858E24FA995E00E95264 /* SmoothPickerCollectionViewCell.swift */; };
+		4DB9859324FA995F00E95264 /* SmoothPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858F24FA995F00E95264 /* SmoothPickerConfiguration.swift */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
 		4DDA61A924CC37F800D0978E /* SelectClockTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */; };
 		4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61AD24CC39FA00D0978E /* MainTab.swift */; };
@@ -153,6 +157,10 @@
 		4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatiticsCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRankingTableViewCell.swift; sourceTree = "<group>"; };
 		4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		4DB9858C24FA995D00E95264 /* SmoothPickerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerHandler.swift; sourceTree = "<group>"; };
+		4DB9858D24FA995E00E95264 /* SmoothPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerView.swift; sourceTree = "<group>"; };
+		4DB9858E24FA995E00E95264 /* SmoothPickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		4DB9858F24FA995F00E95264 /* SmoothPickerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerConfiguration.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClockTypeViewController.swift; sourceTree = "<group>"; };
 		4DDA61AD24CC39FA00D0978E /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
@@ -192,13 +200,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1720D29824E93ED10098BDFE /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		17FF026A24CC1B7A009C1B7F /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +441,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		4DB9856D24FA915400E95264 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				4DB9858E24FA995E00E95264 /* SmoothPickerCollectionViewCell.swift */,
+				4DB9858F24FA995F00E95264 /* SmoothPickerConfiguration.swift */,
+				4DB9858C24FA995D00E95264 /* SmoothPickerHandler.swift */,
+				4DB9858D24FA995E00E95264 /* SmoothPickerView.swift */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
 		4DDA61AA24CC39AD00D0978E /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,7 +499,7 @@
 		4DDA61B524CC4E2D00D0978E /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				1720D29824E93ED10098BDFE /* Profile */,
+				4DB9856D24FA915400E95264 /* DatePicker */,
 				4D9B02CE24CCBAE400261209 /* Setting */,
 				4DA498FC24DB05D600EA9774 /* Cell */,
 				4DDA61B824CC4E4C00D0978E /* MyPage.storyboard */,
@@ -641,6 +653,7 @@
 			files = (
 				17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */,
 				390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */,
+				4DB9859024FA995F00E95264 /* SmoothPickerHandler.swift in Sources */,
 				4D0F5D9F24CC7F2C0044418F /* MyPageMainViewController.swift in Sources */,
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
 				3990C0B924DE4B5C004A56E0 /* ClockViewController.swift in Sources */,
@@ -654,11 +667,13 @@
 				4D0F5D9D24CC62110044418F /* UIApplication+Extension.swift in Sources */,
 				4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */,
 				178E43F324CCC18800955B70 /* SignInResponse.swift in Sources */,
+				4DB9859224FA995F00E95264 /* SmoothPickerCollectionViewCell.swift in Sources */,
 				3990C0BB24DE6F05004A56E0 /* Clock.swift in Sources */,
 				4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */,
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
 				3990C0C024DF0C38004A56E0 /* XibLoadable.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
+				4DB9859124FA995F00E95264 /* SmoothPickerView.swift in Sources */,
 				1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */,
 				4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */,
 				3990C0B324DC3F11004A56E0 /* TimeSettingViewController.swift in Sources */,
@@ -667,6 +682,7 @@
 				178E43F124CCC17700955B70 /* SignUpResponse.swift in Sources */,
 				39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */,
 				4D421DC424C88EF4002DE57B /* KakaoAuth.swift in Sources */,
+				4DB9859324FA995F00E95264 /* SmoothPickerConfiguration.swift in Sources */,
 				1730D20624DA73A100D49287 /* SettingTableViewCell.swift in Sources */,
 				390BD0DA24CC36D1009BDB18 /* MGKTimer.swift in Sources */,
 				390BD0DC24CC43A2009BDB18 /* TimeTask.swift in Sources */,

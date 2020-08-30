@@ -37,11 +37,29 @@ final class SelectClockTypeViewController: UIViewController {
     @IBAction private func timerDidTap(_ sender: Any) {
         toggleUnderLine(on: timerLabel)
         deactiveUnderline(on: stopWatchLabel)
+        
+        let viewController: TimeSettingViewController = .instantiate()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func stopWatchDidTap(_ sender: Any) {
         toggleUnderLine(on: stopWatchLabel)
         deactiveUnderline(on: timerLabel)
+        let questionView: QuestionView = .init(frame: QuestionView.Metric.defaultFrame)
+        let alert: MGKAlertViewController = .instantiate(with: questionView)
+        self.present(alert, animated: false)
+        
+        Promise<Bool> {
+            questionView.promise
+        }.then { needsTimeLapse in
+            alert.dismiss(animated: false)
+            if needsTimeLapse {
+                // Todo: 📽 타임 랩스 화면 랜딩 추가
+            } else {
+                let viewController: ClockViewController = .instantiate(with: .stopwatch)
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
     }
 
     typealias KeyValue = (key: NSAttributedString.Key, value: Any)
@@ -69,4 +87,17 @@ final class SelectClockTypeViewController: UIViewController {
         let viewController: SelectClockTypeViewController = naviController.viewControllers.first as! SelectClockTypeViewController
         return viewController
     }
+}
+
+
+enum Constants {
+    enum Domain1 {}
+    enum Domain2 {}
+}
+
+extension Constants.Domain1 {
+    static let variable = 1
+}
+extension Constants.Domain2 {
+    static let variable = 1
 }

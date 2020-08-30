@@ -64,9 +64,13 @@ final class MGKAlertViewController: UIViewController {
     
     // MARK: Actions
     @IBAction private func backgroundViewDidTap(_ sender: Any) {
-        
-        slideDownContentView().then { [weak self] in
-            self?.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true)
+    }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        slideDownContentView()
+            .then {
+            super.dismiss(animated: flag, completion: completion)
         }
     }
 }
@@ -79,14 +83,14 @@ extension MGKAlertViewController {
         return viewController as! Self
     }
     
-    private static func instantiate(with contentView: UIView) -> Self {
+    static func instantiate(with contentView: UIView) -> Self {
         let viewController: Self = Self.instantiate()
         viewController.contentView = contentView
         return viewController
     }
     
     static func show(with contentView: UIView) {
-        let viewController: MGKAlertViewController = Self.instantiate(with: contentView)
+        let viewController: MGKAlertViewController = .instantiate(with: contentView)
         guard let window = UIApplication.shared.keyWindow else { return }
         window.rootViewController?.presentedViewController?.present(viewController, animated: false, completion: nil)
     }

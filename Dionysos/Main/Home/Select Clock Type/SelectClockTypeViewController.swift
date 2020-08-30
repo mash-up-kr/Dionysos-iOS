@@ -51,8 +51,9 @@ final class SelectClockTypeViewController: UIViewController {
         
         Promise<Bool> {
             questionView.promise
+        }.then { answer in
+            Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
         }.then { needsTimeLapse in
-            alert.dismiss(animated: false)
             if needsTimeLapse {
                 // Todo: 📽 타임 랩스 화면 랜딩 추가
             } else {
@@ -61,7 +62,7 @@ final class SelectClockTypeViewController: UIViewController {
             }
         }
     }
-
+    
     typealias KeyValue = (key: NSAttributedString.Key, value: Any)
     private func toggleUnderLine(on label: UILabel) {
         guard let attributeText = label.attributedText else { return }

@@ -89,16 +89,3 @@ final class SelectClockTypeViewController: UIViewController {
         return viewController
     }
 }
-
-
-enum Constants {
-    enum Domain1 {}
-    enum Domain2 {}
-}
-
-extension Constants.Domain1 {
-    static let variable = 1
-}
-extension Constants.Domain2 {
-    static let variable = 1
-}

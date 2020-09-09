@@ -12,4 +12,5 @@ struct SignInResponse: Codable {
     var jwt: String
     var nickname: String
     var uid: String
+    var provider: String
 }

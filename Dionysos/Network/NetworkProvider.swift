@@ -18,7 +18,7 @@ enum NetworkProvider {
     static func requestWithoutParsing(_ target: TargetType) -> Promise<Void> {
         Promise<Void> { fulfill, reject in
             request(target).then { _ in 
-                fulfill
+                fulfill(())
             }.catch {
                 reject($0)
             }
@@ -52,7 +52,11 @@ enum NetworkProvider {
         }
     }
     
+    private struct ParseResponse<Response: Decodable>: Decodable {
+        var result: Response
+    }
+    
     private static func parse<Response: Decodable>(_ data: Data) throws -> Response {
-        try JSONDecoder().decode(Response.self, from: data)
+        try JSONDecoder().decode(ParseResponse.self, from: data).result
     }
 }

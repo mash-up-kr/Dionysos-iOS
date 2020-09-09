@@ -25,6 +25,12 @@ enum SocialLoginType: String {
 }
 
 final class SignInViewController: UIViewController {
+    lazy var errorView: NetworkErrorView = {
+        let errorView: NetworkErrorView = NetworkErrorView()
+        errorView.setData(mainView: view, delegate: self)
+        return errorView
+    }()
+    private var lastCall: (provider: SocialLoginType, UID: String)?
     @IBAction private func kakaoSignInClicked(_ sender: Any) { kakaoButtonDidTap() }
     @IBAction private func fbSignInClicked(_ sender: Any) { facebookButtonDidTap() }
     @IBAction private func appleSignInClicked(_ sender: Any) { appleButtonDidTap() }
@@ -40,12 +46,15 @@ final class SignInViewController: UIViewController {
     
     private func apiCall(type: SocialLoginType, UID: String?) {
         guard let token = UID else { return }
-        
+        lastCall = (provider: type, UID: token)
         DionysosProvider.callSignIn(provider: type.getRawValue(), token: token).then { _ in
             MainTabCenter.showCurrentViewController()
-        }.catch {
+        }.catch { [weak self] in
             if isNotRegisterUser(error: $0) {
                 openSignupViewController()
+            } else {
+                logger($0)
+                self?.errorView.isHidden = false
             }
         }
         
@@ -146,5 +155,12 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
 extension SignInViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         view.window!
+    }
+}
+
+extension SignInViewController: NetworkErrorRetryDelegate {
+    func callRetry() {
+        guard let lastCall = lastCall else { return }
+        apiCall(type: lastCall.provider, UID: lastCall.UID)
     }
 }

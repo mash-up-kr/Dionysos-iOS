@@ -23,6 +23,12 @@ final class NicknameInputViewController: UIViewController, KeyboardConstraintHan
         signUpApiCall()
     }
     
+    lazy var errorView: NetworkErrorView = {
+        let errorView: NetworkErrorView = NetworkErrorView()
+        errorView.setData(mainView: view, delegate: self)
+        return errorView
+    }()
+    
     private var provider: String?
     private var token: String?
     
@@ -69,9 +75,16 @@ final class NicknameInputViewController: UIViewController, KeyboardConstraintHan
             successViewController.modalPresentationStyle = .fullScreen
             UserDefaults.standard.set($0.jwt, forKey: "myToken")
             self?.present(successViewController, animated: true, completion: nil)
-        }.catch {
+        }.catch { [weak self] in
             guard let error = $0 as? Moya.MoyaError else { return }
+            self?.errorView.isHidden = false
             logger(error)
         }
+    }
+}
+
+extension NicknameInputViewController: NetworkErrorRetryDelegate {
+    func callRetry() {
+        checkNicknameApiCall(nickname: nicknameTextField.text)
     }
 }

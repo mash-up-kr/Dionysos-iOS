@@ -34,9 +34,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="863-Uw-aI3">
                                         <rect key="frame" x="0.0" y="0.0" width="339" height="43"/>
                                         <color key="backgroundColor" name="sunflowerYellow"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <inset key="titleEdgeInsets" minX="3.7999999999999998" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3.7999999999999998" maxY="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Kakao" image="kakaotalk">
                                             <color key="titleColor" name="white"/>
                                         </state>
@@ -52,9 +52,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoE-BQ-SbO">
                                         <rect key="frame" x="0.0" y="57" width="339" height="43"/>
                                         <color key="backgroundColor" name="frenchBlue"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <inset key="titleEdgeInsets" minX="3.7999999999999998" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3.7999999999999998" maxY="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Facebook" image="facebook">
                                             <color key="titleColor" name="white"/>
                                         </state>
@@ -67,11 +67,13 @@
                                             <action selector="fbSignInClicked:" destination="ztV-et-Cvu" eventType="touchUpInside" id="ATg-ed-Wof"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1y-DH-Unx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1y-DH-Unx">
                                         <rect key="frame" x="0.0" y="114" width="339" height="43"/>
                                         <color key="backgroundColor" name="transparentBlackTwo"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <state key="normal" title="Sign in with Apple">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <state key="normal" title="Sign in with Apple" image="apple">
                                             <color key="titleColor" name="white"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -86,9 +88,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSc-WI-uhK">
                                         <rect key="frame" x="0.0" y="171" width="339" height="43"/>
                                         <color key="backgroundColor" name="lightBlueGrey"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <inset key="titleEdgeInsets" minX="3.2999999999999998" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3.2999999999999998" maxY="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Guest" image="guest">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -239,6 +241,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apple" width="12" height="15"/>
         <image name="btnDoneOff64Px" width="64" height="64"/>
         <image name="btnDoneOn64Px" width="64" height="64"/>
         <image name="facebook" width="19" height="19"/>

@@ -14,6 +14,7 @@
 		178E43F324CCC18800955B70 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E43F224CCC18800955B70 /* SignInResponse.swift */; };
 		17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */; };
 		17AE78A224CCE81D00FE58D4 /* signupSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = 17AE78A124CCE81D00FE58D4 /* signupSuccess.gif */; };
+		17C56B7524EBFECC0078E963 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C56B7424EBFECC0078E963 /* PrivacyPolicyViewController.swift */; };
 		17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */; };
 		17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */; };
 		17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */; };
@@ -93,6 +94,7 @@
 		178E43F224CCC18800955B70 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConstraintHandler.swift; sourceTree = "<group>"; };
 		17AE78A124CCE81D00FE58D4 /* signupSuccess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = signupSuccess.gif; sourceTree = "<group>"; };
+		17C56B7424EBFECC0078E963 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		17C8660524C9F42100080A8C /* Dionysos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dionysos.entitlements; sourceTree = "<group>"; };
 		17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSuccessViewController.swift; sourceTree = "<group>"; };
 		17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInputViewController.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				4D9B02CF24CCBAEF00261209 /* Setting.storyboard */,
 				1730D20324D9DB0300D49287 /* MadeByViewController.swift */,
 				1730D20524DA73A100D49287 /* SettingTableViewCell.swift */,
+				17C56B7424EBFECC0078E963 /* PrivacyPolicyViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				390BD0D824CC3603009BDB18 /* TimeAmount.swift in Sources */,
 				178E43F124CCC17700955B70 /* SignUpResponse.swift in Sources */,
 				39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */,
+				17C56B7524EBFECC0078E963 /* PrivacyPolicyViewController.swift in Sources */,
 				4D421DC424C88EF4002DE57B /* KakaoAuth.swift in Sources */,
 				1730D20624DA73A100D49287 /* SettingTableViewCell.swift in Sources */,
 				390BD0DA24CC36D1009BDB18 /* MGKTimer.swift in Sources */,

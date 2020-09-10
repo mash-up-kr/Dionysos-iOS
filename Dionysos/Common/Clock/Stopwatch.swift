@@ -40,7 +40,7 @@ final class Stopwatch: Clock {
         let task: TimeTask = TimeTask()
         timeTasks.append(task)
         task.state = .inProgress
-        self.status = .inProgress
+        status = .inProgress
         configureTimer()
     }
     
@@ -49,7 +49,7 @@ final class Stopwatch: Clock {
             case .inProgress = task.state
             else { return }
         task.state = .done
-        self.status = .onPause
+        status = .onPause
         clearTimer()
     }
     
@@ -65,7 +65,7 @@ final class Stopwatch: Clock {
             guard let self = self else { return }
             self.timeUpdateHandler?(self.accumulatedTime)
         }
-        self.timer = newTimer
+        timer = newTimer
         RunLoop.current.add(newTimer, forMode: .common)
     }
     

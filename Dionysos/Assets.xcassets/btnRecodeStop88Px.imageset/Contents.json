@@ -1,13 +1,13 @@
 {
   "images" : [
     {
-      "filename" : "btnRecodeStop88Px.pdf",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "btnRecodeStop88Px.pdf"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   },
   "properties" : {
     "preserves-vector-representation" : true,

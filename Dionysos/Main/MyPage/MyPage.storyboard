@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mLg-5i-BAf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mLg-5i-BAf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -45,10 +45,10 @@
                                 <rect key="frame" x="0.0" y="129" width="414" height="767"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiF-be-zmY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="767"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1228.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHr-fy-mr8">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="268.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZI-kD-765">
                                                         <rect key="frame" x="163" y="20" width="88" height="88"/>
@@ -64,26 +64,26 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원숭이가나무에서떨어졌다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vll-Zw-jq0">
-                                                        <rect key="frame" x="113.5" y="124" width="187" height="22"/>
+                                                        <rect key="frame" x="113.5" y="124" width="187" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="textColor" name="darkGrey"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모각공과 함께한지 160일째" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFc-xi-Jny">
-                                                        <rect key="frame" x="130" y="154" width="154" height="17"/>
+                                                        <rect key="frame" x="130" y="153.5" width="154" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" name="darkGrey"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m46-rh-Jun">
-                                                        <rect key="frame" x="20" y="195" width="374" height="2"/>
+                                                        <rect key="frame" x="20" y="194.5" width="374" height="2"/>
                                                         <color key="backgroundColor" name="lightBlueGrey"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="2" id="Abg-vw-DYW"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe7-Is-xZy">
-                                                        <rect key="frame" x="143" y="197" width="128" height="72"/>
+                                                        <rect key="frame" x="143" y="196.5" width="128" height="72"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFh-QU-3cY">
                                                                 <rect key="frame" x="0.0" y="20" width="30" height="32"/>
@@ -140,7 +140,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BPR-DU-8T3">
-                                                        <rect key="frame" x="20" y="267" width="374" height="2"/>
+                                                        <rect key="frame" x="20" y="266.5" width="374" height="2"/>
                                                         <color key="backgroundColor" name="lightBlueGrey"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="2" id="kXr-7b-rSU"/>
@@ -170,15 +170,19 @@
                                                     <constraint firstItem="Vll-Zw-jq0" firstAttribute="centerX" secondItem="fHr-fy-mr8" secondAttribute="centerX" id="zYb-Z0-fcB"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXS-Qk-2VG">
-                                                <rect key="frame" x="0.0" y="269" width="414" height="64"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXS-Qk-2VG" customClass="SmoothPickerView" customModule="Dionysos" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="268.5" width="414" height="64"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="64" id="OxU-h8-QoI"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="bS7-gh-l0v" id="KdD-Aj-BJI"/>
+                                                    <outlet property="delegate" destination="bS7-gh-l0v" id="1a1-Nj-zZB"/>
+                                                </connections>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P7I-Xw-nOY">
-                                                <rect key="frame" x="0.0" y="333" width="414" height="434"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P7I-Xw-nOY">
+                                                <rect key="frame" x="0.0" y="332.5" width="414" height="896"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="b8a-cr-McD">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -215,8 +219,8 @@
                                                     <outlet property="delegate" destination="bS7-gh-l0v" id="VIS-wM-s7v"/>
                                                 </connections>
                                             </collectionView>
-                                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-iJ-P1O">
-                                                <rect key="frame" x="0.0" y="269" width="414" height="498"/>
+                                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-iJ-P1O">
+                                                <rect key="frame" x="0.0" y="268.5" width="414" height="960"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" sectionInsetReference="safeArea" id="0YF-kV-THf">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -267,18 +271,22 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="MiF-be-zmY" firstAttribute="top" secondItem="OYA-hM-ybD" secondAttribute="top" id="77n-Yc-T2X"/>
-                                    <constraint firstItem="MiF-be-zmY" firstAttribute="height" secondItem="OYA-hM-ybD" secondAttribute="height" priority="999" id="Y5V-od-pyE"/>
+                                    <constraint firstItem="MiF-be-zmY" firstAttribute="height" secondItem="OYA-hM-ybD" secondAttribute="height" priority="749" id="Y5V-od-pyE"/>
                                     <constraint firstItem="MiF-be-zmY" firstAttribute="width" secondItem="OYA-hM-ybD" secondAttribute="width" id="diO-35-Kjy"/>
                                     <constraint firstItem="MiF-be-zmY" firstAttribute="leading" secondItem="OYA-hM-ybD" secondAttribute="leading" id="ff3-hj-VVl"/>
                                     <constraint firstAttribute="trailing" secondItem="MiF-be-zmY" secondAttribute="trailing" id="rIq-nn-MbP"/>
                                     <constraint firstAttribute="bottom" secondItem="MiF-be-zmY" secondAttribute="bottom" id="raf-v2-ofg"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="bS7-gh-l0v" id="3Kx-mx-Ze7"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="OYA-hM-ybD" secondAttribute="bottom" id="1Vo-WA-gsI"/>
                             <constraint firstItem="pPx-lp-PlU" firstAttribute="trailing" secondItem="OYA-hM-ybD" secondAttribute="trailing" id="6O1-xH-keX"/>
+                            <constraint firstItem="P7I-Xw-nOY" firstAttribute="height" secondItem="3Sg-eT-XPe" secondAttribute="height" id="EEV-d6-HFk"/>
                             <constraint firstItem="Eqv-TY-rsu" firstAttribute="top" secondItem="pPx-lp-PlU" secondAttribute="top" constant="20" id="Gfv-dQ-77d"/>
                             <constraint firstItem="ntK-ls-BoW" firstAttribute="top" secondItem="pPx-lp-PlU" secondAttribute="top" constant="20" id="Nsf-gN-8OP"/>
                             <constraint firstItem="OYA-hM-ybD" firstAttribute="width" secondItem="3Sg-eT-XPe" secondAttribute="width" id="Q2f-Zd-OZD"/>
@@ -294,6 +302,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="XiC-qL-K2S"/>
                     <connections>
+                        <outlet property="mainScrollview" destination="OYA-hM-ybD" id="mfa-dE-K20"/>
+                        <outlet property="pickerView" destination="yXS-Qk-2VG" id="Ur7-QC-pTh"/>
                         <outlet property="statistic" destination="xFh-QU-3cY" id="Wx4-RR-Bwi"/>
                         <outlet property="statisticCollectionView" destination="P7I-Xw-nOY" id="3ZR-Y9-rT8"/>
                         <outlet property="statisticLineView" destination="BHg-jz-LcX" id="7x6-cK-OhY"/>

@@ -13,6 +13,7 @@ enum DionysosTarget {
     case signIn(provider: String, token: String)
     case signUp(provider: String, token: String, nickname: String)
     case checkNickname(token: String, nickname: String)
+    case signOut(token: String)
 }
 
 extension DionysosTarget: TargetType {
@@ -24,6 +25,8 @@ extension DionysosTarget: TargetType {
             return "/user/signup"
         case .checkNickname:
             return "/user/check/nickname"
+        case .signOut:
+            return "/user/signout"
         }
     }
     
@@ -31,6 +34,8 @@ extension DionysosTarget: TargetType {
         switch self {
         case .signIn, .signUp, .checkNickname:
             return .post
+        case .signOut:
+            return .delete
         }
     }
     
@@ -42,6 +47,8 @@ extension DionysosTarget: TargetType {
             return .requestCompositeParameters(bodyParameters: ["provider": provider, "uid": token, "nickname": nickname], bodyEncoding: JSONEncoding.default, urlParameters: [:])
         case .checkNickname(_, let nickname):
             return .requestCompositeParameters(bodyParameters: ["nickname": nickname], bodyEncoding: JSONEncoding.default, urlParameters: [:])
+        case .signOut(_):
+            return .requestCompositeParameters(bodyParameters: [:], bodyEncoding: JSONEncoding.default, urlParameters: [:]) // body 넣을 필요 없는데??
         }
     }
 }
@@ -57,7 +64,7 @@ extension DionysosTarget {
         var baseHeaders: [String: String] = ["Content-type": "application/json"]
         
         switch self {
-        case .checkNickname(let token, _):
+        case .checkNickname(let token, _), .signOut(let token):
             baseHeaders["Authorization"] = token
         default:
             break

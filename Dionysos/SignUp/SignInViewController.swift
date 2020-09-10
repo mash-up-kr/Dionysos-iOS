@@ -35,6 +35,9 @@ final class SignInViewController: UIViewController {
     @IBAction private func fbSignInClicked(_ sender: Any) { facebookButtonDidTap() }
     @IBAction private func appleSignInClicked(_ sender: Any) { appleButtonDidTap() }
     @IBAction private func guestSignInClicked(_ sender: Any) {
+        
+//        let vc = UIStoryboard(name: "TimeLaps", bundle: nil).instantiateInitialViewController()
+//        present(vc!, animated: true, completion: nil)
         //apiCall(type: .guest, UID: UIDevice.current.identifierForVendor?.uuidString)
         MainTabCenter.showCurrentViewController()
     }
@@ -102,9 +105,6 @@ extension SignInViewController {
 ///Facebook Login
 extension SignInViewController {
     private func facebookButtonDidTap() {
-        let vc = UIStoryboard(name: "TimeLaps)", bundle: nil).instantiateInitialViewController()
-        present(vc!, animated: true, completion: nil)
-        
         Promise.start {
             FacebookAuth.login()
         }.then { _ in

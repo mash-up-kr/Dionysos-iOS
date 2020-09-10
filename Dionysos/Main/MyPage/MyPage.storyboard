@@ -342,7 +342,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonAction:" destination="mkL-yt-eqL" eventType="touchUpInside" id="7LT-IM-19T"/>
-                                    <action selector="backButtonAction:" destination="CH2-Hx-J3i" eventType="touchUpInside" id="rZo-um-7Qn"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="gvj-pL-vKa">
@@ -389,7 +388,6 @@
                     <navigationItem key="navigationItem" id="xn0-4E-DLI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbx-il-bUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="CH2-Hx-J3i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1892.753623188406" y="386.38392857142856"/>
         </scene>

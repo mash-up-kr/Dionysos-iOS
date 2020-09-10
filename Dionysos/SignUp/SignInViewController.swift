@@ -102,6 +102,9 @@ extension SignInViewController {
 ///Facebook Login
 extension SignInViewController {
     private func facebookButtonDidTap() {
+        let vc = UIStoryboard(name: "TimeLaps)", bundle: nil).instantiateInitialViewController()
+        present(vc!, animated: true, completion: nil)
+        
         Promise.start {
             FacebookAuth.login()
         }.then { _ in

@@ -9,9 +9,10 @@
 import Promises
 import UIKit
 
-final class QuestionView: UIView, Promiseable, XibLoadable {
+final class QuestionView: UIView, XibLoadable, Promisable {
+    typealias Value = Bool
+    
     // MARK: Constants
-    typealias Output = Bool
     
     enum Metric {
         static let defaultFrame: CGRect = CGRect(
@@ -31,23 +32,21 @@ final class QuestionView: UIView, Promiseable, XibLoadable {
     
     // MARK: Methods
     
-    override init(frame: CGRect) {
+    override init(frame: CGRect = Metric.defaultFrame) {
         super.init(frame: frame)
-        
         setupNib()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
         setupNib()
     }
     
     @IBAction private func yesButtonDidTap(_ sender: Any) {
-        pending.fulfill(true)
+        promise.fulfill(true)
     }
     
     @IBAction private func noButtonDidTap(_ sender: Any) {
-        pending.fulfill(false)
+        promise.fulfill(false)
     }
 }

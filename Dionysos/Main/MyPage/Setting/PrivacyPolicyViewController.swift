@@ -11,6 +11,9 @@ import WebKit
 
 class PrivacyPolicyViewController: UIViewController {
     @IBOutlet private weak var webView: WKWebView!
+    @IBAction func backButtonAction(_ sender: UIButton) {
+        navigationController?.
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

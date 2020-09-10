@@ -109,21 +109,6 @@
             </objects>
             <point key="canvasLocation" x="718.84057971014499" y="-289.28571428571428"/>
         </scene>
-        <!--Privacy View Controller-->
-        <scene sceneID="pli-l6-Eqj">
-            <objects>
-                <viewController storyboardIdentifier="PrivacyViewController" id="k6i-oM-Cua" customClass="PrivacyViewController" customModule="Dionysos" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wn0-bb-hDe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="0hC-lf-F70"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="val-dk-y30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-191" y="477"/>
-        </scene>
         <!--Made By View Controller-->
         <scene sceneID="gUK-tk-cLK">
             <objects>

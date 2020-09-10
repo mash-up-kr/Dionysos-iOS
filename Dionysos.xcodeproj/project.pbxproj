@@ -71,7 +71,6 @@
 		4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2EEA0F24C8C00100E7A687 /* UIView+Extension.swift */; };
 		4D2EEA1224C8C0D800E7A687 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2EEA1124C8C0D800E7A687 /* UINavigationBar+Extension.swift */; };
 		4D378B31250A523C000BEFE3 /* UIDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D378B30250A523C000BEFE3 /* UIDevices.swift */; };
-		4D378B33250A5341000BEFE3 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D378B32250A5341000BEFE3 /* PrivacyViewController.swift */; };
 		4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DB524C88894002DE57B /* DionysosTarget.swift */; };
 		4D421DC424C88EF4002DE57B /* KakaoAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421DC324C88EF4002DE57B /* KakaoAuth.swift */; };
 		4D421DC924C8A7CB002DE57B /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4D421DC824C8A7CB002DE57B /* FacebookCore */; };
@@ -312,6 +311,7 @@
 			children = (
 				4D1287BC2473D15000C4E3DF /* Dionysos */,
 				4D1287BB2473D15000C4E3DF /* Products */,
+				4D378B34250A5BC2000BEFE3 /* Recovered References */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -414,6 +414,14 @@
 				4D378B30250A523C000BEFE3 /* UIDevices.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4D378B34250A5BC2000BEFE3 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				4D378B32250A5341000BEFE3 /* PrivacyViewController.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		4D421DB424C8880A002DE57B /* Network */ = {
@@ -716,7 +724,6 @@
 				1777D374250A58470058CD6D /* ProfileEditViewController.swift in Sources */,
 				4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */,
 				178E43F324CCC18800955B70 /* SignInResponse.swift in Sources */,
-				4D378B33250A5341000BEFE3 /* PrivacyViewController.swift in Sources */,
 				4DB9859224FA995F00E95264 /* SmoothPickerCollectionViewCell.swift in Sources */,
 				3990C0BB24DE6F05004A56E0 /* Clock.swift in Sources */,
 				4D0F5D9324CA015D0044418F /* DionysosProvider.swift in Sources */,

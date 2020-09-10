@@ -108,20 +108,11 @@ extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let setting = Rows(rawValue: indexPath.row) else { return }
-        setting.doNext(current: self.navigationController!)
-        guard let setting = Rows(rawValue: indexPath.row) else { return }
         switch setting {
-        case .use:
-            guard let viewController: UIViewController = storyboard?.instantiateViewController(withIdentifier: "PrivacyViewController") else { return }
-            navigationController?.pushViewController(viewController, animated: true)
         case .contact:
             sendEmail()
-        case .madeby:
-            if let viewController = setting.getViewController() {
-                self.present(viewController, animated: true, completion: nil)
-            }
         default:
-            break
+            setting.doNext(current: self.navigationController!)
         }
     }
 }

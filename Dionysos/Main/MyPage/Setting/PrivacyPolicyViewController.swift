@@ -12,7 +12,7 @@ import WebKit
 class PrivacyPolicyViewController: UIViewController {
     @IBOutlet private weak var webView: WKWebView!
     @IBAction func backButtonAction(_ sender: UIButton) {
-        navigationController?.
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {

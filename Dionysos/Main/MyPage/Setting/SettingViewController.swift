@@ -7,6 +7,7 @@
 //
 
 import MessageUI
+import Moya
 import UIKit
 
 final class SettingViewController: UIViewController {
@@ -14,6 +15,9 @@ final class SettingViewController: UIViewController {
         didSet {
             tableView.tableFooterView = UIView()
         }
+    }
+    @IBAction private func closeButtonClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     enum Rows: Int, CaseIterable {
@@ -49,16 +53,42 @@ final class SettingViewController: UIViewController {
             }
         }
         
-        func getViewController() -> UIViewController? {
+        func doNext(current: UINavigationController) {
+            guard let window = UIApplication.shared.windows.first(where: \.isKeyWindow) else { return }
+            
+            let viewController: UIViewController?
             switch self {
             case .madeby:
-                return UIStoryboard(name: "Setting", bundle: nil).instantiateViewController(identifier: "MadeByViewController")
+                viewController = UIStoryboard(name: "Setting", bundle: nil).instantiateViewController(identifier: "MadeByViewController")
+            case .use:
+                viewController = UIStoryboard(name: "Setting", bundle: nil).instantiateViewController(identifier: "PrivacyPolicyViewController")
+            case .logout:
+                let logoutAlert: UIAlertController = UIAlertController(title: "안내", message: "로그아웃 하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+                let cancelAction: UIAlertAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
+                let logoutAction: UIAlertAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { _ in
+                    guard let token = UserDefaults.standard.string(forKey: "myToken") else { return }
+                    
+                    DionysosProvider.callSignOut(token: token).then { _ in
+                        MainTabCenter.showCurrentViewController()
+                    }.catch {
+                        guard let error = $0 as? Moya.MoyaError else { return }
+                        logger(error)
+                    }
+                })
+                logoutAlert.addAction(cancelAction)
+                logoutAlert.addAction(logoutAction)
+                
+                viewController = logoutAlert
             default:
-                return nil
+                viewController = nil
             }
+            guard let tobePresented = viewController else { return }
+            //guard let root = window.rootViewController as? UINavigationController else { return }
+            current.pushViewController(tobePresented, animated: true)
+            
+//            window.rootViewController?.presentedViewController?.present(tobePresented, animated: true, completion: nil)
         }
     }
-    @IBOutlet private weak var closeButton: UIButton!
 }
 
 extension SettingViewController: UITableViewDataSource {
@@ -77,6 +107,8 @@ extension SettingViewController: UITableViewDataSource {
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let setting = Rows(rawValue: indexPath.row) else { return }
+        setting.doNext(current: self.navigationController!)
         guard let setting = Rows(rawValue: indexPath.row) else { return }
         switch setting {
         case .use:

@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		1730D20424D9DB0300D49287 /* MadeByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730D20324D9DB0300D49287 /* MadeByViewController.swift */; };
 		1730D20624DA73A100D49287 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730D20524DA73A100D49287 /* SettingTableViewCell.swift */; };
+		1777D374250A58470058CD6D /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1777D373250A58470058CD6D /* ProfileEditViewController.swift */; };
 		1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779C59224CC783400CC78D2 /* SignInViewController.swift */; };
 		178E43F124CCC17700955B70 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E43F024CCC17700955B70 /* SignUpResponse.swift */; };
 		178E43F324CCC18800955B70 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E43F224CCC18800955B70 /* SignInResponse.swift */; };
 		17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */; };
 		17AE78A224CCE81D00FE58D4 /* signupSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = 17AE78A124CCE81D00FE58D4 /* signupSuccess.gif */; };
+		17C56B7524EBFECC0078E963 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C56B7424EBFECC0078E963 /* PrivacyPolicyViewController.swift */; };
 		17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */; };
 		17FF026C24CC1BC3009C1B7F /* NicknameInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */; };
 		17FF026E24CC1BD7009C1B7F /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF026D24CC1BD7009C1B7F /* SignUp.storyboard */; };
@@ -100,11 +102,13 @@
 /* Begin PBXFileReference section */
 		1730D20324D9DB0300D49287 /* MadeByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadeByViewController.swift; sourceTree = "<group>"; };
 		1730D20524DA73A100D49287 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		1777D373250A58470058CD6D /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		1779C59224CC783400CC78D2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		178E43F024CCC17700955B70 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		178E43F224CCC18800955B70 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		17A023CB24CC365F001868A3 /* KeyboardConstraintHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConstraintHandler.swift; sourceTree = "<group>"; };
 		17AE78A124CCE81D00FE58D4 /* signupSuccess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = signupSuccess.gif; sourceTree = "<group>"; };
+		17C56B7424EBFECC0078E963 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		17C8660524C9F42100080A8C /* Dionysos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dionysos.entitlements; sourceTree = "<group>"; };
 		17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSuccessViewController.swift; sourceTree = "<group>"; };
 		17FF026B24CC1BC3009C1B7F /* NicknameInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInputViewController.swift; sourceTree = "<group>"; };
@@ -458,7 +462,7 @@
 				4D9B02CF24CCBAEF00261209 /* Setting.storyboard */,
 				1730D20324D9DB0300D49287 /* MadeByViewController.swift */,
 				1730D20524DA73A100D49287 /* SettingTableViewCell.swift */,
-				4D378B32250A5341000BEFE3 /* PrivacyViewController.swift */,
+				17C56B7424EBFECC0078E963 /* PrivacyPolicyViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -544,6 +548,7 @@
 				4DA498FC24DB05D600EA9774 /* Cell */,
 				4DDA61B824CC4E4C00D0978E /* MyPage.storyboard */,
 				4D0F5D9E24CC7F2C0044418F /* MyPageMainViewController.swift */,
+				1777D373250A58470058CD6D /* ProfileEditViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -708,6 +713,7 @@
 				4D78B38B25094BE1000A6560 /* NetworkErrorView.swift in Sources */,
 				390BD10024CCC88A009BDB18 /* QuestionView.swift in Sources */,
 				4D0F5D9D24CC62110044418F /* UIApplication+Extension.swift in Sources */,
+				1777D374250A58470058CD6D /* ProfileEditViewController.swift in Sources */,
 				4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */,
 				178E43F324CCC18800955B70 /* SignInResponse.swift in Sources */,
 				4D378B33250A5341000BEFE3 /* PrivacyViewController.swift in Sources */,
@@ -728,6 +734,7 @@
 				390BD0D824CC3603009BDB18 /* TimeAmount.swift in Sources */,
 				178E43F124CCC17700955B70 /* SignUpResponse.swift in Sources */,
 				39FA2BE224C9C5350073B6F2 /* NetworkProvider.swift in Sources */,
+				17C56B7524EBFECC0078E963 /* PrivacyPolicyViewController.swift in Sources */,
 				4D421DC424C88EF4002DE57B /* KakaoAuth.swift in Sources */,
 				4DB9859324FA995F00E95264 /* SmoothPickerConfiguration.swift in Sources */,
 				1730D20624DA73A100D49287 /* SettingTableViewCell.swift in Sources */,

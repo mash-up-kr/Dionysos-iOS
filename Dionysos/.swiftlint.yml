@@ -558,4 +558,5 @@ opt_in_rules: #사용하는 룰
 
 excluded:
     - Main/MyPage/DatePicker/
+    - Common/Extensions/UIDevices.swift
 reporter: "xcode"

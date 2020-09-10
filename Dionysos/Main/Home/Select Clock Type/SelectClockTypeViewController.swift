@@ -37,13 +37,32 @@ final class SelectClockTypeViewController: UIViewController {
     @IBAction private func timerDidTap(_ sender: Any) {
         toggleUnderLine(on: timerLabel)
         deactiveUnderline(on: stopWatchLabel)
+        
+        let viewController: TimeSettingViewController = .instantiate()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func stopWatchDidTap(_ sender: Any) {
         toggleUnderLine(on: stopWatchLabel)
         deactiveUnderline(on: timerLabel)
+        let questionView: QuestionView = .init(frame: QuestionView.Metric.defaultFrame)
+        let alert: MGKAlertViewController = .instantiate(with: questionView)
+        self.present(alert, animated: false)
+        
+        Promise<Bool> {
+            questionView.promise
+        }.then { answer in
+            Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
+        }.then { needsTimeLapse in
+            if needsTimeLapse {
+                // Todo: 📽 타임 랩스 화면 랜딩 추가
+            } else {
+                let viewController: ClockViewController = .instantiate(with: .stopwatch)
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
     }
-
+    
     typealias KeyValue = (key: NSAttributedString.Key, value: Any)
     private func toggleUnderLine(on label: UILabel) {
         guard let attributeText = label.attributedText else { return }

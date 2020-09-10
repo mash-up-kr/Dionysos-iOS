@@ -78,6 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="sgU-dm-NUp"/>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="oiX-4Z-je1" id="CdK-gb-nVb"/>
                         <outlet property="previewImageView" destination="Vjy-ac-Tmv" id="q1F-hq-J95"/>
                         <outlet property="toggleCameraButton" destination="mOV-jV-OEY" id="wDt-2j-HbE"/>
                     </connections>

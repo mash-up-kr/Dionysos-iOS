@@ -28,7 +28,7 @@ class CameraConfiguration: NSObject {
         case video
     }
     
-    var captureSession: AVCaptureSession?
+    var captureSession: AVCaptureSession = AVCaptureSession()
     var frontCamera: AVCaptureDevice?
     var rearCamera: AVCaptureDevice?
     var audioDevice: AVCaptureDevice?
@@ -49,10 +49,6 @@ class CameraConfiguration: NSObject {
 
 extension CameraConfiguration {
     func setup(handler: @escaping (Error?) -> Void ) {
-        func createCaptureSession() {
-            self.captureSession = AVCaptureSession()
-        }
-        
         func configureCaptureDevices() throws {
             let session = AVCaptureDevice.DiscoverySession.init(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
             
@@ -74,10 +70,6 @@ extension CameraConfiguration {
         }
         
         func configureDeviceInputs() throws {
-            guard let captureSession = self.captureSession else {
-                throw CameraControllerError.captureSessionIsMissing
-            }
-            
             if let rearCamera = self.rearCamera {
                 self.rearCameraInput = try AVCaptureDeviceInput(device: rearCamera)
                 if captureSession.canAddInput(self.rearCameraInput!) {
@@ -113,19 +105,15 @@ extension CameraConfiguration {
         }
         
         func configureVideoOutput() throws {
-            guard let captureSession = self.captureSession else {
-                throw CameraControllerError.captureSessionIsMissing
-            }
-            
             self.videoOutput = AVCaptureMovieFileOutput()
             if captureSession.canAddOutput(self.videoOutput!) {
                 captureSession.addOutput(self.videoOutput!)
             }
+            captureSession.startRunning()
         }
         
         DispatchQueue(label: "setup").async {
             do {
-                createCaptureSession()
                 try configureCaptureDevices()
                 try configureDeviceInputs()
                 try configureVideoOutput()
@@ -143,7 +131,7 @@ extension CameraConfiguration {
     }
     
     func displayPreview(_ view: UIView) throws {
-        guard let captureSession = self.captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
+        guard captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
         
         self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -154,7 +142,7 @@ extension CameraConfiguration {
     }
     
     func switchCameras() throws {
-        guard let currentCameraPosition = currentCameraPosition, let captureSession = self.captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
+        guard let currentCameraPosition = currentCameraPosition, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
         captureSession.beginConfiguration()
         let inputs = captureSession.inputs
         
@@ -193,7 +181,7 @@ extension CameraConfiguration {
     }
     
     func captureImage(completion: @escaping (UIImage?, Error?) -> Void) {
-        guard let captureSession = self.captureSession, captureSession.isRunning else {
+        guard captureSession.isRunning else {
             completion(nil, CameraControllerError.captureSessionIsMissing)
             return
         }
@@ -204,7 +192,7 @@ extension CameraConfiguration {
     }
     
     func recordVideo(completion: @escaping (URL?, Error?)-> Void) {
-        guard let captureSession = self.captureSession, captureSession.isRunning else {
+        guard captureSession.isRunning else {
             completion(nil, CameraControllerError.captureSessionIsMissing)
             return
         }
@@ -217,7 +205,7 @@ extension CameraConfiguration {
     }
     
     func stopRecording(completion: @escaping (Error?) -> Void) {
-        guard let captureSession = self.captureSession, captureSession.isRunning else {
+        guard captureSession.isRunning else {
             completion(CameraControllerError.captureSessionIsMissing)
             return
         }

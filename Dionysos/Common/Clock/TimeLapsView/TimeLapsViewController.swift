@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import Photos
 import UIKit
 
 final class TimeLapsViewController: UIViewController {
@@ -15,20 +16,20 @@ final class TimeLapsViewController: UIViewController {
     @IBOutlet private weak var toggleCameraButton: UIButton!
     
     var cameraConfig: CameraConfiguration!
-    let imagePickerController = UIImagePickerController()
+    let imagePickerController: UIImagePickerController = UIImagePickerController()
     
     var videoRecordingStarted: Bool = false {
-        didSet{
+        didSet {
             if videoRecordingStarted {
-                self.cameraButton.backgroundColor = UIColor.red
+                cameraButton.setImage(UIImage(named: "btnStop88Px"), for: .normal)
             } else {
-                self.cameraButton.backgroundColor = UIColor.white
+                cameraButton.setImage(UIImage(named: "btnPlay88Px"), for: .normal)
             }
         }
     }
     
     fileprivate func registerNotification() {
-        let notificationCenter = NotificationCenter.default
+        let notificationCenter: NotificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: NSNotification.Name(rawValue: "App is going background"), object: nil)
         
         notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
@@ -37,7 +38,7 @@ final class TimeLapsViewController: UIViewController {
     @objc func appMovedToBackground() {
         if videoRecordingStarted {
             videoRecordingStarted = false
-            self.cameraConfig.stopRecording { (error) in
+            cameraConfig.stopRecording { error in
                 print(error ?? "Video recording error")
             }
         }
@@ -50,7 +51,7 @@ final class TimeLapsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cameraConfig = CameraConfiguration()
-        cameraConfig.setup { (error) in
+        cameraConfig.setup { error in
             if error != nil {
                 print(error!.localizedDescription)
             }
@@ -79,37 +80,220 @@ final class TimeLapsViewController: UIViewController {
     
     @objc func video(_ video: String, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
         if let error = error {
-            // we got back an error!
-            
 //            showToast(message: "Could not save!! \n\(error)", fontSize: 12)
         } else {
 //            showToast(message: "Saved", fontSize: 12.0)
         }
     }
     
-    @IBAction func didTapOnTakePhotoButton(_ sender: Any) {
+    @IBAction private func didTapOnTakePhotoButton(_ sender: Any) {
         if videoRecordingStarted {
             videoRecordingStarted = false
-            self.cameraConfig.stopRecording { (error) in
+            cameraConfig.stopRecording { error in
                 print(error ?? "Video recording error")
             }
         } else if !videoRecordingStarted {
             videoRecordingStarted = true
-            self.cameraConfig.recordVideo { (url, error) in
+            cameraConfig.recordVideo { [weak self] url, error in
                 guard let url = url else {
                     print(error ?? "Video recording error")
                     return
                 }
-                UISaveVideoAtPathToSavedPhotosAlbum(url.path, self, #selector(self.video(_:didFinishSavingWithError:contextInfo:)), nil)
+                self?.timeLapse(url)
             }
         }
     }
 
-    @IBAction func toggleCamera(_ sender: Any) {
+    @IBAction private func toggleCamera(_ sender: Any) {
         do {
             try cameraConfig.switchCameras()
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    
+    @IBAction private func dismissButtonAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func timeLapse(_ url: URL) {
+        let videoAsset: AVAsset = AVURLAsset(url: url, options: nil)
+        let mixComposition: AVMutableComposition = AVMutableComposition()
+
+        let videoTrack: AVMutableCompositionTrack? = mixComposition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
+        let videoScaleFactor: Int64 = 5
+        let duration: CMTime = CMTimeMake(value: videoAsset.duration.value / videoScaleFactor, timescale: videoAsset.duration.timescale)
+        do {
+            if let videoAssetTrack: AVAssetTrack = videoAsset.tracks(withMediaType: .video).first {
+                try videoTrack?.insertTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: videoAsset.duration), of: videoAssetTrack, at: CMTime.zero)
+            }
+        } catch let error as NSError {
+            print("error: \(error)")
+        }
+
+        
+        let mainInstruction: AVMutableVideoCompositionInstruction = AVMutableVideoCompositionInstruction()
+        mainInstruction.timeRange = CMTimeRangeMake(start: CMTime.zero, duration: videoAsset.duration)
+
+        let videoLayerInstruction: AVMutableVideoCompositionLayerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack!)
+        let videoAssetTrack: AVAssetTrack? = videoAsset.tracks(withMediaType: .video).first
+        var assetOrientation: UIImage.Orientation = .up
+        var isPortrait: Bool = false
+        let transform: CGAffineTransform = videoAssetTrack!.preferredTransform
+        if transform.a == 0 && transform.b == 1.0 && transform.c == -1.0 && transform.d == 0 {
+            assetOrientation = .right
+            isPortrait = true
+        } else if transform.a == 0 && transform.b == -1.0 && transform.c == 1.0 && transform.d == 0 {
+            assetOrientation = .left
+            isPortrait = true
+        } else if transform.a == 1.0 && transform.b == 0 && transform.c == 0 && transform.d == 1.0 {
+            assetOrientation = .up
+        } else if transform.a == -1.0 && transform.b == 0 && transform.c == 0 && transform.d == -1.0 {
+            assetOrientation = .down
+        }
+
+        videoLayerInstruction.setTransform(videoAssetTrack!.preferredTransform, at: CMTime.zero)
+        videoLayerInstruction.setOpacity(0.0, at: videoAsset.duration)
+
+        mainInstruction.layerInstructions = [videoLayerInstruction]
+
+        let mainComposition: AVMutableVideoComposition = AVMutableVideoComposition()
+        mainComposition.instructions = [mainInstruction]
+        mainComposition.frameDuration = CMTimeMakeWithSeconds(1.0 / 5.0, preferredTimescale: 90_000)
+        var naturalSize: CGSize
+        if isPortrait {
+            naturalSize = CGSize(width: videoAssetTrack!.naturalSize.height, height: videoAssetTrack!.naturalSize.width)
+        } else {
+            naturalSize = videoAssetTrack!.naturalSize
+        }
+
+        mainComposition.renderSize = CGSize(width: naturalSize.width, height: naturalSize.height)
+
+        let tempName = "temp-thread.mov"
+        let tempURL = URL(fileURLWithPath: (NSTemporaryDirectory() as NSString).appendingPathComponent(tempName))
+        do {
+            if FileManager.default.fileExists(atPath: tempURL.path) {
+                try FileManager.default.removeItem(at: tempURL)
+            }
+        } catch {
+            print("Error removing temp file.")
+        }
+        // create final video using export session
+        guard let exportSession = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else { return }
+        exportSession.outputURL = tempURL
+        exportSession.outputFileType = AVFileType.mov
+        exportSession.shouldOptimizeForNetworkUse = true
+        exportSession.videoComposition = mainComposition
+        print("Exporting video...")
+        exportSession.exportAsynchronously {
+            DispatchQueue.main.async { [weak self] in
+                switch exportSession.status {
+                // Success
+                case .completed:
+                    self?.saveVideo(exportSession.outputURL!)
+                case .cancelled, .exporting, .failed, .unknown, .waiting:
+                    print("Export status: \(exportSession.status.rawValue)")
+                    print("Reason: \(String(describing: exportSession.error))")
+                }
+            }
+        }
+    }
+    func saveVideo(_ url: URL) {
+        let videoAsset: AVAsset = AVURLAsset(url: url, options: nil)
+        let mixComposition: AVMutableComposition = AVMutableComposition()
+
+        let videoTrack: AVMutableCompositionTrack? = mixComposition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
+        let videoScaleFactor: Int64 = 5
+        let duration: CMTime = CMTimeMake(value: videoAsset.duration.value / videoScaleFactor, timescale: videoAsset.duration.timescale)
+        do {
+            if let videoAssetTrack: AVAssetTrack = videoAsset.tracks(withMediaType: .video).first {
+                try videoTrack?.insertTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: videoAsset.duration), of: videoAssetTrack, at: CMTime.zero)
+                videoTrack?.scaleTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: videoAsset.duration), toDuration: duration)
+            }
+        } catch let error as NSError {
+            print("error: \(error)")
+        }
+
+        
+        let mainInstruction: AVMutableVideoCompositionInstruction = AVMutableVideoCompositionInstruction()
+        mainInstruction.timeRange = CMTimeRangeMake(start: CMTime.zero, duration: duration)
+
+        let videoLayerInstruction: AVMutableVideoCompositionLayerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack!)
+        let videoAssetTrack: AVAssetTrack? = videoAsset.tracks(withMediaType: .video).first
+        var assetOrientation: UIImage.Orientation = .up
+        var isPortrait: Bool = false
+        let transform: CGAffineTransform = videoAssetTrack!.preferredTransform
+        if transform.a == 0 && transform.b == 1.0 && transform.c == -1.0 && transform.d == 0 {
+            assetOrientation = .right
+            isPortrait = true
+        } else if transform.a == 0 && transform.b == -1.0 && transform.c == 1.0 && transform.d == 0 {
+            assetOrientation = .left
+            isPortrait = true
+        } else if transform.a == 1.0 && transform.b == 0 && transform.c == 0 && transform.d == 1.0 {
+            assetOrientation = .up
+        } else if transform.a == -1.0 && transform.b == 0 && transform.c == 0 && transform.d == -1.0 {
+            assetOrientation = .down
+        }
+
+        videoLayerInstruction.setTransform(videoAssetTrack!.preferredTransform, at: CMTime.zero)
+        videoLayerInstruction.setOpacity(0.0, at: duration)
+
+        mainInstruction.layerInstructions = [videoLayerInstruction]
+
+        let mainComposition: AVMutableVideoComposition = AVMutableVideoComposition()
+        mainComposition.instructions = [mainInstruction]
+        mainComposition.frameDuration = CMTimeMakeWithSeconds(1.0 / 60.0, preferredTimescale: 90_000)
+        var naturalSize: CGSize
+        if isPortrait {
+            naturalSize = CGSize(width: videoAssetTrack!.naturalSize.height, height: videoAssetTrack!.naturalSize.width)
+        } else {
+            naturalSize = videoAssetTrack!.naturalSize
+        }
+
+        mainComposition.renderSize = CGSize(width: naturalSize.width, height: naturalSize.height)
+
+        let tempName = "temp-threads.mov"
+        let tempURL = URL(fileURLWithPath: (NSTemporaryDirectory() as NSString).appendingPathComponent(tempName))
+        do {
+            if FileManager.default.fileExists(atPath: tempURL.path) {
+                try FileManager.default.removeItem(at: tempURL)
+            }
+            let _ = try? FileManager.default.removeItem(at: url)
+        } catch {
+            print("Error removing temp file.")
+        }
+        // create final video using export session
+        guard let exportSession = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else { return }
+        exportSession.outputURL = tempURL
+        exportSession.outputFileType = AVFileType.mov
+        exportSession.shouldOptimizeForNetworkUse = true
+        exportSession.videoComposition = mainComposition
+        print("Exporting video...")
+        exportSession.exportAsynchronously {
+            DispatchQueue.main.async {
+                switch exportSession.status {
+                // Success
+                case .completed:
+                    print("Saving to Photos Library...")
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: exportSession.outputURL!)
+                    }) { success, error in
+                        if success {
+                            print("Added video to library - success: \(success), error: \(String(describing: error?.localizedDescription))")
+                        } else {
+                            print("Added video to library - success: \(success), error: \(String(describing: error!.localizedDescription))")
+                        }
+
+                        let _ = try? FileManager.default.removeItem(at: tempURL)
+                        let _ = try? FileManager.default.removeItem(at: url)
+                    }
+                    print("Export session completed")
+                // Status other than success
+                case .cancelled, .exporting, .failed, .unknown, .waiting:
+                    print("Export status: \(exportSession.status.rawValue)")
+                    print("Reason: \(String(describing: exportSession.error))")
+                }
+            }
         }
     }
 }

@@ -21,7 +21,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiX-4Z-je1">
                                 <rect key="frame" x="163" y="754" width="88" height="88"/>
-                                <state key="normal" image="btnStop88Px"/>
+                                <state key="normal" image="btnPlay88Px"/>
                                 <connections>
                                     <action selector="didTapOnTakePhotoButton:" destination="DbI-Cj-UW1" eventType="touchUpInside" id="hNj-Qb-7uG"/>
                                 </connections>
@@ -32,6 +32,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eng-1I-cFr">
                                         <rect key="frame" x="61.5" y="24" width="40" height="40"/>
                                         <state key="normal" image="icClose40Px"/>
+                                        <connections>
+                                            <action selector="dismissButtonAction:" destination="DbI-Cj-UW1" eventType="touchUpInside" id="wc5-MG-YNp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,7 +92,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btnStop88Px" width="88" height="88"/>
+        <image name="btnPlay88Px" width="88" height="88"/>
         <image name="icClose40Px" width="40" height="40"/>
         <image name="icFlip40Px" width="40" height="40"/>
     </resources>

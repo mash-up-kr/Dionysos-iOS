@@ -25,6 +25,7 @@ final class ClockViewController: UIViewController {
         if case let .timer(targetTime) = strategy {
             updateTimeLabel(from: targetTime.timeInterval)
         }
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     private func setupClock(for strategy: TimeMesureStrategy) {

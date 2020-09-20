@@ -62,19 +62,21 @@ final class TimeSettingViewController: UIViewController {
         let alert: MGKAlertViewController = MGKAlertViewController.instantiate(with: questionView)
         self.present(alert, animated: false, completion: nil)
         
-        questionView.promise
-            .then { [weak self] needsTimeLapse in
-                guard let self = self else { return }
-                if needsTimeLapse {
-                    // Todo: 📽 타임 랩스 화면 랜딩 추가
-                } else {
-                    guard let timeAmount = self.timeAmount else { return }
-                    alert.dismiss(animated: false) {
-                        // Todo: ⏰ 타이머 화면 랜딩 추가
-                        let viewController: ClockViewController = .instantiate(with: .timer(targetTime: timeAmount))
-                        self.navigationController?.pushViewController(viewController, animated: true)
-                    }
+        Promise<Bool> {
+            questionView.promise
+        }.then { answer in
+            Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
+        }.then { needsTimeLapse in
+            if needsTimeLapse {
+                // Todo: 📽 타임 랩스 화면 랜딩 추가
+            } else {
+                guard let timeAmount = self.timeAmount else { return }
+                alert.dismiss(animated: false) {
+                    // Todo: ⏰ 타이머 화면 랜딩 추가
+                    let viewController: ClockViewController = .instantiate(with: .timer(targetTime: timeAmount))
+                    self.navigationController?.pushViewController(viewController, animated: true)
                 }
+            }
         }
     }
     

@@ -80,6 +80,10 @@ final class TimeSettingViewController: UIViewController {
         }
     }
     
+    @IBAction private func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func updateConfirmButton() {
         let isConfirmed: Bool = validate(textFields: [hoursTextField, minutesTextField, secondsTextField])
         confirmButton.isEnabled = isConfirmed

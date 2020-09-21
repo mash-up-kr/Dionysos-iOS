@@ -9,7 +9,11 @@
 import Promises
 import UIKit
 
-final class MGKAlertViewController: UIViewController {
+final class MGKAlertViewController: UIViewController, Promisable {
+    enum Value {
+        case dismiss
+    }
+    
     // MARK: Properties
     
     @IBOutlet private weak var containerHeightConstraint: NSLayoutConstraint!
@@ -69,8 +73,9 @@ final class MGKAlertViewController: UIViewController {
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         slideDownContentView()
-            .then {
-            super.dismiss(animated: flag, completion: completion)
+            .then(on: .main) {
+                super.dismiss(animated: flag, completion: completion)
+                self.promise.fulfill(.dismiss)
         }
     }
 }

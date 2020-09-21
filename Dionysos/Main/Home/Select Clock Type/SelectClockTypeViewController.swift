@@ -27,6 +27,7 @@ final class SelectClockTypeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        resetLabels()
         view.addSubview(MainTabCenter.default.getMainTab())
     }
     
@@ -48,6 +49,11 @@ final class SelectClockTypeViewController: UIViewController {
         let questionView: QuestionView = .init(frame: QuestionView.Metric.defaultFrame)
         let alert: MGKAlertViewController = .instantiate(with: questionView)
         self.present(alert, animated: false)
+        
+        // ⚪️ 타입 랩스와 스톱워치 선택 시 레이블 하이라이팅 취소 로직 추가
+        alert.promise.then { [weak self] _ in
+            self?.resetLabels()
+        }
         
         Promise<Bool> {
             questionView.promise
@@ -81,6 +87,11 @@ final class SelectClockTypeViewController: UIViewController {
         let text: NSMutableAttributedString = NSMutableAttributedString(attributedString: attributeText)
         text.addAttributes([.underlineStyle: NSUnderlineStyle.byWord.rawValue], range: NSRange(0..<attributeText.length))
         label.attributedText = text
+    }
+    
+    private func resetLabels() {
+        deactiveUnderline(on: timerLabel)
+        deactiveUnderline(on: stopWatchLabel)
     }
     
     static func instantiate() -> SelectClockTypeViewController {

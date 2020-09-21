@@ -50,7 +50,6 @@ final class SelectClockTypeViewController: UIViewController {
         let alert: MGKAlertViewController = .instantiate(with: questionView)
         self.present(alert, animated: false)
         
-        // ⚪️ 타입 랩스와 스톱워치 선택 시 레이블 하이라이팅 취소 로직 추가
         alert.promise.then { [weak self] _ in
             self?.resetLabels()
         }
@@ -62,6 +61,8 @@ final class SelectClockTypeViewController: UIViewController {
         }.then { needsTimeLapse in
             if needsTimeLapse {
                 // Todo: 📽 타임 랩스 화면 랜딩 추가
+                let viewController: TimeLapsViewController = .instantiate()
+                self.navigationController?.pushViewController(viewController, animated: true)
             } else {
                 let viewController: ClockViewController = .instantiate(with: .stopwatch)
                 self.navigationController?.pushViewController(viewController, animated: true)

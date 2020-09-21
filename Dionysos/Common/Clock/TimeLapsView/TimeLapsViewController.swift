@@ -258,7 +258,7 @@ final class TimeLapsViewController: UIViewController {
             if FileManager.default.fileExists(atPath: tempURL.path) {
                 try FileManager.default.removeItem(at: tempURL)
             }
-            let _ = try? FileManager.default.removeItem(at: url)
+            _ = try? FileManager.default.removeItem(at: url)
         } catch {
             print("Error removing temp file.")
         }
@@ -284,8 +284,8 @@ final class TimeLapsViewController: UIViewController {
                             print("Added video to library - success: \(success), error: \(String(describing: error!.localizedDescription))")
                         }
 
-                        let _ = try? FileManager.default.removeItem(at: tempURL)
-                        let _ = try? FileManager.default.removeItem(at: url)
+                        _ = try? FileManager.default.removeItem(at: tempURL)
+                        _ = try? FileManager.default.removeItem(at: url)
                     }
                     print("Export session completed")
                 // Status other than success
@@ -295,5 +295,11 @@ final class TimeLapsViewController: UIViewController {
                 }
             }
         }
+    }
+}
+extension TimeLapsViewController {
+    static func instantiate() -> TimeLapsViewController {
+        let viewController = UIStoryboard(name: "TimeLaps", bundle: nil).instantiateInitialViewController() as! TimeLapsViewController
+        return viewController
     }
 }

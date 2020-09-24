@@ -60,7 +60,7 @@ final class SelectClockTypeViewController: UIViewController {
             Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
         }.then { needsTimeLapse in
             if needsTimeLapse {
-                // Todo: 📽 타임 랩스 화면 랜딩 추가
+                // 📽 타임 랩스 화면 랜딩
                 let viewController: TimeLapsViewController = .instantiate()
                 self.navigationController?.pushViewController(viewController, animated: true)
             } else {

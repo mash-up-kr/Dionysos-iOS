@@ -10,7 +10,6 @@ import Promises
 import UIKit
 
 final class TimeSettingViewController: UIViewController, KeyboardConstraintHandler {
-    
     // MARK: Properties
     
     @IBOutlet private weak var backButton: UIButton!
@@ -54,13 +53,13 @@ final class TimeSettingViewController: UIViewController, KeyboardConstraintHandl
             Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
         }.then { needsTimeLapse in
             if needsTimeLapse {
-                // Todo: 📽 타임 랩스 화면 랜딩 추가
+                // 📽 타임 랩스 화면 랜딩
                 let viewController: TimeLapsViewController = .instantiate()
                 self.navigationController?.pushViewController(viewController, animated: true)
             } else {
                 guard let timeAmount = self.timeAmount else { return }
                 alert.dismiss(animated: false) {
-                    // Todo: ⏰ 타이머 화면 랜딩 추가
+                    // ⏰ 타이머 화면 랜딩
                     let viewController: ClockViewController = .instantiate(with: .timer(targetTime: timeAmount))
                     self.navigationController?.pushViewController(viewController, animated: true)
                 }

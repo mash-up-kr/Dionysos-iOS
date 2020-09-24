@@ -9,7 +9,7 @@
 import Promises
 import UIKit
 
-final class TimeSettingViewController: UIViewController {
+final class TimeSettingViewController: UIViewController, KeyboardConstraintHandler {
     // MARK: Properties
     
     @IBOutlet private weak var backButton: UIButton!
@@ -30,12 +30,52 @@ final class TimeSettingViewController: UIViewController {
         return TimeAmount(hours: hours, minutes: minutes, seconds: seconds)
     }
     
+    var bottomConstraint: NSLayoutConstraint? {
+        get { confirmButtonBottomConstraint }
+        set {
+            guard let newValue = newValue else { return }
+            confirmButtonBottomConstraint.constant = newValue.constant
+        }
+    }
+    var keyboardIsShown: Bool = false
+    let baseConstraint: CGFloat = 20
+    
     // MARK: Methods
+    
+    @IBAction private func confirmButtonDidTap(_ sender: Any) {
+        let questionView: QuestionView = QuestionView(frame: QuestionView.Metric.defaultFrame)
+        let alert: MGKAlertViewController = MGKAlertViewController.instantiate(with: questionView)
+        self.present(alert, animated: false, completion: nil)
+        
+        Promise<Bool> {
+            questionView.promise
+        }.then { answer in
+            Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
+        }.then { needsTimeLapse in
+            if needsTimeLapse {
+                // 📽 타임 랩스 화면 랜딩
+                let viewController: TimeLapsViewController = .instantiate()
+                self.navigationController?.pushViewController(viewController, animated: true)
+            } else {
+                guard let timeAmount = self.timeAmount else { return }
+                alert.dismiss(animated: false) {
+                    // ⏰ 타이머 화면 랜딩
+                    let viewController: ClockViewController = .instantiate(with: .timer(targetTime: timeAmount))
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                }
+            }
+        }
+    }
+    
+    @IBAction private func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
+        keyboardReactive()
     }
     
     private func configureUI() {
@@ -55,27 +95,6 @@ final class TimeSettingViewController: UIViewController {
         let number: UInt = UInt(text) ?? 0
         textField.text = String(format: "%02d", number)
         updateConfirmButton()
-    }
-    
-    @IBAction private func confirmButtonDidTap(_ sender: Any) {
-        let questionView: QuestionView = QuestionView(frame: QuestionView.Metric.defaultFrame)
-        let alert: MGKAlertViewController = MGKAlertViewController.instantiate(with: questionView)
-        self.present(alert, animated: false, completion: nil)
-        
-        questionView.promise
-            .then { [weak self] needsTimeLapse in
-                guard let self = self else { return }
-                if needsTimeLapse {
-                    // Todo: 📽 타임 랩스 화면 랜딩 추가
-                } else {
-                    guard let timeAmount = self.timeAmount else { return }
-                    alert.dismiss(animated: false) {
-                        // Todo: ⏰ 타이머 화면 랜딩 추가
-                        let viewController: ClockViewController = .instantiate(with: .timer(targetTime: timeAmount))
-                        self.navigationController?.pushViewController(viewController, animated: true)
-                    }
-                }
-        }
     }
     
     private func updateConfirmButton() {

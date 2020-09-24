@@ -27,6 +27,7 @@ final class SelectClockTypeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        resetLabels()
         view.addSubview(MainTabCenter.default.getMainTab())
     }
     
@@ -49,13 +50,19 @@ final class SelectClockTypeViewController: UIViewController {
         let alert: MGKAlertViewController = .instantiate(with: questionView)
         self.present(alert, animated: false)
         
+        alert.promise.then { [weak self] _ in
+            self?.resetLabels()
+        }
+        
         Promise<Bool> {
             questionView.promise
         }.then { answer in
             Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
         }.then { needsTimeLapse in
             if needsTimeLapse {
-                // Todo: 📽 타임 랩스 화면 랜딩 추가
+                // 📽 타임 랩스 화면 랜딩
+                let viewController: TimeLapsViewController = .instantiate()
+                self.navigationController?.pushViewController(viewController, animated: true)
             } else {
                 let viewController: ClockViewController = .instantiate(with: .stopwatch)
                 self.navigationController?.pushViewController(viewController, animated: true)
@@ -81,6 +88,11 @@ final class SelectClockTypeViewController: UIViewController {
         let text: NSMutableAttributedString = NSMutableAttributedString(attributedString: attributeText)
         text.addAttributes([.underlineStyle: NSUnderlineStyle.byWord.rawValue], range: NSRange(0..<attributeText.length))
         label.attributedText = text
+    }
+    
+    private func resetLabels() {
+        deactiveUnderline(on: timerLabel)
+        deactiveUnderline(on: stopWatchLabel)
     }
     
     static func instantiate() -> SelectClockTypeViewController {

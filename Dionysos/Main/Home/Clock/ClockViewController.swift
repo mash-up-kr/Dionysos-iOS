@@ -13,6 +13,7 @@ final class ClockViewController: UIViewController {
     @IBOutlet private weak var accumulatedTimeLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var playAndPauseButton: UIButton!
+    @IBOutlet private weak var stopButton: UIButton!
     
     private var clock: Clock!
     private var strategy: TimeMesureStrategy! {
@@ -22,10 +23,18 @@ final class ClockViewController: UIViewController {
     // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        if case let .timer(targetTime) = strategy {
+        configureUI()
+    }
+    
+    private func configureUI() {
+        navigationController?.navigationBar.isHidden = true
+        guard let strategy = strategy else { return }
+        switch strategy {
+        case .timer(let targetTime):
             updateTimeLabel(from: targetTime.timeInterval)
+        case .stopwatch:
+            updateTimeLabel(from: 0)
         }
-        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     private func setupClock(for strategy: TimeMesureStrategy) {
@@ -52,21 +61,30 @@ final class ClockViewController: UIViewController {
         if let index: String.Index = timeString.firstIndex(of: ":") {
             timeString.insert("\n", at: index)
         }
-        timeLabel.text = timeString
+        let text: NSMutableAttributedString =
+            NSMutableAttributedString(string: timeString)
+        text.addAttributes([.underlineStyle: NSUnderlineStyle.single.rawValue], range: NSRange(0..<text.length))
+        timeLabel.attributedText = text
     }
     
     private func updatePlayAndPauseButton(from status: Clock.Status) {
         switch status {
         case .inProgress:
             playAndPauseButton.isSelected = true
+            stopButton.isHidden = true
         case .onPause,
              .done:
             playAndPauseButton.isSelected = false
+            stopButton.isHidden = false
         }
     }
     
     @IBAction private func playAndPauseButtonDidTap(_ sender: UIButton) {
         sender.isSelected ? clock.pause() : clock.run()
+    }
+    
+    @IBAction private func stopButtonDidTap(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

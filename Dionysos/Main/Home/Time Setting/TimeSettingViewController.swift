@@ -68,7 +68,7 @@ final class TimeSettingViewController: UIViewController, KeyboardConstraintHandl
     }
     
     @IBAction private func backButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -79,6 +79,7 @@ final class TimeSettingViewController: UIViewController, KeyboardConstraintHandl
     }
     
     private func configureUI() {
+        self.navigationController?.navigationBar.isHidden = true
         configureTextField(hoursTextField)
         configureTextField(minutesTextField)
         configureTextField(secondsTextField)

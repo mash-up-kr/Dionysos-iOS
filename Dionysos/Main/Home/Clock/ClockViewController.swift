@@ -119,16 +119,15 @@ final class ClockViewController: UIViewController {
         }.then { answer in
             // Alert 애니메이션 끝난 후
             Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
-        }.then { [weak self] answer -> Promise<Void>  in
+        }.then { [weak self] answer in
             if let self = self, answer {
-                return self.requestAddTimeHistory()
+                self.requestAddTimeHistory().then(on: .main) { [weak self] in
+                    self?.dismiss(animated: true, completion: nil)
+                }
             } else {
-                return .end
-            }
-        }.then { [weak self] _ in
-                self?.dismiss(animated: true, completion: nil)
-            }
+                alert.dismiss(animated: true, completion: nil)}
         }
+    }
     
     private func requestAddTimeHistory() -> Promise<Void> {
         guard let duration = self.userAccumulatedTime?.timeInterval else { return .end }
@@ -146,7 +145,7 @@ extension ClockViewController {
         let viewController: UIViewController? = UIStoryboard(name: "Clock", bundle: nil).instantiateInitialViewController()
         return viewController as! ClockViewController
     }
-
+    
     static func instantiate(with strategy: TimeMesureStrategy) -> ClockViewController {
         let viewController: ClockViewController = ClockViewController.instantiate()
         viewController.strategy = strategy

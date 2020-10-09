@@ -49,7 +49,8 @@ final class SignInViewController: UIViewController {
     private func apiCall(type: SocialLoginType, UID: String?) {
         guard let token = UID else { return }
         lastCall = (provider: type, UID: token)
-        DionysosProvider.callSignIn(provider: type.getRawValue(), token: token).then { _ in
+        DionysosProvider.callSignIn(provider: type.getRawValue(), token: token).then {
+            UserDefaults.standard.set($0.jwt, forKey: "myToken")
             MainTabCenter.showCurrentViewController()
         }.catch { [weak self] in
             if isNotRegisterUser(error: $0) {

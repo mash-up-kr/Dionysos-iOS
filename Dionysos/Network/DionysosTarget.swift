@@ -17,6 +17,8 @@ enum DionysosTarget {
     case rankingDay
     case rankingWeek
     case rankingMonth
+    case statistic(year: Int, month: Int)
+    case getDiary
 }
 
 extension DionysosTarget: TargetType {
@@ -36,12 +38,16 @@ extension DionysosTarget: TargetType {
             return "/ranking/week"
         case .rankingMonth:
             return "/ranking/month"
+        case .statistic:
+            return "/statistic"
+        case .getDiary:
+            return "/diary"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .rankingDay, .rankingWeek, .rankingMonth:
+        case .rankingDay, .rankingWeek, .rankingMonth, .statistic, .getDiary:
             return .get
         case .signIn, .signUp, .checkNickname:
             return .post
@@ -60,8 +66,10 @@ extension DionysosTarget: TargetType {
             return .requestCompositeParameters(bodyParameters: ["nickname": nickname], bodyEncoding: JSONEncoding.default, urlParameters: [:])
         case .signOut(_):
             return .requestCompositeParameters(bodyParameters: [:], bodyEncoding: JSONEncoding.default, urlParameters: [:]) // body 넣을 필요 없는데??
-        case .rankingDay, .rankingWeek, .rankingMonth:
+        case .rankingDay, .rankingWeek, .rankingMonth, .getDiary:
             return .requestPlain
+        case .statistic(let year, let month):
+            return .requestParameters(parameters: ["year": year, "month": month], encoding: JSONEncoding.default)
         }
     }
 }
@@ -76,11 +84,8 @@ extension DionysosTarget {
     var headers: [String: String]? {
         var baseHeaders: [String: String] = ["Content-type": "application/json"]
         
-        switch self {
-        case .checkNickname(let token, _), .signOut(let token):
+        if let token = UserDefaults.standard.string(forKey: "myToken") {
             baseHeaders["Authorization"] = token
-        default:
-            break
         }
         
         return baseHeaders

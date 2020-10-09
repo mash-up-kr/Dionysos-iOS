@@ -92,6 +92,9 @@
 		4DB9859824FAA77E00E95264 /* TimeLaps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB9859724FAA77E00E95264 /* TimeLaps.storyboard */; };
 		4DC382A224FAAF5900A8669B /* CameraConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC382A124FAAF5900A8669B /* CameraConfigure.swift */; };
 		4DCA9E0525304C8700892B42 /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA9E0425304C8700892B42 /* RankingModel.swift */; };
+		4DCA9E0825305B9600892B42 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA9E0725305B9600892B42 /* StatisticModel.swift */; };
+		4DCA9E0B25305D9800892B42 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA9E0A25305D9800892B42 /* DiaryModel.swift */; };
+		4DCA9E0F25305EE000892B42 /* MyPageFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA9E0E25305EE000892B42 /* MyPageFeedCollectionViewCell.swift */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
 		4DDA61A924CC37F800D0978E /* SelectClockTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */; };
 		4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61AD24CC39FA00D0978E /* MainTab.swift */; };
@@ -184,6 +187,9 @@
 		4DB9859724FAA77E00E95264 /* TimeLaps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeLaps.storyboard; sourceTree = "<group>"; };
 		4DC382A124FAAF5900A8669B /* CameraConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraConfigure.swift; sourceTree = "<group>"; };
 		4DCA9E0425304C8700892B42 /* RankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
+		4DCA9E0725305B9600892B42 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		4DCA9E0A25305D9800892B42 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
+		4DCA9E0E25305EE000892B42 /* MyPageFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClockTypeViewController.swift; sourceTree = "<group>"; };
 		4DDA61AD24CC39FA00D0978E /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
@@ -483,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */,
+				4DCA9E0E25305EE000892B42 /* MyPageFeedCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -561,6 +568,8 @@
 				4D9B02CE24CCBAE400261209 /* Setting */,
 				4DA498FC24DB05D600EA9774 /* Cell */,
 				4DDA61B824CC4E4C00D0978E /* MyPage.storyboard */,
+				4DCA9E0A25305D9800892B42 /* DiaryModel.swift */,
+				4DCA9E0725305B9600892B42 /* StatisticModel.swift */,
 				4D0F5D9E24CC7F2C0044418F /* MyPageMainViewController.swift */,
 				1777D373250A58470058CD6D /* ProfileEditViewController.swift */,
 			);
@@ -719,6 +728,7 @@
 				4DCA9E0525304C8700892B42 /* RankingModel.swift in Sources */,
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
 				3990C0B924DE4B5C004A56E0 /* ClockViewController.swift in Sources */,
+				4DCA9E0B25305D9800892B42 /* DiaryModel.swift in Sources */,
 				4DDA61A924CC37F800D0978E /* SelectClockTypeViewController.swift in Sources */,
 				4D0F5DA124CC7F350044418F /* RankingMainViewController.swift in Sources */,
 				390BD0F324CC7C8C009BDB18 /* MGKAlertViewController.swift in Sources */,
@@ -758,11 +768,13 @@
 				4D1287C02473D15000C4E3DF /* SceneDelegate.swift in Sources */,
 				4D421DB624C88894002DE57B /* DionysosTarget.swift in Sources */,
 				4DB9859624FAA77300E95264 /* TimeLapsViewController.swift in Sources */,
+				4DCA9E0825305B9600892B42 /* StatisticModel.swift in Sources */,
 				390BD0CE24CBD45E009BDB18 /* Promise+.swift in Sources */,
 				4D9B02D224CCBAFA00261209 /* SettingViewController.swift in Sources */,
 				4DA498FE24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift in Sources */,
 				17CCCF8924CC622600EBA733 /* NicknameSuccessViewController.swift in Sources */,
 				17A023CC24CC365F001868A3 /* KeyboardConstraintHandler.swift in Sources */,
+				4DCA9E0F25305EE000892B42 /* MyPageFeedCollectionViewCell.swift in Sources */,
 				1730D20424D9DB0300D49287 /* MadeByViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

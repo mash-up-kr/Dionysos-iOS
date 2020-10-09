@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StatiticsCalendarCollectionViewCell: UICollectionViewCell {
+final class StatiticsCalendarCollectionViewCell: UICollectionViewCell {
     enum Frequency: CaseIterable {
         case none
         case less

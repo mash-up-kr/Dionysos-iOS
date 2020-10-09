@@ -11,12 +11,22 @@ import UIKit
 final class MyPageMainViewController: UIViewController {
     @IBOutlet private weak var statisticCollectionView: UICollectionView!
     @IBOutlet private weak var timeStampCollectionView: UICollectionView!
-    @IBOutlet weak var mainScrollview: UIScrollView!
+    @IBOutlet private weak var mainScrollview: UIScrollView!
     @IBOutlet private weak var statistic: UIButton!
     @IBOutlet private weak var timeStamp: UIButton!
     @IBOutlet private weak var statisticLineView: UIView!
     @IBOutlet private weak var timeStampLineView: UIView!
     @IBOutlet private weak var pickerView: SmoothPickerView!
+    private var statisticModel: StatisticModel? {
+        didSet {
+            statisticCollectionView.reloadData()
+        }
+    }
+    private var timeStampModel: DiaryModel? {
+        didSet {
+            timeStampCollectionView.reloadData()
+        }
+    }
     var views: [UIView] = []
     @IBAction private func staticsButtonAction(_ sender: Any) {
         statistic.titleLabel?.font = .systemFont(ofSize: 16, weight: .black)
@@ -61,6 +71,10 @@ final class MyPageMainViewController: UIViewController {
         
         let index = (Int(nameOfMonth)! - 1) + (Int(nameOfYear)! - 2020)
         pickerView.firstselectedItem = index
+        
+        DionysosProvider.getDiary().then { [weak self] in
+            self?.timeStampModel = $0
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,17 +91,17 @@ final class MyPageMainViewController: UIViewController {
 extension MyPageMainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == statisticCollectionView {
-            return 30
+            return statisticModel?.count ?? 0
         }
-        return 100
+        return timeStampModel?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == statisticCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StatiticsCalendarCollectionViewCell", for: indexPath) as! StatiticsCalendarCollectionViewCell
             cell.setFrequency(.none)
-            
-            let num = indexPath.row % 5
+                    
+            let num = statisticModel?[indexPath.row].level
             if num == 0 {
                 cell.setFrequency(.none)
             } else if num == 1 {
@@ -101,8 +115,12 @@ extension MyPageMainViewController: UICollectionViewDelegate, UICollectionViewDa
             }
             
             return cell
+        } else {
+            guard let model = timeStampModel?[indexPath.row] else { return .init() }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPageFeedCollectionViewCell", for: indexPath)  as! MyPageFeedCollectionViewCell
+            cell.setData(model: model)
+            return cell
         }
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "MyPageFeedCollectionViewCell", for: indexPath)
     }
 }
 
@@ -142,10 +160,20 @@ extension MyPageMainViewController: SmoothPickerViewDataSource, SmoothPickerView
     
     func didSelectItem(index: Int, view: UIView, pickerView: SmoothPickerView) {
         let pickerView = view as! PickerDataView
-        previousView?.label.text = "\((view.tag % 12) + 1)"
-        pickerView.label.text = "\((view.tag / 12) + 2020). \((view.tag % 12) + 1)"
+        previousView?.label.text = "\(((previousView?.tag ?? 0) % 12) + 1)"
+        let year = (view.tag / 12) + 2020
+        let month = (view.tag % 12) + 1
+        pickerView.label.text = "\(year). \(month)"
         self.index = pickerView.tag
         previousView = pickerView
+        
+        callStatics(year: year, month: month)
+    }
+    
+    private func callStatics(year: Int, month: Int) {
+        DionysosProvider.getStatistic(year: year, month: month).then { [weak self] in
+            self?.statisticModel = $0
+        }
     }
 }
 

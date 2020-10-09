@@ -43,4 +43,12 @@ enum DionysosProvider {
     static func getRankingMonth() -> Promise<RankingModel> {
         NetworkProvider.request(Target.rankingMonth, to: RankingModel.self, direct: true)
     }
+    
+    static func getStatistic(year: Int, month: Int) -> Promise<StatisticModel> {
+        NetworkProvider.request(Target.statistic(year: year, month: month), to: StatisticModel.self)
+    }
+    
+    static func getDiary() -> Promise<DiaryModel> {
+        NetworkProvider.request(Target.getDiary, to: DiaryModel.self, direct: true)
+    }
 }

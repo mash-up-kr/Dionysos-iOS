@@ -15,6 +15,25 @@ final class TimeLapsViewController: UIViewController {
     @IBOutlet private weak var previewImageView: UIView!
     @IBOutlet private weak var toggleCameraButton: UIButton!
     @IBOutlet private weak var encodingView: UIView!
+    @IBOutlet private weak var timeLabel: UILabel!
+    
+    private var clock: Clock!
+    private var strategy: TimeMesureStrategy! {
+        didSet { self.setupClock(for: strategy) }
+    }
+    private func setupClock(for strategy: TimeMesureStrategy) {
+        switch strategy {
+        case .timer(let remainingTime):
+            self.clock = MGKTimer(
+                targetTime: remainingTime,
+                timeUpdateHandler: updateTimeLabel(from:)
+            )
+        case .stopwatch:
+            self.clock = Stopwatch(
+                timeUpdateHandler: updateTimeLabel(from:)
+            )
+        }
+    }
     
     var cameraConfig: CameraConfiguration!
     let imagePickerController: UIImagePickerController = UIImagePickerController()
@@ -62,6 +81,7 @@ final class TimeLapsViewController: UIViewController {
             try? self.cameraConfig.displayPreview(self.previewImageView)
         }
         registerNotification()
+        configureUI()
         navigationController?.navigationBar.isHidden = true
     }
     
@@ -73,6 +93,15 @@ final class TimeLapsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    private func configureUI() {
+        guard let strategy = strategy else { return }
+        switch strategy {
+        case .timer(let targetTime):
+            updateTimeLabel(from: targetTime.timeInterval)
+        case .stopwatch:
+            updateTimeLabel(from: 0)
+        }
     }
     
     @objc
@@ -102,6 +131,7 @@ final class TimeLapsViewController: UIViewController {
             }
         } else if !videoRecordingStarted {
             //TODO: 시간 시작
+            self.clock.run()
             videoRecordingStarted = true
             cameraConfig.recordVideo { [weak self] url, error in
                 guard let url = url else {
@@ -109,6 +139,7 @@ final class TimeLapsViewController: UIViewController {
                     return
                 }
                 //TODO: 시간 멈추기
+                self?.clock.pause()
                 self?.timeLapse(url)
             }
         }
@@ -315,5 +346,21 @@ extension TimeLapsViewController {
     static func instantiate() -> TimeLapsViewController {
         let viewController = UIStoryboard(name: "TimeLaps", bundle: nil).instantiateInitialViewController() as! TimeLapsViewController
         return viewController
+    }
+    
+    static func instantiate(with strategy: TimeMesureStrategy) -> TimeLapsViewController {
+        let viewController = TimeLapsViewController.instantiate()
+        viewController.strategy = strategy
+        return viewController
+    }
+}
+
+extension TimeLapsViewController {
+    private func updateTimeLabel(from timeInterval: TimeInterval) {
+        let time: TimeAmount = TimeAmount(timeInterval)
+        let timeString: String = [time.hours, time.minutes, time.seconds]
+            .map { String(format: "%02d", $0) }
+            .joined(separator: ":")
+        timeLabel.text = timeString
     }
 }

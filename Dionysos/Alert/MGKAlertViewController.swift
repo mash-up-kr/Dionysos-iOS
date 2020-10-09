@@ -45,11 +45,12 @@ final class MGKAlertViewController: UIViewController, Promisable {
     
     private func configure(_ contentView: UIView) {
         containerView.addSubview(contentView)
-        contentView.frame.origin = .zero
+        setupCloseButton()
+        contentView.frame.origin = CGPoint(x: 0, y: 60)
     }
     
     private func slideUpContentView(withDuration duration: TimeInterval = 0.3) {
-        containerHeightConstraint.constant = contentView?.bounds.height ?? 0
+        containerHeightConstraint.constant = (contentView?.bounds.height ?? 0) + 60
         UIView.animate(withDuration: duration) { [weak self] in
             self?.view.layoutIfNeeded()
         }
@@ -68,7 +69,7 @@ final class MGKAlertViewController: UIViewController, Promisable {
     
     // MARK: Actions
     @IBAction private func backgroundViewDidTap(_ sender: Any) {
-        self.dismiss(animated: true)
+        self.dismiss(animated: false)
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
@@ -98,5 +99,26 @@ extension MGKAlertViewController {
         let viewController: MGKAlertViewController = .instantiate(with: contentView)
         guard let window = UIApplication.shared.keyWindow else { return }
         window.rootViewController?.presentedViewController?.present(viewController, animated: false, completion: nil)
+    }
+    
+    private func setupCloseButton() {
+        let closeButton = UIButton()
+        closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
+        self.containerView?.addSubview(closeButton)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16),
+            closeButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            closeButton.heightAnchor.constraint(equalToConstant: 44),
+            closeButton.widthAnchor.constraint(equalToConstant: 44)
+        ])
+        
+        closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        closeButton.tintColor = .black
+    }
+    
+    @objc
+    private func closeButtonDidTap() {
+        self.dismiss(animated: false)
     }
 }

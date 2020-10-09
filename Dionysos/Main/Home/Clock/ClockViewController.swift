@@ -89,19 +89,20 @@ final class ClockViewController: UIViewController {
 }
 
 extension ClockViewController {
-    enum TimeMesureStrategy {
-        case timer(targetTime: TimeAmount)
-        case stopwatch
-    }
     
     private static func instantiate() -> ClockViewController {
         let viewController: UIViewController? = UIStoryboard(name: "Clock", bundle: nil).instantiateInitialViewController()
         return viewController as! ClockViewController
     }
-    
+
     static func instantiate(with strategy: TimeMesureStrategy) -> ClockViewController {
         let viewController: ClockViewController = ClockViewController.instantiate()
         viewController.strategy = strategy
         return viewController
     }
+
+}
+enum TimeMesureStrategy {
+    case timer(targetTime: TimeAmount)
+    case stopwatch
 }

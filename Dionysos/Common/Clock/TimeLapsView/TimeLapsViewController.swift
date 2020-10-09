@@ -14,6 +14,7 @@ final class TimeLapsViewController: UIViewController {
     @IBOutlet private weak var cameraButton: UIButton!
     @IBOutlet private weak var previewImageView: UIView!
     @IBOutlet private weak var toggleCameraButton: UIButton!
+    @IBOutlet private weak var encodingView: UIView!
     
     var cameraConfig: CameraConfiguration!
     let imagePickerController: UIImagePickerController = UIImagePickerController()
@@ -52,6 +53,7 @@ final class TimeLapsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        encodingView.isHidden = true
         self.cameraConfig = CameraConfiguration()
         cameraConfig.setup { error in
             if error != nil {
@@ -99,12 +101,14 @@ final class TimeLapsViewController: UIViewController {
                 print(error ?? "Video recording error")
             }
         } else if !videoRecordingStarted {
+            //TODO: 시간 시작
             videoRecordingStarted = true
             cameraConfig.recordVideo { [weak self] url, error in
                 guard let url = url else {
                     print(error ?? "Video recording error")
                     return
                 }
+                //TODO: 시간 멈추기
                 self?.timeLapse(url)
             }
         }
@@ -190,6 +194,7 @@ final class TimeLapsViewController: UIViewController {
         exportSession.outputFileType = AVFileType.mov
         exportSession.shouldOptimizeForNetworkUse = true
         exportSession.videoComposition = mainComposition
+        encodingView.isHidden = false
         print("Exporting video...")
         exportSession.exportAsynchronously {
             DispatchQueue.main.async { [weak self] in
@@ -274,6 +279,7 @@ final class TimeLapsViewController: UIViewController {
         exportSession.outputFileType = AVFileType.mov
         exportSession.shouldOptimizeForNetworkUse = true
         exportSession.videoComposition = mainComposition
+        encodingView.isHidden = false
         print("Exporting video...")
         exportSession.exportAsynchronously {
             DispatchQueue.main.async {
@@ -293,6 +299,8 @@ final class TimeLapsViewController: UIViewController {
                         _ = try? FileManager.default.removeItem(at: tempURL)
                         _ = try? FileManager.default.removeItem(at: url)
                     }
+                    
+                    // ToDo: show
                     print("Export session completed")
                 // Status other than success
                 case .cancelled, .exporting, .failed, .unknown, .waiting:

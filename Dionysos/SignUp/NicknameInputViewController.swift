@@ -63,7 +63,7 @@ final class NicknameInputViewController: UIViewController, KeyboardConstraintHan
             logger(error)
             self.confirmButton.isSelected = false
             self.confirmButton.isEnabled = false
-            self.nicknameReviewLabel.text = "음..........."
+            self.nicknameReviewLabel.text = "다른 닉네임을 입력해주세요."
             self.nicknameReviewLabel.textColor = UIColor(named: "coralPink")
         }
     }

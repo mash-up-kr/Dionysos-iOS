@@ -13,7 +13,7 @@ class ProfileEditViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func backButtonAction(_ sender: Any) {
+    @IBAction private func backButtonAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 }

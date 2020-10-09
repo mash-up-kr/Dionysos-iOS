@@ -68,7 +68,7 @@ final class MGKAlertViewController: UIViewController, Promisable {
     
     // MARK: Actions
     @IBAction private func backgroundViewDidTap(_ sender: Any) {
-        self.dismiss(animated: true)
+        self.dismiss(animated: false)
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4bU-eI-lT3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4bU-eI-lT3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IEl-Qo-e9t">
-                                <rect key="frame" x="20" y="64" width="148" height="80"/>
+                                <rect key="frame" x="20" y="64" width="146.5" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g48-0Z-n3x">
                                         <rect key="frame" x="0.0" y="0.0" width="87.5" height="36"/>
@@ -26,47 +28,64 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbd-wG-qFr" userLabel="누적시간">
-                                        <rect key="frame" x="0.0" y="44" width="148" height="36"/>
+                                        <rect key="frame" x="0.0" y="44" width="146.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
                                         <color key="textColor" name="darkGrey"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cl3-XG-Bb1" userLabel="재생/정지">
-                                <rect key="frame" x="163" y="734" width="88" height="88"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vmg-gs-FcD">
+                                <rect key="frame" x="111" y="734" width="192" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cl3-XG-Bb1" userLabel="재생/정지">
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="Tlj-Nq-Sgh"/>
+                                            <constraint firstAttribute="width" constant="88" id="bJe-x1-dFt"/>
+                                        </constraints>
+                                        <color key="tintColor" name="white"/>
+                                        <state key="normal" backgroundImage="btnPlay88Px"/>
+                                        <state key="selected" backgroundImage="btnPause88Px"/>
+                                        <connections>
+                                            <action selector="playAndPauseButtonDidTap:" destination="4bU-eI-lT3" eventType="touchUpInside" id="B2E-bn-eAu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAy-wl-fxg">
+                                        <rect key="frame" x="104" y="0.0" width="88" height="88"/>
+                                        <state key="normal" backgroundImage="btnStop88Px"/>
+                                        <connections>
+                                            <action selector="stopButtonDidTap:" destination="4bU-eI-lT3" eventType="touchUpInside" id="Mwh-l6-bmI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="Tlj-Nq-Sgh"/>
-                                    <constraint firstAttribute="width" constant="88" id="bJe-x1-dFt"/>
+                                    <constraint firstItem="AAy-wl-fxg" firstAttribute="width" secondItem="Cl3-XG-Bb1" secondAttribute="width" id="HqQ-pN-XB5"/>
+                                    <constraint firstItem="AAy-wl-fxg" firstAttribute="height" secondItem="Cl3-XG-Bb1" secondAttribute="height" id="yXi-ot-IMq"/>
                                 </constraints>
-                                <color key="tintColor" name="white"/>
-                                <state key="normal" backgroundImage="btnPlay88Px"/>
-                                <state key="selected" backgroundImage="btnPause88Px"/>
-                                <connections>
-                                    <action selector="playAndPauseButtonDidTap:" destination="4bU-eI-lT3" eventType="touchUpInside" id="B2E-bn-eAu"/>
-                                </connections>
-                            </button>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 :00:00" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-ow-HzB" userLabel="지난시간/남은시간">
-                                <rect key="frame" x="20" y="210" width="287.5" height="200.5"/>
+                                <rect key="frame" x="20" y="210" width="282" height="200.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="84"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="V9f-X0-22Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IEl-Qo-e9t" firstAttribute="leading" secondItem="V9f-X0-22Z" secondAttribute="leading" constant="20" id="19O-HC-9EM"/>
                             <constraint firstItem="IEl-Qo-e9t" firstAttribute="top" secondItem="V9f-X0-22Z" secondAttribute="top" constant="20" id="EfV-cn-RgN"/>
                             <constraint firstItem="jkK-ow-HzB" firstAttribute="leading" secondItem="V9f-X0-22Z" secondAttribute="leading" constant="20" id="HNx-Vg-Jmn"/>
-                            <constraint firstItem="V9f-X0-22Z" firstAttribute="bottom" secondItem="Cl3-XG-Bb1" secondAttribute="bottom" constant="40" id="IwX-CI-IDn"/>
+                            <constraint firstItem="V9f-X0-22Z" firstAttribute="bottom" secondItem="vmg-gs-FcD" secondAttribute="bottom" constant="40" id="Lku-dM-BOV"/>
                             <constraint firstItem="jkK-ow-HzB" firstAttribute="top" secondItem="IEl-Qo-e9t" secondAttribute="bottom" constant="66" id="Oor-6l-tXH"/>
-                            <constraint firstItem="Cl3-XG-Bb1" firstAttribute="centerX" secondItem="7Hs-JZ-NOj" secondAttribute="centerX" id="QLd-t2-OJJ"/>
+                            <constraint firstItem="vmg-gs-FcD" firstAttribute="centerX" secondItem="7Hs-JZ-NOj" secondAttribute="centerX" id="dcN-kF-Vge"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="V9f-X0-22Z"/>
                     </view>
                     <connections>
                         <outlet property="accumulatedTimeLabel" destination="sbd-wG-qFr" id="9C7-5u-xoR"/>
                         <outlet property="playAndPauseButton" destination="Cl3-XG-Bb1" id="v5n-YR-Amc"/>
+                        <outlet property="stopButton" destination="AAy-wl-fxg" id="Ft8-Jd-UCy"/>
                         <outlet property="timeLabel" destination="jkK-ow-HzB" id="GPx-vh-Y61"/>
                     </connections>
                 </viewController>
@@ -78,11 +97,15 @@
     <resources>
         <image name="btnPause88Px" width="88" height="88"/>
         <image name="btnPlay88Px" width="88" height="88"/>
+        <image name="btnStop88Px" width="88" height="88"/>
         <namedColor name="darkGrey">
             <color red="0.12941176470588237" green="0.13333333333333333" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

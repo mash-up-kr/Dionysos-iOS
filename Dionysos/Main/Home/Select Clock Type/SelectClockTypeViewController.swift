@@ -40,7 +40,9 @@ final class SelectClockTypeViewController: UIViewController {
         deactiveUnderline(on: stopWatchLabel)
         
         let viewController: TimeSettingViewController = .instantiate()
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let navigationController: UINavigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true, completion: nil)
     }
     
     @IBAction private func stopWatchDidTap(_ sender: Any) {
@@ -59,14 +61,16 @@ final class SelectClockTypeViewController: UIViewController {
         }.then { answer in
             Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
         }.then { needsTimeLapse in
+            let viewController: UIViewController
             if needsTimeLapse {
                 // 📽 타임 랩스 화면 랜딩
-                let viewController: TimeLapsViewController = .instantiate()
-                self.navigationController?.pushViewController(viewController, animated: true)
+                viewController = TimeLapsViewController.instantiate()
             } else {
-                let viewController: ClockViewController = .instantiate(with: .stopwatch)
-                self.navigationController?.pushViewController(viewController, animated: true)
+                viewController = ClockViewController.instantiate(with: .stopwatch)
             }
+            let navigationController: UINavigationController = UINavigationController(rootViewController: viewController)
+            navigationController.modalPresentationStyle = .fullScreen
+            self.present(navigationController, animated: true, completion: nil)
         }
     }
     
@@ -96,8 +100,8 @@ final class SelectClockTypeViewController: UIViewController {
     }
     
     static func instantiate() -> SelectClockTypeViewController {
-        let naviController: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
-        let viewController: SelectClockTypeViewController = naviController.viewControllers.first as! SelectClockTypeViewController
+        let viewController: SelectClockTypeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! SelectClockTypeViewController
+//        let viewController: SelectClockTypeViewController = naviController.viewControllers.first as! SelectClockTypeViewController
         return viewController
     }
 }

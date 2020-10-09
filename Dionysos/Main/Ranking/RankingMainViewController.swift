@@ -20,28 +20,28 @@ class RankingMainViewController: UIViewController {
     @IBOutlet private weak var blackViewCenterConstraint: NSLayoutConstraint!
     @IBAction private func dayButtonAction(_ sender: Any) {
         moveTabButton(-95)
-        dayLabel.textColor = UIColor(named: "white")
+        dayLabel.textColor = UIColor(named: "basicWhite")
         weekLabel.textColor = UIColor(named: "darkGrey")
         monthLabel.textColor = UIColor(named: "darkGrey")
     }
     @IBAction private func weekButtonAction(_ sender: Any) {
         moveTabButton(0)
         dayLabel.textColor = UIColor(named: "darkGrey")
-        weekLabel.textColor = UIColor(named: "white")
+        weekLabel.textColor = UIColor(named: "basicWhite")
         monthLabel.textColor = UIColor(named: "darkGrey")
     }
     @IBAction private func monthButtonAction(_ sender: Any) {
         moveTabButton(95)
         dayLabel.textColor = UIColor(named: "darkGrey")
         weekLabel.textColor = UIColor(named: "darkGrey")
-        monthLabel.textColor = UIColor(named: "white")
+        monthLabel.textColor = UIColor(named: "basicWhite")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dayLabel.textColor = UIColor(named: "darkGrey")
-        weekLabel.textColor = UIColor(named: "white")
+        weekLabel.textColor = UIColor(named: "basicWhite")
         monthLabel.textColor = UIColor(named: "darkGrey")
         
         view.addSubview(MainTabCenter.default.getMainTab())

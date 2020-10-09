@@ -35,7 +35,8 @@ final class TimeLapsViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    @objc func appMovedToBackground() {
+    @objc
+    func appMovedToBackground() {
         if videoRecordingStarted {
             videoRecordingStarted = false
             cameraConfig.stopRecording { error in
@@ -44,7 +45,8 @@ final class TimeLapsViewController: UIViewController {
         }
     }
     
-    @objc func appCameToForeground() {
+    @objc
+    func appCameToForeground() {
         print("app enters foreground")
     }
     
@@ -58,6 +60,7 @@ final class TimeLapsViewController: UIViewController {
             try? self.cameraConfig.displayPreview(self.previewImageView)
         }
         registerNotification()
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,15 +73,18 @@ final class TimeLapsViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    @objc fileprivate func showToastForSaved() {
+    @objc
+    fileprivate func showToastForSaved() {
         //            showToast(message: "Saved!", fontSize: 12.0)
     }
     
-    @objc fileprivate func showToastForRecordingStopped() {
+    @objc
+    fileprivate func showToastForRecordingStopped() {
         //            showToast(message: "Recording Stopped", fontSize: 12.0)
     }
     
-    @objc func video(_ video: String, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+    @objc
+    func video(_ video: String, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
         if let error = error {
 //            showToast(message: "Could not save!! \n\(error)", fontSize: 12)
         } else {

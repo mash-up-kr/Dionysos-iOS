@@ -152,7 +152,7 @@ extension MyPageMainViewController: SmoothPickerViewDataSource, SmoothPickerView
 class PickerDataView: UIView {
     let label: UILabel = UILabel()
     init(index: Int) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 70, height: 50))
+        super.init(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         
         tag = index
         addSubview(label)
@@ -161,6 +161,7 @@ class PickerDataView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        label.font = UIFont.systemFont(ofSize: 22, weight: .black)
     }
     
     required init?(coder: NSCoder) {

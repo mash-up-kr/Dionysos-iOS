@@ -23,4 +23,11 @@ extension Promise where Value == Void {
     ) -> Promise<Result> {
         Promise<Result> { try work() }
     }
+    
+    static var end: Promise<Void> {
+        let endPromise = Promise<Void> { fulfill, _ in
+            fulfill(())
+        }
+        return endPromise
+    }
 }

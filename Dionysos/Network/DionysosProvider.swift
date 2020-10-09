@@ -51,4 +51,11 @@ enum DionysosProvider {
     static func getDiary() -> Promise<DiaryModel> {
         NetworkProvider.request(Target.getDiary, to: DiaryModel.self, direct: true)
     }
+    
+    static func addTimeHistory(duration: Double, timeStamp: String) -> Promise<Void> {
+        NetworkProvider.requestWithoutParsing(Target.addTimeHistory(duration: duration, timeStamp: timeStamp))
+    }
+    static func getTimeHistory() -> Promise<TimeHistory> {
+        NetworkProvider.request(Target.getTimeHistory, to: TimeHistory.self)
+    }
 }

@@ -18,6 +18,8 @@ enum DionysosTarget {
     case rankingWeek
     case rankingMonth
     case statistic(year: Int, month: Int)
+    case addTimeHistory(duration: Double, timeStamp: String)
+    case getTimeHistory
     case getDiary
 }
 
@@ -42,14 +44,17 @@ extension DionysosTarget: TargetType {
             return "/statistic"
         case .getDiary:
             return "/diary"
+        case .addTimeHistory,
+            .getTimeHistory:
+            return "/time-history"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .rankingDay, .rankingWeek, .rankingMonth, .statistic, .getDiary:
+        case .rankingDay, .rankingWeek, .rankingMonth, .statistic, .getDiary, .getTimeHistory:
             return .get
-        case .signIn, .signUp, .checkNickname:
+        case .signIn, .signUp, .checkNickname, .addTimeHistory:
             return .post
         case .signOut:
             return .delete
@@ -66,10 +71,12 @@ extension DionysosTarget: TargetType {
             return .requestCompositeParameters(bodyParameters: ["nickname": nickname], bodyEncoding: JSONEncoding.default, urlParameters: [:])
         case .signOut(_):
             return .requestCompositeParameters(bodyParameters: [:], bodyEncoding: JSONEncoding.default, urlParameters: [:]) // body 넣을 필요 없는데??
-        case .rankingDay, .rankingWeek, .rankingMonth, .getDiary:
+        case .rankingDay, .rankingWeek, .rankingMonth, .getDiary, .getTimeHistory:
             return .requestPlain
         case .statistic(let year, let month):
             return .requestParameters(parameters: ["year": year, "month": month], encoding: JSONEncoding.default)
+        case .addTimeHistory(let duration, let timeStamp):
+            return .requestParameters(parameters: ["duration": duration, "historyDay": timeStamp], encoding: JSONEncoding.default)
         }
     }
 }

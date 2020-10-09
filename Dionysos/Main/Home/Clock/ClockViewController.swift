@@ -11,10 +11,18 @@ import UIKit
 
 final class ClockViewController: UIViewController {
     // MARK: Properties
+    
     @IBOutlet private weak var accumulatedTimeLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var playAndPauseButton: UIButton!
     @IBOutlet private weak var stopButton: UIButton!
+    
+    // 누적 시간 초기값
+    private var initalUserAccumulatedTime: TimeAmount?
+    // 현재 타이머로 인해 더해진 누적 시간
+    private var userAccumulatedTime: TimeAmount? {
+        didSet { updateAccumulatedTimeLabel() }
+    }
     
     private var clock: Clock!
     private var strategy: TimeMesureStrategy! {
@@ -32,10 +40,15 @@ final class ClockViewController: UIViewController {
         guard let strategy = strategy else { return }
         switch strategy {
         case .timer(let targetTime):
-            updateTimeLabel(from: targetTime.timeInterval)
+            updateTime(from: targetTime.timeInterval)
         case .stopwatch:
-            updateTimeLabel(from: 0)
+            updateTime(from: 0)
         }
+        setupDurationLabel()
+    }
+    
+    private func updateAccumulatedTimeLabel() {
+        accumulatedTimeLabel.text = userAccumulatedTime?.description
     }
     
     private func setupClock(for strategy: TimeMesureStrategy) {
@@ -43,19 +56,22 @@ final class ClockViewController: UIViewController {
         case .timer(let remainingTime):
             self.clock = MGKTimer(
                 targetTime: remainingTime,
-                timeUpdateHandler: updateTimeLabel(from:),
+                timeUpdateHandler: updateTime(from:),
                 statusUpdateHandler: updatePlayAndPauseButton(from:)
             )
         case .stopwatch:
             self.clock = Stopwatch(
-                timeUpdateHandler: updateTimeLabel(from:),
+                timeUpdateHandler: updateTime(from:),
                 statusUpdateHandler: updatePlayAndPauseButton(from:)
             )
         }
     }
     
-    private func updateTimeLabel(from timeInterval: TimeInterval) {
+    private func updateTime(from timeInterval: TimeInterval) {
         let time: TimeAmount = TimeAmount(timeInterval)
+        if let initalUserAccumulatedTime = self.initalUserAccumulatedTime {
+            userAccumulatedTime = initalUserAccumulatedTime + time
+        }
         var timeString: String = [time.hours, time.minutes, time.seconds]
             .map { String(format: "%02d", $0) }
             .joined(separator: ":")
@@ -84,6 +100,16 @@ final class ClockViewController: UIViewController {
         sender.isSelected ? clock.pause() : clock.run()
     }
     
+    private func setupDurationLabel() {
+        Promise.start {
+            DionysosProvider.getTimeHistory()
+        }.then(on: .main) { [weak self] timeHistory in
+            let time = TimeAmount(timeHistory.duration)
+            self?.initalUserAccumulatedTime = time
+            self?.accumulatedTimeLabel.text = time.description
+        }
+    }
+    
     @IBAction private func stopButtonDidTap(_ sender: UIButton) {
         let questionView = QuestionView(frame: QuestionView.Metric.defaultFrame)
         questionView.questionLabel.text = "정말 종료하시나요?"
@@ -95,15 +121,28 @@ final class ClockViewController: UIViewController {
         }.then { answer in
             // Alert 애니메이션 끝난 후
             Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
-        }.then { [weak self] answer in
-            if answer {
-                // 화면 dismiss
+        }.then { [weak self] answer -> Promise<Void>  in
+            if let self = self, answer {
+                return self.requestAddTimeHistory()
+            } else {
+                return .end
+            }
+        }.then { [weak self] _ in
                 self?.dismiss(animated: true, completion: nil)
             }
         }
+    
+    private func requestAddTimeHistory() -> Promise<Void> {
+        guard let duration = self.userAccumulatedTime?.timeInterval else { return .end }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.string(from: Date())
+        dateFormatter.dateFormat = "hh:mm:ss"
+        let time = dateFormatter.string(from: Date())
+        let timeStamp = "\(date)T\(time)"
+        return DionysosProvider.addTimeHistory(duration: duration, timeStamp: timeStamp)
     }
 }
-
 extension ClockViewController {
     private static func instantiate() -> ClockViewController {
         let viewController: UIViewController? = UIStoryboard(name: "Clock", bundle: nil).instantiateInitialViewController()
@@ -115,7 +154,6 @@ extension ClockViewController {
         viewController.strategy = strategy
         return viewController
     }
-
 }
 enum TimeMesureStrategy {
     case timer(targetTime: TimeAmount)

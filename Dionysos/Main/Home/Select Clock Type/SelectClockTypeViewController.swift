@@ -29,10 +29,20 @@ final class SelectClockTypeViewController: UIViewController {
         
         resetLabels()
         view.addSubview(MainTabCenter.default.getMainTab())
+        setupDurationLabel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    private func setupDurationLabel() {
+        Promise.start {
+            DionysosProvider.getTimeHistory()
+        }.then(on: .main) { [weak self] timeHistory in
+            let timeAmount = TimeAmount(timeHistory.duration)
+            self?.accumulatedTimeLabel.text = timeAmount.description
+        }
     }
     
     @IBAction private func timerDidTap(_ sender: Any) {

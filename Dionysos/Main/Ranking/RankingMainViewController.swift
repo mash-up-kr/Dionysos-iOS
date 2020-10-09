@@ -129,12 +129,23 @@ extension RankingMainViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let rankIndex = indexPath.row + 3
+        guard let user = rankingModel?[safe: rankIndex] else {
+            return UITableViewCell()
+        }
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyRankingTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyRankingTableViewCell", for: indexPath) as! MyRankingTableViewCell
+            cell.rankLabel.text = "\(rankIndex + 1)위"
+            cell.nameLabel.text = user.nickname
+            cell.durationLabel.text = TimeAmount(TimeInterval(user.duration)).description
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RankingTableViewCell", for: indexPath) as! RankingTableViewCell
+            cell.rankLabel.text = "\(rankIndex + 1)위"
+            cell.nameLabel.text = user.nickname
+            cell.durationLabel.text = TimeAmount(TimeInterval(user.duration)).description
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RankingTableViewCell", for: indexPath)
-        return cell
     }
 }
 

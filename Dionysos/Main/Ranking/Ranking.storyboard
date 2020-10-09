@@ -346,6 +346,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="azQ-hJ-YVT" secondAttribute="trailing" constant="22" id="pJ4-8f-ZEe"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="durationLabel" destination="MCG-Sp-iL5" id="Lzw-Tk-Fjp"/>
+                                            <outlet property="nameLabel" destination="A6l-i6-mdE" id="tBb-1r-IfM"/>
+                                            <outlet property="rankLabel" destination="uLP-s5-PCy" id="ZqL-Cm-TxY"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankingTableViewCell" rowHeight="106" id="4Rq-F1-Mml" customClass="RankingTableViewCell" customModule="Dionysos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="394" width="414" height="106"/>
@@ -414,6 +419,11 @@
                                                 <constraint firstItem="ZcM-Oa-yAE" firstAttribute="top" secondItem="GYc-eX-eZo" secondAttribute="top" constant="5" id="uuR-hx-8Bt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="durationLabel" destination="Dyw-r0-taw" id="JRh-HX-qDn"/>
+                                            <outlet property="nameLabel" destination="pVV-b5-98i" id="az9-vz-yks"/>
+                                            <outlet property="rankLabel" destination="K5h-QI-I8a" id="zZ7-zh-L9r"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

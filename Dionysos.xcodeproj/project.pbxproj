@@ -30,6 +30,7 @@
 		390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD10124CCE772009BDB18 /* FacebookAuth.swift */; };
 		392B19C124E92A3200DC89D8 /* Promisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B19C024E92A3200DC89D8 /* Promisable.swift */; };
 		3936C2B324CB029D005DEFB2 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */; };
+		397C52C92530E00800F9119E /* TimeHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397C52C82530E00800F9119E /* TimeHistoryModel.swift */; };
 		3990C0B124DC3AEC004A56E0 /* TimeSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3990C0B024DC3AEC004A56E0 /* TimeSetting.storyboard */; };
 		3990C0B324DC3F11004A56E0 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990C0B224DC3F11004A56E0 /* TimeSettingViewController.swift */; };
 		3990C0B724DE4967004A56E0 /* Clock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3990C0B624DE4967004A56E0 /* Clock.storyboard */; };
@@ -129,6 +130,7 @@
 		390BD10124CCE772009BDB18 /* FacebookAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuth.swift; sourceTree = "<group>"; };
 		392B19C024E92A3200DC89D8 /* Promisable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promisable.swift; sourceTree = "<group>"; };
 		3936C2B224CB029D005DEFB2 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		397C52C82530E00800F9119E /* TimeHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryModel.swift; sourceTree = "<group>"; };
 		3990C0B024DC3AEC004A56E0 /* TimeSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeSetting.storyboard; sourceTree = "<group>"; };
 		3990C0B224DC3F11004A56E0 /* TimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
 		3990C0B624DE4967004A56E0 /* Clock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Clock.storyboard; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				3990C0B524DE47F1004A56E0 /* Clock */,
 				3990C0B424DE4747004A56E0 /* Select Clock Type */,
 				3990C0AF24DC3AD2004A56E0 /* Time Setting */,
+				397C52C82530E00800F9119E /* TimeHistoryModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				4D1287BE2473D15000C4E3DF /* AppDelegate.swift in Sources */,
 				3990C0C024DF0C38004A56E0 /* XibLoadable.swift in Sources */,
 				4D12881B2474447900C4E3DF /* Logger.swift in Sources */,
+				397C52C92530E00800F9119E /* TimeHistoryModel.swift in Sources */,
 				4DB9859124FA995F00E95264 /* SmoothPickerView.swift in Sources */,
 				1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */,
 				4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */,

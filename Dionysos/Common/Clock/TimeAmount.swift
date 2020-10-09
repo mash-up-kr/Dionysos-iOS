@@ -43,3 +43,10 @@ extension TimeAmount {
         TimeAmount(lhs.timeInterval + rhs.timeInterval)
     }
 }
+extension TimeAmount: CustomStringConvertible {
+    var description: String {
+        [hours, minutes, seconds]
+            .map { String(format: "%02d", $0) }
+            .joined(separator: ":")
+    }
+}

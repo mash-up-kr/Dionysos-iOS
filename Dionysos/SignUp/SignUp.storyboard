@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signInBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LOh-FX-fFT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모여서 각자 공부," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnB-8q-Jfy">
                                 <rect key="frame" x="106" y="144" width="202.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
@@ -61,7 +58,7 @@
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Facebook" image="facebook">
-                                            <color key="titleColor" name="white"/>
+                                            <color key="titleColor" name="basicWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -114,6 +111,9 @@
                                     <constraint firstItem="PoE-BQ-SbO" firstAttribute="width" secondItem="gqG-ux-W1l" secondAttribute="width" id="IWU-SA-8YZ"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signInBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LOh-FX-fFT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A5E-BG-RLF"/>
                         <color key="backgroundColor" name="basicGray1"/>

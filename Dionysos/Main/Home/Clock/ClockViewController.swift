@@ -23,10 +23,17 @@ final class ClockViewController: UIViewController {
     private var userAccumulatedTime: TimeAmount? {
         didSet { updateAccumulatedTimeLabel() }
     }
-    
     private var clock: Clock!
     private var strategy: TimeMesureStrategy! {
         didSet { self.setupClock(for: strategy) }
+    }
+    private var isTimeOut: Bool = false {
+        didSet {
+            if self.isTimeOut {
+                stopButton.isHidden = !isTimeOut
+                self.timeLabel.textColor = UIColor(red: 252.0 / 255.0, green: 90.0 / 255.0, blue: 110.0 / 255.0, alpha: 1.0)
+            }
+        }
     }
     
     // MARK: Methods
@@ -68,8 +75,13 @@ final class ClockViewController: UIViewController {
     }
     
     private func updateTime(from timeInterval: TimeInterval) {
-        let time: TimeAmount = TimeAmount(timeInterval)
-        userAccumulatedTime = (initalUserAccumulatedTime ?? .zero) + time
+        let time: TimeAmount = self.isTimeOut ? TimeAmount(-timeInterval) : TimeAmount(timeInterval)
+        if clock is Stopwatch {
+            userAccumulatedTime = (initalUserAccumulatedTime ?? .zero) + time
+        } else {
+            userAccumulatedTime = (initalUserAccumulatedTime ?? .zero) + TimeAmount(clock!.accumulatedTime)
+        }
+        isTimeOut = timeInterval < 0
         var timeString: String = [time.hours, time.minutes, time.seconds]
             .map { String(format: "%02d", $0) }
             .joined(separator: ":")
@@ -80,13 +92,14 @@ final class ClockViewController: UIViewController {
             NSMutableAttributedString(string: timeString)
         text.addAttributes([.underlineStyle: NSUnderlineStyle.single.rawValue], range: NSRange(0..<text.length))
         timeLabel.attributedText = text
+        
     }
     
     private func updatePlayAndPauseButton(from status: Clock.Status) {
         switch status {
         case .inProgress:
             playAndPauseButton.isSelected = true
-            stopButton.isHidden = true
+            stopButton.isHidden = !isTimeOut
         case .onPause,
              .done:
             playAndPauseButton.isSelected = false
@@ -119,16 +132,15 @@ final class ClockViewController: UIViewController {
         }.then { answer in
             // Alert 애니메이션 끝난 후
             Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
-        }.then { [weak self] answer -> Promise<Void>  in
+        }.then { [weak self] answer in
             if let self = self, answer {
-                return self.requestAddTimeHistory()
+                self.requestAddTimeHistory().then(on: .main) { [weak self] in
+                    self?.dismiss(animated: true, completion: nil)
+                }
             } else {
-                return .end
-            }
-        }.then { [weak self] _ in
-                self?.dismiss(animated: true, completion: nil)
-            }
+                alert.dismiss(animated: true, completion: nil)}
         }
+    }
     
     private func requestAddTimeHistory() -> Promise<Void> {
         guard let duration = self.userAccumulatedTime?.timeInterval else { return .end }
@@ -146,7 +158,7 @@ extension ClockViewController {
         let viewController: UIViewController? = UIStoryboard(name: "Clock", bundle: nil).instantiateInitialViewController()
         return viewController as! ClockViewController
     }
-
+    
     static func instantiate(with strategy: TimeMesureStrategy) -> ClockViewController {
         let viewController: ClockViewController = ClockViewController.instantiate()
         viewController.strategy = strategy

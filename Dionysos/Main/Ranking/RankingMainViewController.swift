@@ -35,6 +35,7 @@ class RankingMainViewController: UIViewController {
     @IBAction private func dayButtonAction(_ sender: Any) {
         moveTabButton(-95)
         callApi(tap: .day)
+        currentTab = .day
         dayLabel.textColor = UIColor(named: "basicWhite")
         weekLabel.textColor = UIColor(named: "darkGrey")
         monthLabel.textColor = UIColor(named: "darkGrey")
@@ -42,6 +43,7 @@ class RankingMainViewController: UIViewController {
     @IBAction private func weekButtonAction(_ sender: Any) {
         moveTabButton(0)
         callApi(tap: .week)
+        currentTab = .week
         dayLabel.textColor = UIColor(named: "darkGrey")
         weekLabel.textColor = UIColor(named: "basicWhite")
         monthLabel.textColor = UIColor(named: "darkGrey")
@@ -49,11 +51,13 @@ class RankingMainViewController: UIViewController {
     @IBAction private func monthButtonAction(_ sender: Any) {
         moveTabButton(95)
         callApi(tap: .month)
+        currentTab = .month
         dayLabel.textColor = UIColor(named: "darkGrey")
         weekLabel.textColor = UIColor(named: "darkGrey")
         monthLabel.textColor = UIColor(named: "basicWhite")
     }
     
+    var currentTab: RankingTap = .week
     private var rankingModel: RankingModel? {
         didSet {
             tableView.reloadData()
@@ -71,11 +75,11 @@ class RankingMainViewController: UIViewController {
         callApi(tap: .week)
         view.addSubview(MainTabCenter.default.getMainTab())
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         view.addSubview(MainTabCenter.default.getMainTab())
+        callApi(tap: currentTab)
     }
     
     private func reloadTopUser() {

@@ -54,6 +54,7 @@ final class SignInViewController: UIViewController {
         lastCall = (provider: type, UID: token)
         DionysosProvider.callSignIn(provider: type.getRawValue(), token: token).then {
             UserDefaults.standard.set($0.jwt, forKey: "myToken")
+            UserDefaults.standard.set($0.nickname, forKey: "myNickname")
             MainTabCenter.showCurrentViewController()
         }.catch { [weak self] in
             if isNotRegisterUser(error: $0) {

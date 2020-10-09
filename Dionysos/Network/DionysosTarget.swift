@@ -21,6 +21,7 @@ enum DionysosTarget {
     case addTimeHistory(duration: Double, timeStamp: String)
     case getTimeHistory
     case getDiary
+    case changeNickname(newNickname: String)
 }
 
 extension DionysosTarget: TargetType {
@@ -47,6 +48,8 @@ extension DionysosTarget: TargetType {
         case .addTimeHistory,
             .getTimeHistory:
             return "/time-history"
+        case .changeNickname:
+            return "/user/my"
         }
     }
     
@@ -56,6 +59,8 @@ extension DionysosTarget: TargetType {
             return .get
         case .signIn, .signUp, .checkNickname, .addTimeHistory:
             return .post
+        case .changeNickname:
+            return .put
         case .signOut:
             return .delete
         }
@@ -77,6 +82,8 @@ extension DionysosTarget: TargetType {
             return .requestParameters(parameters: ["year": year, "month": month], encoding: JSONEncoding.default)
         case .addTimeHistory(let duration, let timeStamp):
             return .requestParameters(parameters: ["duration": duration, "historyDay": timeStamp], encoding: JSONEncoding.default)
+        case .changeNickname(let newNickname):
+            return .requestParameters(parameters: ["nickname": newNickname], encoding: JSONEncoding.default)
         }
     }
 }

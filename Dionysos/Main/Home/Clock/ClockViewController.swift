@@ -23,7 +23,6 @@ final class ClockViewController: UIViewController {
     private var userAccumulatedTime: TimeAmount? {
         didSet { updateAccumulatedTimeLabel() }
     }
-    
     private var clock: Clock!
     private var strategy: TimeMesureStrategy! {
         didSet { self.setupClock(for: strategy) }
@@ -93,6 +92,7 @@ final class ClockViewController: UIViewController {
             NSMutableAttributedString(string: timeString)
         text.addAttributes([.underlineStyle: NSUnderlineStyle.single.rawValue], range: NSRange(0..<text.length))
         timeLabel.attributedText = text
+        
     }
     
     private func updatePlayAndPauseButton(from status: Clock.Status) {

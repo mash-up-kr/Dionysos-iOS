@@ -55,7 +55,12 @@ enum DionysosProvider {
     static func addTimeHistory(duration: Double, timeStamp: String) -> Promise<Void> {
         NetworkProvider.requestWithoutParsing(Target.addTimeHistory(duration: duration, timeStamp: timeStamp))
     }
+    
     static func getTimeHistory() -> Promise<TimeHistory> {
         NetworkProvider.request(Target.getTimeHistory, to: TimeHistory.self)
+    }
+    
+    static func changeNickname(newNickname: String) -> Promise<Void> {
+        NetworkProvider.requestWithoutParsing(Target.changeNickname(newNickname: newNickname))
     }
 }

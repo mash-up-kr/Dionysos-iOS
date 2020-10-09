@@ -322,6 +322,7 @@
                     <navigationItem key="navigationItem" id="XiC-qL-K2S"/>
                     <connections>
                         <outlet property="mainScrollview" destination="OYA-hM-ybD" id="mfa-dE-K20"/>
+                        <outlet property="nicknameLabel" destination="Vll-Zw-jq0" id="1Ol-5z-XUy"/>
                         <outlet property="pickerView" destination="yXS-Qk-2VG" id="Ur7-QC-pTh"/>
                         <outlet property="statistic" destination="xFh-QU-3cY" id="Wx4-RR-Bwi"/>
                         <outlet property="statisticCollectionView" destination="P7I-Xw-nOY" id="3ZR-Y9-rT8"/>
@@ -380,6 +381,9 @@
                                 <state key="normal" title="save">
                                     <color key="titleColor" name="azure"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonDidTap:" destination="mkL-yt-eqL" eventType="touchUpInside" id="OAS-cQ-i2y"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JFf-Rg-Yhw"/>
@@ -402,6 +406,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xn0-4E-DLI"/>
+                    <connections>
+                        <outlet property="nicknameToEditLabel" destination="Rgx-uL-cP4" id="K1M-Wc-nfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbx-il-bUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

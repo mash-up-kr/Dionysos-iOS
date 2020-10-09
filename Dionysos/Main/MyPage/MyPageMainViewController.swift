@@ -9,6 +9,7 @@
 import UIKit
 
 final class MyPageMainViewController: UIViewController {
+    @IBOutlet private weak var nicknameLabel: UILabel!
     @IBOutlet private weak var statisticCollectionView: UICollectionView!
     @IBOutlet private weak var timeStampCollectionView: UICollectionView!
     @IBOutlet private weak var mainScrollview: UIScrollView!
@@ -75,6 +76,8 @@ final class MyPageMainViewController: UIViewController {
         DionysosProvider.getDiary().then { [weak self] in
             self?.timeStampModel = $0
         }
+        
+        nicknameLabel.text = UserDefaults.standard.string(forKey: "myNickname")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -198,19 +201,4 @@ class PickerDataView: UIView {
 }
 
 extension MyPageMainViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView == mainScrollview {
-//            if scrollView.contentOffset.y > 200 {
-//                mainScrollview.isScrollEnabled = false
-//                statisticCollectionView.isScrollEnabled = true
-//                timeStampCollectionView.isScrollEnabled = true
-//            }
-//        } else {
-//            if scrollView.contentOffset.y <= 0 {
-//                mainScrollview.isScrollEnabled = true
-//                statisticCollectionView.isScrollEnabled = false
-//                timeStampCollectionView.isScrollEnabled = false
-//            }
-//        }
-//    }
 }

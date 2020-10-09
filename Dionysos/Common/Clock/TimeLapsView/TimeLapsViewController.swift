@@ -233,10 +233,12 @@ final class TimeLapsViewController: UIViewController {
                 // Success
                 case .completed:
                     self?.saveVideo(exportSession.outputURL!)
+                    self?.encodingView.isHidden = true
                 case .cancelled, .exporting, .failed, .unknown, .waiting:
                     print("Export status: \(exportSession.status.rawValue)")
                     print("Reason: \(String(describing: exportSession.error))")
                 }
+                self?.encodingView.isHidden = true
             }
         }
     }

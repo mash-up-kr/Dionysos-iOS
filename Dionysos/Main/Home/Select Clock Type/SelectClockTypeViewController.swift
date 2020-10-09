@@ -64,7 +64,7 @@ final class SelectClockTypeViewController: UIViewController {
             let viewController: UIViewController
             if needsTimeLapse {
                 // 📽 타임 랩스 화면 랜딩
-                viewController = TimeLapsViewController.instantiate()
+                viewController = TimeLapsViewController.instantiate(with: .stopwatch)
             } else {
                 viewController = ClockViewController.instantiate(with: .stopwatch)
             }

@@ -133,6 +133,7 @@
                         <outlet property="cameraButton" destination="oiX-4Z-je1" id="CdK-gb-nVb"/>
                         <outlet property="encodingView" destination="LvS-zo-Eif" id="W4p-uo-5m8"/>
                         <outlet property="previewImageView" destination="Vjy-ac-Tmv" id="q1F-hq-J95"/>
+                        <outlet property="timeLabel" destination="Ofc-Va-5GQ" id="DPP-Ut-VdH"/>
                         <outlet property="toggleCameraButton" destination="mOV-jV-OEY" id="wDt-2j-HbE"/>
                     </connections>
                 </viewController>

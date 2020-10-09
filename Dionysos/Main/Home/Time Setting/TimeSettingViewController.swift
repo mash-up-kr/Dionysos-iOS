@@ -54,7 +54,8 @@ final class TimeSettingViewController: UIViewController, KeyboardConstraintHandl
         }.then { needsTimeLapse in
             if needsTimeLapse {
                 // 📽 타임 랩스 화면 랜딩
-                let viewController: TimeLapsViewController = .instantiate()
+                guard let timeAmount = self.timeAmount else { return }
+                let viewController: TimeLapsViewController = .instantiate(with: .timer(targetTime: timeAmount))
                 self.navigationController?.pushViewController(viewController, animated: true)
             } else {
                 guard let timeAmount = self.timeAmount else { return }

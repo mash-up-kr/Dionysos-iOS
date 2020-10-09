@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mashup. All rights reserved.
 //
 
+import Promises
 import UIKit
 
 final class ClockViewController: UIViewController {
@@ -84,12 +85,26 @@ final class ClockViewController: UIViewController {
     }
     
     @IBAction private func stopButtonDidTap(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        let questionView = QuestionView(frame: QuestionView.Metric.defaultFrame)
+        questionView.questionLabel.text = "정말 종료하시나요?"
+        questionView.tipLabel.text = ""
+        let alert = MGKAlertViewController.instantiate(with: questionView)
+        self.present(alert, animated: false)
+        Promise<Bool> {
+            questionView.promise
+        }.then { answer in
+            // Alert 애니메이션 끝난 후
+            Promise<Bool> { fulfill, _ in alert.dismiss(animated: false) { fulfill(answer) } }
+        }.then { [weak self] answer in
+            if answer {
+                // 화면 dismiss
+                self?.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 }
 
 extension ClockViewController {
-    
     private static func instantiate() -> ClockViewController {
         let viewController: UIViewController? = UIStoryboard(name: "Clock", bundle: nil).instantiateInitialViewController()
         return viewController as! ClockViewController

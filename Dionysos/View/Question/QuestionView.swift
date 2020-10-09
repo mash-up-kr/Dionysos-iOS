@@ -25,8 +25,8 @@ final class QuestionView: UIView, XibLoadable, Promisable {
     
     // MARK: Properties
     
-    @IBOutlet private weak var questionLabel: UILabel!
-    @IBOutlet private weak var tipLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet private weak var yesButton: UIButton!
     @IBOutlet private weak var noButton: UIButton!
     

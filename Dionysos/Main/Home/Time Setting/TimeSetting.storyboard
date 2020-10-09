@@ -29,32 +29,41 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EzI-Dy-NUq">
-                                <rect key="frame" x="40" y="287" width="334" height="54.5"/>
+                                <rect key="frame" x="35.5" y="287" width="343" height="54.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wk1-OA-l4b" userLabel="시">
-                                        <rect key="frame" x="0.0" y="0.0" width="63" height="54.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="54.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="2IK-nl-UsZ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9J-mk-QMS">
-                                        <rect key="frame" x="93" y="0.0" width="12.5" height="54.5"/>
+                                        <rect key="frame" x="96" y="0.0" width="12.5" height="54.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isU-92-uJ5" userLabel="분">
-                                        <rect key="frame" x="135.5" y="0.0" width="63" height="54.5"/>
+                                        <rect key="frame" x="138.5" y="0.0" width="66" height="54.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="bW8-3Q-HWd"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LY3-E8-oph">
-                                        <rect key="frame" x="228.5" y="0.0" width="12.5" height="54.5"/>
+                                        <rect key="frame" x="234.5" y="0.0" width="12.5" height="54.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tn5-Wm-3jw" userLabel="초">
-                                        <rect key="frame" x="271" y="0.0" width="63" height="54.5"/>
+                                        <rect key="frame" x="277" y="0.0" width="66" height="54.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="Zbe-wm-CPd"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="44"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>

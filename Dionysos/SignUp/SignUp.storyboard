@@ -18,17 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signInBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LOh-FX-fFT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-pW-Zsg" customClass="ParticleEffectView" customModule="Dionysos" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모여서 각자 공부," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnB-8q-Jfy">
-                                <rect key="frame" x="106" y="144" width="202.5" height="36"/>
+                                <rect key="frame" x="106" y="239" width="202.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginCharacter" translatesAutoresizingMaskIntoConstraints="NO" id="mw4-XW-8sA">
+                                <rect key="frame" x="97.5" y="640" width="219" height="256"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mo gak gong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uB-jA-tcR">
-                                <rect key="frame" x="111" y="180" width="192" height="36"/>
+                                <rect key="frame" x="111" y="275" width="192" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
                                 <color key="textColor" name="darkGrey"/>
                                 <nil key="highlightedColor"/>
@@ -120,18 +124,23 @@
                         <constraints>
                             <constraint firstItem="gqG-ux-W1l" firstAttribute="centerX" secondItem="H9L-vu-B6X" secondAttribute="centerX" id="5dl-ho-kni"/>
                             <constraint firstItem="3uB-jA-tcR" firstAttribute="top" secondItem="nnB-8q-Jfy" secondAttribute="bottom" id="Cl9-GX-cob"/>
-                            <constraint firstItem="nnB-8q-Jfy" firstAttribute="top" secondItem="A5E-BG-RLF" secondAttribute="top" constant="100" id="EdI-I3-mui"/>
+                            <constraint firstItem="vbQ-pW-Zsg" firstAttribute="top" secondItem="H9L-vu-B6X" secondAttribute="top" id="Id3-t2-1vk"/>
                             <constraint firstItem="gqG-ux-W1l" firstAttribute="centerY" secondItem="H9L-vu-B6X" secondAttribute="centerY" id="Las-P9-LJ4"/>
-                            <constraint firstAttribute="bottom" secondItem="LOh-FX-fFT" secondAttribute="bottom" id="Npo-Rg-Iw7"/>
-                            <constraint firstItem="LOh-FX-fFT" firstAttribute="top" secondItem="A5E-BG-RLF" secondAttribute="top" id="eW6-Bz-BHa"/>
+                            <constraint firstItem="mw4-XW-8sA" firstAttribute="centerX" secondItem="H9L-vu-B6X" secondAttribute="centerX" id="YbQ-fV-zty"/>
+                            <constraint firstAttribute="bottom" secondItem="mw4-XW-8sA" secondAttribute="bottom" id="bK4-m8-5sl"/>
+                            <constraint firstItem="vbQ-pW-Zsg" firstAttribute="leading" secondItem="A5E-BG-RLF" secondAttribute="leading" id="d86-jz-AUP"/>
                             <constraint firstItem="3uB-jA-tcR" firstAttribute="centerX" secondItem="H9L-vu-B6X" secondAttribute="centerX" id="iV2-S8-MDR"/>
-                            <constraint firstItem="LOh-FX-fFT" firstAttribute="leading" secondItem="H9L-vu-B6X" secondAttribute="leading" id="l80-Rf-zCd"/>
+                            <constraint firstAttribute="bottom" secondItem="vbQ-pW-Zsg" secondAttribute="bottom" id="lgY-Wi-dPR"/>
+                            <constraint firstItem="A5E-BG-RLF" firstAttribute="trailing" secondItem="vbQ-pW-Zsg" secondAttribute="trailing" id="nL3-mA-bli"/>
                             <constraint firstItem="A5E-BG-RLF" firstAttribute="trailing" secondItem="gqG-ux-W1l" secondAttribute="trailing" constant="36" id="nOz-Uz-Zxq"/>
                             <constraint firstItem="nnB-8q-Jfy" firstAttribute="centerX" secondItem="H9L-vu-B6X" secondAttribute="centerX" id="oqD-zf-mg0"/>
-                            <constraint firstAttribute="trailing" secondItem="LOh-FX-fFT" secondAttribute="trailing" id="sQE-Hh-did"/>
+                            <constraint firstItem="gqG-ux-W1l" firstAttribute="top" secondItem="3uB-jA-tcR" secondAttribute="bottom" constant="30" id="tav-dA-1xK"/>
                             <constraint firstItem="gqG-ux-W1l" firstAttribute="leading" secondItem="A5E-BG-RLF" secondAttribute="leading" constant="36" id="xJ2-0h-RTE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="particleEffectView" destination="vbQ-pW-Zsg" id="i1b-qP-jVz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wss-NX-MKH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,7 +267,7 @@
         <image name="facebook" width="19" height="19"/>
         <image name="guest" width="14" height="15"/>
         <image name="kakaotalk" width="21" height="21"/>
-        <image name="signInBackground" width="360" height="673"/>
+        <image name="loginCharacter" width="219" height="256"/>
         <namedColor name="azure">
             <color red="0.10199999809265137" green="0.58799999952316284" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

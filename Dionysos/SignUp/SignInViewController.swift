@@ -31,6 +31,7 @@ final class SignInViewController: UIViewController {
         return errorView
     }()
     private var lastCall: (provider: SocialLoginType, UID: String)?
+    @IBOutlet private weak var particleEffectView: ParticleEffectView!
     @IBAction private func kakaoSignInClicked(_ sender: Any) { kakaoButtonDidTap() }
     @IBAction private func fbSignInClicked(_ sender: Any) { facebookButtonDidTap() }
     @IBAction private func appleSignInClicked(_ sender: Any) { appleButtonDidTap() }
@@ -44,6 +45,7 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializedLogin()
+        particleEffectView.start()
     }
     
     private func apiCall(type: SocialLoginType, UID: String?) {

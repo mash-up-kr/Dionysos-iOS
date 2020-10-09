@@ -84,6 +84,7 @@
 		4DA498FE24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */; };
 		4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */; };
 		4DA7A0DE24CCDACA0037E83D /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */; };
+		4DB8221C25306FC500ECA782 /* ParticleEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8221B25306FC500ECA782 /* ParticleEffectView.swift */; };
 		4DB9859024FA995F00E95264 /* SmoothPickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858C24FA995D00E95264 /* SmoothPickerHandler.swift */; };
 		4DB9859124FA995F00E95264 /* SmoothPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858D24FA995E00E95264 /* SmoothPickerView.swift */; };
 		4DB9859224FA995F00E95264 /* SmoothPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9858E24FA995E00E95264 /* SmoothPickerCollectionViewCell.swift */; };
@@ -179,6 +180,7 @@
 		4DA498FD24DB05F300EA9774 /* StatiticsCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatiticsCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRankingTableViewCell.swift; sourceTree = "<group>"; };
 		4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		4DB8221B25306FC500ECA782 /* ParticleEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffectView.swift; sourceTree = "<group>"; };
 		4DB9858C24FA995D00E95264 /* SmoothPickerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerHandler.swift; sourceTree = "<group>"; };
 		4DB9858D24FA995E00E95264 /* SmoothPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerView.swift; sourceTree = "<group>"; };
 		4DB9858E24FA995E00E95264 /* SmoothPickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothPickerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				17CCCF8824CC622600EBA733 /* NicknameSuccessViewController.swift */,
 				178E43F024CCC17700955B70 /* SignUpResponse.swift */,
 				178E43F224CCC18800955B70 /* SignInResponse.swift */,
+				4DB8221B25306FC500ECA782 /* ParticleEffectView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				4DB9859124FA995F00E95264 /* SmoothPickerView.swift in Sources */,
 				1779C59324CC783400CC78D2 /* SignInViewController.swift in Sources */,
 				4DA7A0DC24CCDAA50037E83D /* MyRankingTableViewCell.swift in Sources */,
+				4DB8221C25306FC500ECA782 /* ParticleEffectView.swift in Sources */,
 				4D378B31250A523C000BEFE3 /* UIDevices.swift in Sources */,
 				3990C0B324DC3F11004A56E0 /* TimeSettingViewController.swift in Sources */,
 				392B19C124E92A3200DC89D8 /* Promisable.swift in Sources */,

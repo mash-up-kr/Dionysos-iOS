@@ -28,6 +28,14 @@ final class ClockViewController: UIViewController {
     private var strategy: TimeMesureStrategy! {
         didSet { self.setupClock(for: strategy) }
     }
+    private var isTimeOut: Bool = false {
+        didSet {
+            if self.isTimeOut {
+                stopButton.isHidden = !isTimeOut
+                self.timeLabel.textColor = UIColor(red: 252.0 / 255.0, green: 90.0 / 255.0, blue: 110.0 / 255.0, alpha: 1.0)
+            }
+        }
+    }
     
     // MARK: Methods
     override func viewDidLoad() {
@@ -68,8 +76,13 @@ final class ClockViewController: UIViewController {
     }
     
     private func updateTime(from timeInterval: TimeInterval) {
-        let time: TimeAmount = TimeAmount(timeInterval)
-        userAccumulatedTime = (initalUserAccumulatedTime ?? .zero) + time
+        let time: TimeAmount = self.isTimeOut ? TimeAmount(-timeInterval) : TimeAmount(timeInterval)
+        if clock is Stopwatch {
+            userAccumulatedTime = (initalUserAccumulatedTime ?? .zero) + time
+        } else {
+            userAccumulatedTime = (initalUserAccumulatedTime ?? .zero) + TimeAmount(clock!.accumulatedTime)
+        }
+        isTimeOut = timeInterval < 0
         var timeString: String = [time.hours, time.minutes, time.seconds]
             .map { String(format: "%02d", $0) }
             .joined(separator: ":")
@@ -86,7 +99,7 @@ final class ClockViewController: UIViewController {
         switch status {
         case .inProgress:
             playAndPauseButton.isSelected = true
-            stopButton.isHidden = true
+            stopButton.isHidden = !isTimeOut
         case .onPause,
              .done:
             playAndPauseButton.isSelected = false

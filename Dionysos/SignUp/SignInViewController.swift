@@ -30,6 +30,7 @@ final class SignInViewController: UIViewController {
         errorView.setData(mainView: view, delegate: self)
         return errorView
     }()
+    @IBOutlet private weak var loginCharacterImageView: UIImageView!
     private var lastCall: (provider: SocialLoginType, UID: String)?
     @IBOutlet private weak var particleEffectView: ParticleEffectView!
     @IBAction private func kakaoSignInClicked(_ sender: Any) { kakaoButtonDidTap() }

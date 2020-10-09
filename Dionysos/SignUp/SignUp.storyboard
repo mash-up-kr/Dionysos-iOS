@@ -139,6 +139,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginCharacterImageView" destination="mw4-XW-8sA" id="tNL-i9-G5x"/>
                         <outlet property="particleEffectView" destination="vbQ-pW-Zsg" id="i1b-qP-jVz"/>
                     </connections>
                 </viewController>

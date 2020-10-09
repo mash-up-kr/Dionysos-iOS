@@ -25,12 +25,17 @@ enum NetworkProvider {
         }
     }
     
-    static func request<Response: Decodable>(_ target: TargetType, to type: Response.Type) -> Promise<Response> {
+    static func request<Response: Decodable>(_ target: TargetType, to type: Response.Type, direct: Bool = false) -> Promise<Response> {
         Promise<Response> { fulfill, reject in
             request(target).then {
                 do {
-                    fulfill(try parse($0))
+                    if direct {
+                        fulfill(try parseDirect($0))
+                    } else {
+                        fulfill(try parse($0))
+                    }
                 } catch {
+                    logger(error)
                     reject(error)
                 }
             }.catch {
@@ -55,6 +60,10 @@ enum NetworkProvider {
     
     private struct ParseResponse<Response: Decodable>: Decodable {
         var result: Response
+    }
+    
+    private static func parseDirect<Response: Decodable>(_ data: Data) throws -> Response {
+        try JSONDecoder().decode(Response.self, from: data)
     }
     
     private static func parse<Response: Decodable>(_ data: Data) throws -> Response {

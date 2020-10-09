@@ -91,6 +91,7 @@
 		4DB9859624FAA77300E95264 /* TimeLapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9859524FAA77300E95264 /* TimeLapsViewController.swift */; };
 		4DB9859824FAA77E00E95264 /* TimeLaps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB9859724FAA77E00E95264 /* TimeLaps.storyboard */; };
 		4DC382A224FAAF5900A8669B /* CameraConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC382A124FAAF5900A8669B /* CameraConfigure.swift */; };
+		4DCA9E0525304C8700892B42 /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA9E0425304C8700892B42 /* RankingModel.swift */; };
 		4DDA61A724CC2C4B00D0978E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDA61A624CC2C4B00D0978E /* Colors.xcassets */; };
 		4DDA61A924CC37F800D0978E /* SelectClockTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */; };
 		4DDA61AE24CC39FA00D0978E /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA61AD24CC39FA00D0978E /* MainTab.swift */; };
@@ -182,6 +183,7 @@
 		4DB9859524FAA77300E95264 /* TimeLapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLapsViewController.swift; sourceTree = "<group>"; };
 		4DB9859724FAA77E00E95264 /* TimeLaps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeLaps.storyboard; sourceTree = "<group>"; };
 		4DC382A124FAAF5900A8669B /* CameraConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraConfigure.swift; sourceTree = "<group>"; };
+		4DCA9E0425304C8700892B42 /* RankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
 		4DDA61A624CC2C4B00D0978E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4DDA61A824CC37F800D0978E /* SelectClockTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClockTypeViewController.swift; sourceTree = "<group>"; };
 		4DDA61AD24CC39FA00D0978E /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 				4D0F5DA024CC7F350044418F /* RankingMainViewController.swift */,
 				4DA7A0DB24CCDAA50037E83D /* MyRankingTableViewCell.swift */,
 				4DA7A0DD24CCDACA0037E83D /* RankingTableViewCell.swift */,
+				4DCA9E0425304C8700892B42 /* RankingModel.swift */,
 			);
 			path = Ranking;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				390BD10224CCE772009BDB18 /* FacebookAuth.swift in Sources */,
 				4DB9859024FA995F00E95264 /* SmoothPickerHandler.swift in Sources */,
 				4D0F5D9F24CC7F2C0044418F /* MyPageMainViewController.swift in Sources */,
+				4DCA9E0525304C8700892B42 /* RankingModel.swift in Sources */,
 				4D2EEA1024C8C00100E7A687 /* UIView+Extension.swift in Sources */,
 				3990C0B924DE4B5C004A56E0 /* ClockViewController.swift in Sources */,
 				4DDA61A924CC37F800D0978E /* SelectClockTypeViewController.swift in Sources */,

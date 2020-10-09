@@ -31,4 +31,16 @@ enum DionysosProvider {
     static func callCheckNickname(token: String, nickname: String) -> Promise<Void> {
         NetworkProvider.requestWithoutParsing(Target.checkNickname(token: token, nickname: nickname))
     }
+    
+    static func getRankingDay() -> Promise<RankingModel> {
+        NetworkProvider.request(Target.rankingDay, to: RankingModel.self, direct: true)
+    }
+    
+    static func getRankingWeek() -> Promise<RankingModel> {
+        NetworkProvider.request(Target.rankingWeek, to: RankingModel.self, direct: true)
+    }
+    
+    static func getRankingMonth() -> Promise<RankingModel> {
+        NetworkProvider.request(Target.rankingMonth, to: RankingModel.self, direct: true)
+    }
 }

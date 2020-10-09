@@ -14,6 +14,9 @@ enum DionysosTarget {
     case signUp(provider: String, token: String, nickname: String)
     case checkNickname(token: String, nickname: String)
     case signOut(token: String)
+    case rankingDay
+    case rankingWeek
+    case rankingMonth
 }
 
 extension DionysosTarget: TargetType {
@@ -27,11 +30,19 @@ extension DionysosTarget: TargetType {
             return "/user/check/nickname"
         case .signOut:
             return "/user/signout"
+        case .rankingDay:
+            return "/ranking/day"
+        case .rankingWeek:
+            return "/ranking/week"
+        case .rankingMonth:
+            return "/ranking/month"
         }
     }
     
     var method: Moya.Method {
         switch self {
+        case .rankingDay, .rankingWeek, .rankingMonth:
+            return .get
         case .signIn, .signUp, .checkNickname:
             return .post
         case .signOut:
@@ -49,6 +60,8 @@ extension DionysosTarget: TargetType {
             return .requestCompositeParameters(bodyParameters: ["nickname": nickname], bodyEncoding: JSONEncoding.default, urlParameters: [:])
         case .signOut(_):
             return .requestCompositeParameters(bodyParameters: [:], bodyEncoding: JSONEncoding.default, urlParameters: [:]) // body 넣을 필요 없는데??
+        case .rankingDay, .rankingWeek, .rankingMonth:
+            return .requestPlain
         }
     }
 }

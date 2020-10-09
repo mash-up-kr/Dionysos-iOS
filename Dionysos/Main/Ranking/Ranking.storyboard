@@ -158,13 +158,13 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rank1St" translatesAutoresizingMaskIntoConstraints="NO" id="yOJ-kG-7MX">
                                                     <rect key="frame" x="20" y="0.0" width="48" height="48"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재르시" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTe-sl-mqA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTe-sl-mqA">
                                                     <rect key="frame" x="0.0" y="124" width="88" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
                                                     <color key="textColor" name="darkGrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PT4-j8-leg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PT4-j8-leg">
                                                     <rect key="frame" x="0.0" y="147.5" width="88" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" name="darkGrey"/>
@@ -197,13 +197,13 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rank3Rd" translatesAutoresizingMaskIntoConstraints="NO" id="xqa-NU-sMb">
                                                     <rect key="frame" x="20" y="0.0" width="48" height="48"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재르시" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekh-Np-B6a">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekh-Np-B6a">
                                                     <rect key="frame" x="0.0" y="124" width="88" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
                                                     <color key="textColor" name="darkGrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVQ-4i-gMS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVQ-4i-gMS">
                                                     <rect key="frame" x="0.0" y="147.5" width="88" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" name="darkGrey"/>
@@ -236,13 +236,13 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rank2Nd" translatesAutoresizingMaskIntoConstraints="NO" id="Cx7-Xy-xSN">
                                                     <rect key="frame" x="20" y="0.0" width="48" height="48"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재르시" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stp-5V-nTp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stp-5V-nTp">
                                                     <rect key="frame" x="0.0" y="124" width="88" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
                                                     <color key="textColor" name="darkGrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEl-8D-wiE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEl-8D-wiE">
                                                     <rect key="frame" x="0.0" y="147.5" width="88" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" name="darkGrey"/>
@@ -439,8 +439,17 @@
                     <connections>
                         <outlet property="blackViewCenterConstraint" destination="8Yh-fG-8qM" id="f4Q-em-ToN"/>
                         <outlet property="dayLabel" destination="OUS-6g-hSo" id="5aZ-jY-CGD"/>
+                        <outlet property="firstDuration" destination="PT4-j8-leg" id="0E4-yO-HG1"/>
+                        <outlet property="firstProfile" destination="t6g-gd-HIX" id="eH6-4M-MKy"/>
+                        <outlet property="firstUserName" destination="mTe-sl-mqA" id="GbS-pX-8F7"/>
                         <outlet property="monthLabel" destination="DVu-3Z-6Ww" id="94O-aP-739"/>
+                        <outlet property="secondDuration" destination="NEl-8D-wiE" id="Z52-wz-cnA"/>
+                        <outlet property="secondProfile" destination="jFC-bE-jEF" id="4Dx-pz-hep"/>
+                        <outlet property="secondUserName" destination="Stp-5V-nTp" id="ih7-5s-nwG"/>
                         <outlet property="tableView" destination="4pe-2P-hjb" id="3Nq-Zj-5y8"/>
+                        <outlet property="thirdDuration" destination="eVQ-4i-gMS" id="0Ya-mJ-F4k"/>
+                        <outlet property="thirdProfile" destination="52B-rN-lkq" id="fbc-Va-zDq"/>
+                        <outlet property="thirdUserName" destination="Ekh-Np-B6a" id="zHh-IS-EIQ"/>
                         <outlet property="weekLabel" destination="87d-2r-sjL" id="qTY-0h-gBN"/>
                     </connections>
                 </viewController>

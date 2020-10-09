@@ -69,9 +69,7 @@ final class ClockViewController: UIViewController {
     
     private func updateTime(from timeInterval: TimeInterval) {
         let time: TimeAmount = TimeAmount(timeInterval)
-        if let initalUserAccumulatedTime = self.initalUserAccumulatedTime {
-            userAccumulatedTime = initalUserAccumulatedTime + time
-        }
+        userAccumulatedTime = (initalUserAccumulatedTime ?? .zero) + time
         var timeString: String = [time.hours, time.minutes, time.seconds]
             .map { String(format: "%02d", $0) }
             .joined(separator: ":")

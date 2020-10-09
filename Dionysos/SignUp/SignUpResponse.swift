@@ -11,6 +11,6 @@ import Foundation
 struct SignUpResponse: Codable {
     var jwt: String
     var nickname: String
-    var providerType: String
+    var provider: String
     var uid: String
 }

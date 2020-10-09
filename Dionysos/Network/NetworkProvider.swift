@@ -41,6 +41,7 @@ enum NetworkProvider {
     
     private static func request(_ target: TargetType) -> Promise<Data> {
         Promise<Data> { fulfill, reject in
+            provider.session.sessionConfiguration.timeoutIntervalForRequest = 5
             provider.request(MultiTarget(target)) { result in
                 switch result {
                 case .success(let response):
